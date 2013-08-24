@@ -28,6 +28,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
@@ -333,5 +334,13 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         }
 
         return true;
+    }
+
+    protected boolean isCheckBoxPrefernceChecked(Preference p) {
+        if(p instanceof CheckBoxPreference) {
+            return ((CheckBoxPreference) p).isChecked();
+        } else {
+            return false;
+        }
     }
 }

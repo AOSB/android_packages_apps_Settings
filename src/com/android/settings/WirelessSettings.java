@@ -22,6 +22,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -46,6 +47,7 @@ import android.util.Log;
 
 import com.android.internal.telephony.SmsApplication;
 import com.android.internal.telephony.SmsApplication.SmsApplicationData;
+import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.TelephonyProperties;
 import com.android.settings.nfc.NfcEnabler;
@@ -68,12 +70,14 @@ public class WirelessSettings extends RestrictedSettingsFragment
     private static final String KEY_SMS_APPLICATION = "sms_application";
     private static final String KEY_TOGGLE_NSD = "toggle_nsd"; //network service discovery
     private static final String KEY_CELL_BROADCAST_SETTINGS = "cell_broadcast_settings";
+    private static final String KEY_SHOW_LTE_OR_FOURGEE = "show_lte_or_fourgee";
 
     public static final String EXIT_ECM_RESULT = "exit_ecm_result";
     public static final int REQUEST_CODE_EXIT_ECM = 1;
 
     private AirplaneModeEnabler mAirplaneModeEnabler;
     private CheckBoxPreference mAirplaneModePreference;
+    private CheckBoxPreference mShowLTEorFourGee;
     private NfcEnabler mNfcEnabler;
     private NfcAdapter mNfcAdapter;
     private NsdEnabler mNsdEnabler;
@@ -109,6 +113,11 @@ public class WirelessSettings extends RestrictedSettingsFragment
             return true;
         } else if (preference == findPreference(KEY_MANAGE_MOBILE_PLAN)) {
             onManageMobilePlanClick();
+        } else if (preference == mShowLTEorFourGee) {
+            putBoolean(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SHOW_LTE_OR_FOURGEE,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         }
         // Let the intents be launched by the Preference manager
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -248,6 +257,22 @@ public class WirelessSettings extends RestrictedSettingsFragment
     private boolean isSmsSupported() {
         // Some tablet has sim card but could not do telephony operations. Skip those.
         return mTm.isSmsCapable();
+    }
+
+    public static boolean putBoolean(ContentResolver cr, String name, boolean value) {
+         return Settings.System.putString(cr, name, value ? "1" : "0");
+    }
+
+    public static boolean getBoolean(ContentResolver cr, String name, boolean def) {
+         String v = Settings.System.getString(cr, name);
+         try {
+                if(v != null)
+                 return "1".equals(v);
+                else
+                 return def;
+         } catch (NumberFormatException e) {
+                return def;
+         }
     }
 
     @Override
@@ -399,6 +424,19 @@ public class WirelessSettings extends RestrictedSettingsFragment
             if (ps != null) root.removePreference(ps);
         }
         protectByRestrictions(KEY_CELL_BROADCAST_SETTINGS);
+
+        mShowLTEorFourGee = (CheckBoxPreference) findPreference(KEY_SHOW_LTE_OR_FOURGEE);
+        mShowLTEorFourGee.setChecked(getBoolean(getActivity().
+                getApplicationContext().getContentResolver(),
+                    Settings.System.SHOW_LTE_OR_FOURGEE, false));
+        if (!deviceSupportsLTE()) {
+            getPreferenceScreen().removePreference(mShowLTEorFourGee);
+        }
+    }
+
+    private boolean deviceSupportsLTE() {
+        return (TelephonyManager.getLteOnCdmaModeStatic() == PhoneConstants.LTE_ON_CDMA_TRUE
+                    || TelephonyManager.getLteOnGsmModeStatic() != 0);
     }
 
     @Override
