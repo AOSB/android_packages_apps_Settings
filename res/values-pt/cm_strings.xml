@@ -454,8 +454,6 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="title_tile_camera">Câmera</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="lockscreen_widgets_category_title">Widgets</string>
-    <string name="lockscreen_enable_widgets_title">Paginamento de widget</string>
-    <string name="lockscreen_enable_widgets_summary">Permitir páginas múltiplas de widget a serem adicionadas e selecionadas</string>
     <string name="privacy_guard_manager_title">Proteção à Privacidade</string>
     <string name="privacy_guard_manager_summary">Gerenciar quais aplicativos têm acesso aos seus dados pessoais</string>
     <string name="privacy_guard_no_user_apps">Nenhum aplicativo está instalado</string>
@@ -575,7 +573,6 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="title_tile_performance_profile">Perfil de performance</string>
     <string name="quiet_hours_system">Desativar sons do sistema</string>
     <string name="privacy_guard_advanced_settings_title">Avançado</string>
-    <string name="hardware_keys_enable_custom_title">Permitir botões personalizados</string>
     <string name="development_shortcut_title">Atalho para desenvolvimento</string>
     <string name="development_shortcut_summary">Ativar opções \'limpar dados\' e \'forçar fechamento\' na área de notificação e lista de aplicativos recentes</string>
     <string name="display_rotation_title">Rotação</string>
@@ -646,10 +643,6 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="lockpattern_settings_enable_error_path_title">Exibir erro no padrão</string>
     <string name="lockpattern_settings_enable_dots_title">Exibir pontos no padrão</string>
     <string name="lockscreen_custom_widgets_title">Widgets personalizados</string>
-    <string name="lock_pattern_size_3">3x3</string>
-    <string name="lock_pattern_size_4">4x4</string>
-    <string name="lock_pattern_size_5">5x5</string>
-    <string name="lock_pattern_size_6">6x6</string>
     <string name="volume_overlay_title">Estilo do painel de volume</string>
     <string name="stylus_icon_enabled_title">Mostrar ícone quando usando stylus</string>
     <string name="stylus_icon_enabled_summary">Mostar ponteiro quando pairando ou desenhando com o stylus</string>
@@ -686,4 +679,18 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="volume_overlay_expanded">Expandido</string>
     <string name="volume_overlay_none">Nenhum</string>
     <string name="status_bar_double_tap_to_sleep_title">Toque duplo para dormir</string>
+    <string name="status_bar_show_clock_title">Mostrar relógio</string>
+    <string name="status_bar_toggle_brightness">Controle de brilho</string>
+    <string name="status_bar_toggle_brightness_summary">Permite ajustar o brilho deslizando através da barra de status</string>
+    <string name="status_bar_toggle_info">Brilho automático está habilitado</string>
+    <string name="status_bar_signal_text_title">Alternar exibição de sinal</string>
+    <string name="status_bar_notif_count_title">Mostrar contador de notificação</string>
+    <string name="status_bar_notif_count_summary">Mostrar o número de notificações pendentes na barra de status</string>
+    <string name="lockscreen_enable_camera_title">Widget da câmera</string>
+    <string name="status_bar_signal_style_icon">Ícone</string>
+    <string name="status_bar_signal_style_text">Texto</string>
+    <string name="lock_pattern_size_3">3x3</string>
+    <string name="lock_pattern_size_4">4x4</string>
+    <string name="lock_pattern_size_5">5x5</string>
+    <string name="lock_pattern_size_6">6x6</string>
 </resources>
