@@ -20,6 +20,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <ListPreference
+        android:key="lcd_density"
+        android:title="@string/custom_density_title"
+        android:entries="@array/lcd_density_entries"
+        android:entryValues="@array/lcd_density_entries" />
+
+    <ListPreference
         android:key="pref_zram_size"
         android:dialogTitle="@string/pref_zram_title"
         android:title="@string/pref_zram_title"
@@ -38,3 +44,4 @@
         android:summary="@string/pref_ksm_summary" />
 
 </PreferenceScreen>
+
