@@ -402,4 +402,8 @@
     <string name="title_full_screen_swipe">Swipe-to-Switch detection</string>
     <string name="summary_full_screen_swipe">Use full screen detection for swipe to switch, not just the bottom bar</string>
 
+     <!--Lockscreen See Through-->
+     <string name="see_through_title">See through</string>
+     <string name="see_through_summary">Shows the content behind your lockscreen</string>
+
 </resources>
