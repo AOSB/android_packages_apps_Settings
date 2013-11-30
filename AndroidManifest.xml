@@ -219,6 +219,9 @@
 	<!-- About ProBAM -->
 	<activity android:name=".probam.About" />
 
+	<!-- Notification Drawer Style -->
+	<activity android:name=".pac.NotificationDrawerStyle" />
+
         <!-- Wireless Controls -->
         <activity android:name="Settings$WirelessSettingsActivity"
                 android:taskAffinity="com.android.settings"
