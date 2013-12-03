@@ -26,6 +26,11 @@
             android:summary="@string/unlock_set_unlock_mode_pin"
             android:persistent="false"/>
 
+        <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.probam.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
         <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="lockscreen_quick_unlock_control"
             android:title="@string/unlock_quick_unlock_control_title"

@@ -44,6 +44,11 @@
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
         <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.probam.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
+        <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
