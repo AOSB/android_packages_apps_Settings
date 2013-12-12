@@ -16,6 +16,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
+	
+	<PreferenceScreen android:layout="@layout/logo_row" android:key="probam_logo" />
 
         <!-- System update settings - launches activity -->
       <!--  <PreferenceScreen android:key="system_update_settings"
@@ -40,28 +42,30 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
-        <!-- CyanogenMod Updates -->
-        <PreferenceScreen android:key="cm_updates"
-                android:title="@string/cmupdate_settings_title" 
-                android:summary="@string/cmupdate_settings_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.updater"
-                    android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
+	<!-- ProBAM Updates -->
+        <PreferenceScreen android:title="@string/pbupdate_settings_title" 
+		android:key="cm_updates"
+		android:summary="@string/pbupdate_settings_summary">
+            <intent android:targetPackage="com.probam.updater"
+		    android:action="android.intent.action.MAIN"
+		    android:targetClass="com.probam.updater.MainActivity" />
         </PreferenceScreen>
 
-        <!-- Anonymous statistics - (CMStats) -->
-        <PreferenceScreen
-            android:key="cmstats"
-            android:title="@string/anonymous_statistics_title"
-            android:summary="@string/anonymous_statistics_summary"
-            android:fragment="com.android.settings.cmstats.AnonymousStats" >
-        </PreferenceScreen>
+	<!-- ProBAM Stats -->
+        <PreferenceScreen 
+	    android:title="@string/pbstats_settings_title"
+            android:key="probam_stats"
+	    android:summary="@string/pbstats_settings_summary">
+            <intent android:targetPackage="android.probamstats"
+		    android:action="android.intent.action.MAIN"
+		    android:targetClass="android.probamstats.ProBamStats" />
 
-        <!-- Change Log -->
+        <!-- Change Log 
         <PreferenceScreen android:key="changelog"
             android:title="@string/changelog_title"
             android:fragment="com.android.settings.cyanogenmod.ChangeLog" >
         </PreferenceScreen>
+	-->
 
         <!-- Legal Information -->
         <PreferenceScreen
@@ -158,6 +162,12 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
+
+        <!-- ProBAM version -->
+        <Preference android:key="probam_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/probam_version"
+                android:summary="@string/probam_version_default" />
 
         <!-- Mod version -->
         <Preference android:key="mod_version"
