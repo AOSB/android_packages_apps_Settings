@@ -59,6 +59,7 @@
             <intent android:targetPackage="android.probamstats"
 		    android:action="android.intent.action.MAIN"
 		    android:targetClass="android.probamstats.ProBamStats" />
+	</PreferenceScreen>
 
         <!-- Change Log 
         <PreferenceScreen android:key="changelog"
