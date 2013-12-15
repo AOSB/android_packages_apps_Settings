@@ -2,6 +2,26 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- General strings -->
+    <string name="reset">Reset</string>
+    <string name="enabled">Enabled</string>
+    <string name="attention">Attention</string>
+    <string name="disabled">Disabled</string>
+    <string name="default_string">Default</string>
+    <string name="additional_options_title">Additional options</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="style_title">Style</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+
     <!-- Halo -->
     <string name="halo_settings_title">Halo</string>
     <string name="halo_behavior_title">Halo Behavior</string>

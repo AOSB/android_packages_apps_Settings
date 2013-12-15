@@ -95,6 +95,7 @@
         <item>0</item>
     </string-array>
 
+
     <!-- Recents RAM bar-->
     <string-array name="entries_ram_bar_mode">
         <item>@string/ram_bar_none</item>
