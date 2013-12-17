@@ -196,6 +196,9 @@
             </intent-filter>
         </activity>
 
+ 	<!--  Configurable init.d  -->
+	<activity android:name=".initD" />
+
         <!-- Wireless Controls -->
 
         <activity android:name="Settings$WirelessSettingsActivity"
