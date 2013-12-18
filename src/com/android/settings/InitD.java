@@ -146,8 +146,6 @@ public class InitD extends SettingsPreferenceFragment {
             return false;
         }
 
-	CMDProcessor.SH shell = new CMDProcessor().su;
-	shell.runWaitFor("chmod 777 " + INIT_D_CFG);
         return true;
     }
 
