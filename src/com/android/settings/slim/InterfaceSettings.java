@@ -74,7 +74,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
 
     private void updateSettings() {
         setPreferenceScreen(null);
-        addPreferencesFromResource(R.xml.slim_interface_settings);
+        addPreferencesFromResource(R.xml.init_d);
 
         mLcdDensity = (ListPreference) findPreference(KEY_LCD_DENSITY);
         String current = SystemProperties.get(DENSITY_PROP,

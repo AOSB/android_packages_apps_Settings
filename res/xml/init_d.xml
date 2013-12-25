@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+   <PreferenceCategory android:title="@string/custom_density_title" >
+	<ListPreference
+	   android:key="lcd_density"
+           android:title="@string/custom_density_title"
+           android:entries="@array/lcd_density_entries"
+           android:entryValues="@array/lcd_density_entries" />
+   </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/pt_general" >
+
+
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="zipalign_apks"
