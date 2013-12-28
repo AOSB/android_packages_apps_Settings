@@ -27,6 +27,11 @@
     	android:title="@string/ad_settings_title"	
     	android:summary="@string/ad_settings_summary" /> 
 
+     <PreferenceScreen
+        android:key="app_sidebar"
+        android:fragment="com.android.settings.crdroid.AppSidebar"
+        android:title="@string/app_sidebar_title"/>
+
     <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.InitD"
