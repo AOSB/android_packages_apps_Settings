@@ -38,4 +38,3 @@
         android:summary="@string/pref_ksm_summary" />
 
 </PreferenceScreen>
-

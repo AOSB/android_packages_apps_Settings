@@ -261,19 +261,7 @@
     <string name="ad_threshold_5s">5 seconds</string>
     <string name="ad_pocket_mode_off">Off</string>
     <string name="ad_pocket_mode_notifications">Notifications only</string>
-    <string name="ad_pocket_mode_always">Always</string>	    
-    
-    <!-- Density Changer -->
-    <string name="custom_density_title">Custom lcd density</string>
-    <string name="custom_density">custom</string>
-    <string name="set_custom_density_title">Set custom density</string>
-    <string name="set_custom_density_set">Set</string>
-    <string name="reboot_now">Reboot</string>
-    <string name="dialog_reboot_title">Would you like to reboot?</string>
-    <string name="dialog_reboot_summary">You must reboot to apply new density</string>
-    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
-    <string name="dpi">DPI</string>
-    <string name="current_lcd_density">"Current LCD Density: "</string>
+    <string name="ad_pocket_mode_always">Always</string>
 
     <!-- Low battery warning policy -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
