@@ -322,4 +322,43 @@
     <string name="theme_auto_mode_lightsensor">On light condition change</string>
     <string name="theme_auto_mode_twilight">On daytime</string>
     <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
+    
+
+    <!-- LCD Density -->
+    <string name="dpi">DPI</string>
+    <string name="su_dialog_error_title">Warning</string>
+    <string name="su_dialog_error_message">An error occurred.\n\nPlease check for root access. To activate go into superuser settings and enable root access.</string>
+    <string name="lcd_density_title">LCD density</string>
+    <string name="lcd_density_summary">unknown</string>
+    <string name="current_lcd_density">"Current LCD Density: "</string>
+    <string name="lcd_density_wizard">LCD Density Wizard</string>
+    <string name="stock_density_title">Change to preset values</string>
+    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240.</string>
+    <string name="stock_density_changed_summary">"Density set to: "</string>
+    <string name="reboot_title">Reboot NOW!</string>
+    <string name="clear_market_data_title">Clear all relevant market data.</string>
+    <string name="clear_market_data_summary">This step clears data from market, google play services and google services framework.</string>
+    <string name="clear_market_data_cleared">Data successfully cleared</string>
+    <string name="reboot_cleardata_title">Reboot!</string>
+    <string name="reboot_cleardata_summary">Come back here after the reboot and complete the rest of the steps!</string>
+    <string name="open_market_title">Open Market and hit accept</string>
+    <string name="open_market_summary">Press back when done to return here.</string>
+    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
+    <string name="custom_density_title">Change to custom values</string>
+    <string name="custom_density_summary">Some values may cause compatibility issues with apps and the playstore, use at your own RISK!</string>
+    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
+    <string name="custom_density">custom</string>
+    <string name="set_custom_density_title">Set custom density</string>
+    <string name="set_custom_density_set">Set</string>
+    <string name="custom_density_dialog_title">"WARNING!"</string>
+    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+    <string name="custom_density_dialog_button_got">Got it!</string>
+    <string name="custom_density_dialog_button_reboot">Reboot now</string>
+    
+    <!-- LCD Density Warning -->
+    <string name="lcd_warning_title">LCD Density Warning</string>
+    <string name="lcd_warning">Be Advised that it is recommended to use a Multi-DPI Play Store to avoid any issues with apps after changing your system density. Do you understand?</string>
+    <string name="lcd_warning_yes">YES</string>
+    <string name="lcd_warning_no">NO</string>
+
 </resources>
