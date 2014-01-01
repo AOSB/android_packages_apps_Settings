@@ -380,13 +380,9 @@
     <!-- double-tap to sleep -->
     <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
 
-    <!-- Notification Drawer - Swipe to Switch full screen detection-->
-    <string name="title_full_screen_swipe">Swipe-to-Switch detection</string>
-    <string name="summary_full_screen_swipe">Use full screen detection for swipe to switch, not just the bottom bar</string>
-
-     <!--Lockscreen See Through-->
-     <string name="see_through_title">See through</string>
-     <string name="see_through_summary">Shows the content behind your lockscreen</string>
+    <!--Lockscreen See Through-->
+    <string name="see_through_title">See through</string>
+    <string name="see_through_summary">Shows the content behind your lockscreen</string>
 
     <!-- Lockscreen Notifications -->
     <!-- Categories -->
