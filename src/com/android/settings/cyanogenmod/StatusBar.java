@@ -46,6 +46,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
     private static final String STATUS_BAR_NETWORK_STATS = "status_bar_show_network_stats";
     private static final String STATUS_BAR_NETWORK_STATS_UPDATE = "status_bar_network_status_update";
+    private static final String KEY_SMS_BREATH = "sms_breath";
+    private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
+    private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
 
     private ListPreference mStatusBarBattery;
     private ListPreference mBatteryBar;
@@ -57,7 +60,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarNetStatsUpdate;
     private ColorPickerPreference mBatteryBarColor;
     private CheckBoxPreference mStatusBarNetworkStats;
-
+    private CheckBoxPreference mSMSBreath;
+    private CheckBoxPreference mMissedCallBreath;
+    private CheckBoxPreference mVoicemailBreath;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +73,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         mStatusBarBattery = (ListPreference) prefSet.findPreference(STATUS_BAR_BATTERY);
-	mStatusBarBatteryShowPercent = 
-		(CheckBoxPreference) findPreference(STATUS_BAR_BATTERY_SHOW_PERCENT);
+	    mStatusBarBatteryShowPercent = (CheckBoxPreference) findPreference(STATUS_BAR_BATTERY_SHOW_PERCENT);
         mStatusBarCmSignal = (ListPreference) prefSet.findPreference(STATUS_BAR_SIGNAL);
 
-        CheckBoxPreference statusBarBrightnessControl = (CheckBoxPreference)
-                prefSet.findPreference(Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL);
+        CheckBoxPreference statusBarBrightnessControl = (CheckBoxPreference) prefSet.findPreference(Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL);
 
         try {
             if (Settings.System.getInt(resolver, Settings.System.SCREEN_BRIGHTNESS_MODE)
@@ -85,6 +88,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
             // Do nothing
         }
 
+        mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
+        mMissedCallBreath = (CheckBoxPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
+        mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
 
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY);
         mStatusBarNetworkStats = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS);
@@ -94,7 +100,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarBattery.setValue(String.valueOf(batteryStyle));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
-	enableStatusBarBatteryDependents(mStatusBarBattery.getValue());
+	    enableStatusBarBatteryDependents(mStatusBarBattery.getValue());
 
         int signalStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SIGNAL_TEXT, 0);
         mStatusBarCmSignal.setValue(String.valueOf(signalStyle));
@@ -140,9 +146,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mBatteryBarThickness.setOnPreferenceChangeListener(this);
         mBatteryBarThickness.setValue((Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1)) + "");
         mBatteryBarThickness.setSummary(mBatteryBarThickness.getEntry());
+       
+        mSMSBreath.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(), Settings.System.KEY_SMS_BREATH, 0) == 1));
+        mMissedCallBreath.setChecked((Settings.System.getInt(resolver, Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1));        
+        mVoicemailBreath.setChecked((Settings.System.getInt(resolver, Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
 
         updateBatteryBarOptions();
-	enableDependents();
+	    enableDependents();
     }
 
     @Override
@@ -153,13 +163,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
             int index = mStatusBarBattery.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_BATTERY, batteryStyle);
             mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
-	    enableStatusBarBatteryDependents((String)newValue);
+	        enableStatusBarBatteryDependents((String)newValue);
             return true;
         } else if (preference == mStatusBarCmSignal) {
             int signalStyle = Integer.valueOf((String) newValue);
             int index = mStatusBarCmSignal.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntries()[index]);
+            return true;
         } else if (preference == mStatusBarNetStatsUpdate) {
             long updateInterval = Long.valueOf((String) newValue);
             int index = mStatusBarNetStatsUpdate.findIndexOfValue((String) newValue);
@@ -205,6 +216,21 @@ public class StatusBar extends SettingsPreferenceFragment implements
         } else if (preference == mBatteryBarChargingAnimation) {
             value = mBatteryBarChargingAnimation.isChecked();
             Settings.System.putInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, value ? 1 : 0);
+            return true;
+        } else if (preference == mSMSBreath) {
+            value = mSMSBreath.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
+            return true;
+        } else if (preference == mMissedCallBreath) {
+            value = mMissedCallBreath.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
+            return true;
+        } else if (preference == mVoicemailBreath) {
+            value = mVoicemailBreath.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
             return true;
         }
         return false;
