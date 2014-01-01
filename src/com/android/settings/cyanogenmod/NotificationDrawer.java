@@ -30,8 +30,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private static final String TAG = "NotificationDrawer";
 
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
+    private static final String SWIPE_TO_SWITCH_SCREEN_DETECTION = "full_swipe_to_switch_detection";
 
     private ListPreference mCollapseOnDismiss;
+    private CheckBoxPreference mFullScreenDetection;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
         mCollapseOnDismiss.setOnPreferenceChangeListener(this);
         updateCollapseBehaviourSummary(collapseBehaviour);
+
+        mFullScreenDetection = (CheckBoxPreference) findPreference(SWIPE_TO_SWITCH_SCREEN_DETECTION);
+        mFullScreenDetection.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SWIPE_TO_SWITCH_SCREEN_DETECTION, 0) == 1);
+        mFullScreenDetection.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -56,6 +63,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
             updateCollapseBehaviourSummary(value);
+            return true;
+        } else if (preference == mFullScreenDetection) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.SWIPE_TO_SWITCH_SCREEN_DETECTION, value ? 1 : 0);
             return true;
         }
 
