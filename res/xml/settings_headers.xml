@@ -279,6 +279,13 @@
         android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings" />
 
+    <!-- About ProBAM -->
+    <header
+        android:id="@+id/about_probam"
+        android:fragment="com.android.settings.probam.About"
+        android:icon="@drawable/ic_cm_stats_notif"
+        android:title="@string/about_probam_settings_title" />
+
     <!-- About Device -->
     <header
         android:id="@+id/about_settings"

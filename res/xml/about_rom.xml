@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_probam_settings_title"
+xmlns:rb="http://schemas.android.com/apk/res/com.android.settings">
+
+<PreferenceScreen android:key="probam_logo"
+                 android:layout="@layout/logo_row" />
+
+	<PreferenceCategory
+	android:key="links"
+	android:title="@string/about_probam">
+
+	<Preference
+	    android:key="probam_site"
+	    android:title="@string/probam_site_title"
+	    android:summary="@string/probam_site_summary" />
+
+	<com.android.settings.widgets.DeveloperPreference
+                        android:title="ProBAM"
+                        rb:nameDev="ProBAM"
+                        rb:facebookLink="@string/facebook_probam"
+                        rb:githubLink="@string/github_probam"
+            		rb:twitterHandle="CodeXperts"
+			rb:googleLink="@string/google_probam"
+                        rb:emailDev="hany.alsamman@gmail.com"/>
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+	    android:key="devs"
+            android:title="@string/devs">
+
+	<com.android.settings.widgets.DeveloperPreference
+            android:title="hany_alsamman"
+            rb:nameDev="hany.alsamman"
+            rb:twitterHandle="CodeXperts"
+            rb:donateLink="@string/donate_hany_alsamman"
+            rb:githubLink="@string/github_hany_alsamman"
+	    rb:googleLink="@string/google_hany_alsamman"
+	    rb:emailDev="hany.alsamman@gmail.com"/>
+
+</PreferenceCategory>
+
+<PreferenceCategory
+android:key="contributors"
+android:title="@string/contributors_title">
+
+	<com.android.settings.widgets.DeveloperPreference
+            android:title="CyanogenMod"
+            rb:nameDev="CyanogenMod"
+            rb:twitterHandle="cyanogenmod"
+            rb:donateLink="@string/donate_cyanogenmod"
+            rb:githubLink="@string/github_cyanogenmod"
+            rb:emailDev="hany.alsamman@gmail.com"/>
+
+</PreferenceCategory>
+
+</PreferenceScreen>

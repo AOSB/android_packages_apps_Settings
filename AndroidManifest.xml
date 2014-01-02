@@ -239,6 +239,9 @@
 
         <service android:name="com.brewcrewfoo.performance.service.BootService"/>
 
+	<!-- About ProBAM -->
+	<activity android:name=".probam.About" />
+
         <!-- Wireless Controls -->
 
         <activity android:name="Settings$WirelessSettingsActivity"
