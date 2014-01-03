@@ -78,6 +78,7 @@ import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.cyanogenmod.ButtonSettings;
 import com.android.settings.cyanogenmod.LockscreenInterface;
 import com.android.settings.cyanogenmod.MoreDeviceSettings;
+import com.android.settings.cyanogenmod.PerformanceSettings;
 import com.android.settings.cyanogenmod.SystemUiSettings;
 import com.android.settings.cyanogenmod.superuser.PolicyNativeFragment;
 import com.android.settings.deviceinfo.Memory;
@@ -371,6 +372,7 @@ public class Settings extends PreferenceActivity
         ButtonSettings.class.getName(),
         MoreDeviceSettings.class.getName(),
         ProfilesSettings.class.getName(),
+        PerformanceSettings.class.getName(),
         PolicyNativeFragment.class.getName()
     };
 
@@ -637,7 +639,8 @@ public class Settings extends PreferenceActivity
                         target.remove(i);
                     }
                 }
-            } else if (id == R.id.development_settings) {
+            } else if (id == R.id.development_settings
+                    || id == R.id.performance_settings) {
                 if (!showDev) {
                     target.remove(i);
                 }
@@ -1204,6 +1207,5 @@ public class Settings extends PreferenceActivity
     public static class BlacklistSettingsActivity extends Settings { /* empty */ }
     public static class ASSRamBarActivity extends Settings { /* empty */ }
     public static class SystemSettingsActivity extends Settings { /* empty */ }
-    public static class PerformanceSettingsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
 }
