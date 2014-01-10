@@ -210,7 +210,7 @@ public class NavRingTargets extends Fragment implements
                     @Override
                     public void onCheckedChanged(CompoundButton v,
                             boolean checked) {
-                        Settings.System.putBoolean(cr,
+                        	putBoolean(cr,
                                 Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE,
                                 checked);
                         updateDrawables();
@@ -491,6 +491,22 @@ public class NavRingTargets extends Fragment implements
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    public static boolean putBoolean(ContentResolver cr, String name, boolean value) {
+	    return Settings.System.putString(cr, name, value ? "1" : "0");
+    }
+
+    public static boolean getBoolean(ContentResolver cr, String name, boolean def) {
+	    String v = Settings.System.getString(cr, name);
+	    try {
+		if(v != null)
+		    return "1".equals(v);
+		else
+		    return def;
+	    } catch (NumberFormatException e) {
+		return def;
+	    }
+    }
+
     public void updateDrawables() {
         for (int i = 0; i < 5; i++) {
             targetActivities[i] = Settings.System.getString(cr,
@@ -500,7 +516,7 @@ public class NavRingTargets extends Fragment implements
             customIcons[i] = Settings.System.getString(cr,
                     Settings.System.SYSTEMUI_NAVRING_ICON[i]);
         }
-        mBoolLongPress = (Settings.System.getBoolean(cr,
+        mBoolLongPress = (getBoolean(cr,
                 Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, false));
 
         mNavRingAmount = Settings.System.getInt(cr,
