@@ -559,4 +559,9 @@ public class LockscreenTargets extends Fragment implements
     @Override
     public void onFinishFinalAnimation() {
     }
+
+    @Override
+    public void onTargetChange(View v, final int target) {
+    }
+
 }
