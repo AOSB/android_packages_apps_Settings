@@ -92,4 +92,9 @@
         android:fragment="com.android.settings.cyanogenmod.NotificationDrawer"
         android:title="@string/notification_drawer_title" />
 
+    <PreferenceScreen
+        android:key="navigation_bar_ring"
+        android:fragment="com.android.settings.probam.NavRingTargets"
+        android:title="@string/category_navring" />
+
 </PreferenceScreen>
