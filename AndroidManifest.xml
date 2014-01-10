@@ -226,6 +226,9 @@
 	<!-- Nav Ring -->
 	<activity android:name=".probam.NavRingTargets" />
 
+	<!-- Nav Bar -->
+        <activity android:name=".probam.navbar.NavbarTabHostFragment" />
+
         <!-- Wireless Controls -->
         <activity android:name="Settings$WirelessSettingsActivity"
                 android:taskAffinity="com.android.settings"

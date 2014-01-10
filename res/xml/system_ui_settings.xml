@@ -97,4 +97,9 @@
         android:fragment="com.android.settings.probam.NavRingTargets"
         android:title="@string/category_navring" />
 
+    <PreferenceScreen
+        android:key="navigation_bar"
+        android:fragment="com.android.settings.probam.navbar.NavbarTabHostFragment"
+        android:title="@string/category_navbar" />
+
 </PreferenceScreen>

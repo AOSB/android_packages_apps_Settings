@@ -48,4 +48,7 @@
     <color name="auto_brightness_preview_grid">#44ffffff</color>
 
     <color name="tab_selector">#FFFFFFFF</color>
+
+    <color name="extension_list_item_color">#ffc9c9c9</color>
+    <color name="setting_separator">#ff484848</color>
 </resources>
