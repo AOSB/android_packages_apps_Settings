@@ -83,17 +83,6 @@
             android:persistent="true" />
 
 
-    <CheckBoxPreference
-            android:key="enable_nav_bar"
-            android:title="@string/navbar_enable_bar"
-            android:summary="@string/navbar_enable_bar_summary" />
-
-    <PreferenceScreen
-	android:key="navbar_style_dimen_settings"
-	android:fragment="com.android.settings.crdroid.NavbarDimenSettings"
-	android:title="@string/navbar_style_dimen_title" 
-	android:dependency="enable_nav_bar" />
-
     <!-- Device Specific Touchscreen gestures -->
     <Preference
         android:key="touch_screen_gesture_settings">
