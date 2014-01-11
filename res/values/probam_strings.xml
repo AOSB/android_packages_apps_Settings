@@ -535,4 +535,9 @@
     <string name="system_power_crt_mode_both">Collapse orientation dependent</string>
     <string name="system_power_crt_mode_scale">Scale down</string>
 
+    <!-- Sound settings screen, setting check box label -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
+    <string name="camera_sounds_entry_stock">Default (bloop)</string>
+    <string name="camera_sounds_entry_realistic">Realistic (click)</string>
+    <string name="camera_sounds_entry_off">Disabled (ILLEGAL in some areas)</string>
 </resources>
