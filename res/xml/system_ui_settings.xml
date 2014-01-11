@@ -92,14 +92,27 @@
         android:fragment="com.android.settings.cyanogenmod.NotificationDrawer"
         android:title="@string/notification_drawer_title" />
 
+    <CheckBoxPreference
+            android:key="enable_nav_bar"
+            android:title="@string/navbar_enable_bar"
+            android:summary="@string/navbar_enable_bar_summary" />
+
     <PreferenceScreen
-        android:key="navigation_bar_ring"
-        android:fragment="com.android.settings.probam.NavRingTargets"
-        android:title="@string/category_navring" />
+         android:key="navbar_style_dimen_settings"
+         android:fragment="com.android.settings.probam.navbar.NavbarDimenSettings"
+         android:title="@string/navbar_style_dimen_title"
+         android:dependency="enable_nav_bar" />
 
     <PreferenceScreen
         android:key="navigation_bar"
         android:fragment="com.android.settings.probam.navbar.NavbarTabHostFragment"
-        android:title="@string/category_navbar" />
+        android:title="@string/category_navbar"
+	android:dependency="enable_nav_bar" />
+
+    <PreferenceScreen
+        android:key="navigation_bar_ring"
+        android:fragment="com.android.settings.probam.NavRingTargets"
+        android:title="@string/category_navring"
+	android:dependency="enable_nav_bar" />
 
 </PreferenceScreen>
