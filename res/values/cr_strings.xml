@@ -517,4 +517,7 @@
     <!-- Show 4G icon instead of LTE. User defined settings -->
     <string name="show_lte_or_fourgee_title">Show 4G network</string>
     <string name="show_lte_or_fourgee_summary">This will allow you to show you 4G instead of LTE</string>
+
+    <!-- Power Menu -->
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
 </resources>
