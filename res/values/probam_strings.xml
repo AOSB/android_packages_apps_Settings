@@ -540,4 +540,10 @@
     <string name="camera_sounds_entry_stock">Default (bloop)</string>
     <string name="camera_sounds_entry_realistic">Realistic (click)</string>
     <string name="camera_sounds_entry_off">Disabled (ILLEGAL in some areas)</string>
+
+    <!-- AppOps additions -->
+    <string name="appops_settings">Apps permissions</string>
+    <string name="appops_sysapp_beware">Beware!</string>
+    <string name="appops_sysapp_warning">"Changing permissions of core Android components might lead to undesired behavior. Change settings here at your own risk</string>
+
 </resources>
