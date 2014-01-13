@@ -389,8 +389,141 @@
     <!-- double-tap to sleep -->
     <string name="status_bar_double_tap_to_sleep_title">Zweimal tippen zum schlafen</string>
 
-    <!-- Notification Drawer - Swipe to Switch full screen detection-->
-    <string name="title_full_screen_swipe">Swipe-zum-ändern Erkennung</string>
-    <string name="summary_full_screen_swipe">Benutze Full Screnn zum swipen, nicht nur Unten</string>
+     <!--Lockscreen See Through-->
+     <string name="see_through_title">Durchsichtig</string>
+     <string name="see_through_summary">Zeigt dir den Inhalt "hinter" dem Sperrbildschirm</string>
+
+    <!-- Lockscreen Notifications -->
+    <!-- Categories -->
+    <string name="general">General</string>
+    <string name="layout">Layout</string>
+    <string name="privacy">Privacy</string>
+    <string name="lockscreen_notifications">Sperrbildschirm Benachrichtigungen</string>
+    <string name="lockscreen_notifications_summary">Zeige unerledigte Benachrichtigungen auf dem Sperrbildschirm</string>
+    <string name="pocket_mode">Taschen-Modus</string>
+    <string name="pocket_mode_summary">Schalte Display ein und zeige alle Benachrichtigungen wenn das Gerät aus der Tasche geholt wird. Schalte Display aus wenn das Gerät in die Tasche zurück gesteckt wird</string>
+    <string name="show_always">Immer anzeigen</string>
+    <string name="show_always_summary">Display immer einschalten wenn es aus der Tasche gezogen wird, auch wenn es keine unerledigten Benachrichtigungen gibt.</string>
+    <string name="hide_low_priority">Verstecke Unwichtige</string>
+    <string name="hide_low_priority_summary">Verstecke unwichtige Benachrichtigungen, wie zum Beispiel Google Now Wetterbenachrichtigungen</string>
+    <string name="hide_non_clearable">Verstecke unlöschbare</string>
+    <string name="hide_non_clearable_summary">Verstecke alle nicht löschbaren Benachrichtigungen</string>
+    <string name="dismiss_all">Erlaube das löschen aller Benachrichtigungen</string>
+    <string name="dismiss_all_summary">Erlaube das Entfernen von eigentlich nicht löschbaren Benachrichtigen. Natürlich werden sie nur auf dem Sperrbildschirm gelöscht aber nicht aus der Benachrichtigungsleiste.</string>
+    <string name="expanded_view">Erweiterte Benachrichtigungsleisten - Ansicht</string>
+    <string name="expanded_view_summary">Füge die Möglichkeit hinzu zwischen normaler und erweiterter Ansicht durch langes drücken umzuschalten. Die erweiterte Ansicht zeigt manchmal mehr private Informationen. Es könnte also sein, dass du es darum deaktivieren mÃchtest.</string>
+    <string name="force_expanded_view">Erzwinge die erweiterte Benachrichtigungsleisten - Ansicht.</string>
+    <string name="force_expanded_view_summary">Zeige standardmäßig die erweiterten Benachrichtigungen. Es ist immer noch möglich zwischen der normalen und erweiterten Ansicht umzuschalten.</string>
+    <string name="wake_on_notification">Aufwachen bei Benachrichtigung</string>
+    <string name="wake_on_notification_summary">Gerät aufwecken bei einer neuen Benachrichtigung l</string>
+    <string name="notifications_height">Benachrichtigungszähler</string>
+    <string name="notifications_height_summary">Anzahl der Benachrichtigungen auf einmal anzeigen</string>
+    <string name="offset_top">Abstand zum oberen Rand des Displays:</string>
+    <string name="privacy_mode">Privater Modus</string>
+    <string name="privacy_mode_summary">Schalte die Funktion ab Benachrichtigungen zu zeigen oder zu löschen. Auf diese Weise siehst Du nur die Icons deiner Benachrichtigungen.</string>
+
+    <!-- Slims Strings (Temporary) -->
+    <string name="shortcut_image_not_valid">Die ausgewählte App hat kein gültiges Icon oder unterstützt den Zuschnitt des Icons nicht. Benutze eine andere App.</string>
+
+    <!-- Notification drawer background -->
+    <string name="notification_style_title">Stil</string>
+    <string name="notification_style_summary">Ändere den Benchrichtigungshintergrund - Stil</string>
+    <string name="notification_wallpaper_title">Hintergrund</string>
+    <string name="notification_wallpaper_landscape_title">Anderer Landscape - Hintergrund</string>
+    <string name="notification_background_color_fill">Farbfüllung</string>
+    <string name="notification_background_custom_image">Anderer Hintergrund</string>
+    <string name="notification_background_default_wallpaper">Standard Hintergrund</string>
+    <string name="notification_drawer_custom_background_dialog_title">Wähle die Farbe</string>
+    <string name="notif_wallpaper_alpha_title">Hintergrundtransparenz</string>
+
+    <!-- Lockscreen pin shuffle -->
+    <string name="lock_numpad_random_title">Ändere die Anordnung der PIN-Pad-Nummern</string>
+    <string name="lock_numpad_random_dialog_title">PIN-PAD-Nummernreihenfolge ändern</string>
+    <string name="lock_numpad_random_off">Ausgeschaltet</string>
+    <string name="lock_numpad_random_always">Immer</string>
+    <string name="lock_numpad_random_on_request">Bei Nachfrage</string>
+
+    <!-- Battery Bar -->
+    <string name="status_bar_battery_cat_title">Batterie</string>
+    <string name="battery_bar_title">Batterieleiste</string>
+    <string name="battery_bar">Batterieleisten - Position</string>
+    <string name="battery_bar_color">Batterieleisten - Farbe</string>
+    <string name="battery_bar_cat">Batterieleisten - Stil</string>
+    <string name="battery_bar_style_title">Batterieleisten - Ausrichtung</string>
+    <string name="battery_bar_thickness_title">Batterieleisten - Dicke</string>
+    <string name="battery_bar_animate_title">Ladeanimation</string>
+    <string name="battery_bar_animate_summary">Die Ladeanimation könnte zur Folge haben, dass das System langsamer wird. Aktivieren nach eigenem Ermessen.</string>
+
+    <!-- Nav Ring Targets -->
+    <string name="category_navbar">Navigationsleiste</string>
+    <string name="category_navring">Navigationsring</string>
+    <string name="navbar_ring_cat">Navigationsring Verknüpfungen</string>
+    <string name="navbar_ring">Benutzerdefinierte Navigationsring - Verknüpfung</string>
+    <string name="navring_enable_long">Aktiviere "langes Drücken" für den Navigationsring</string>
+    <string name="navring_target_save">Navigationsring gespeichert</string>
+    <string name="navring_target_reset_message">Willst du den Navigationsring auf Standard zurücksetzen?</string>
+    <string name="navring_target_reset">Navigationsring - Verknüpfungen zurück gesetzt.</string>
+    <string name="choose_action_title">Wähle Aktion</string>
+    <string name="choose_action_short_title">Wähle Aktion beim kurz Drücken</string>
+    <string name="choose_action_long_title">Wähle Aktion beim langen Drücken</string>
+    <string name="action_long_save">Als Aktion beim langen Drücken verwenden</string>
+    <string name="title_navring_amount">Anzahl der Navigationsring Verknüpfungen</string>
+    <string name="summary_navring_amount">Wähle die Anzahl der Verknüpfungen im Navigationsring</string>
+    <string name="interface_navring_settings_title">Navigationsring</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">Ziehe deinen Finger zu einer Verknüpfung um eine Aktion damit zu verbinden</string>
+    <string name="navring_clear">Clear action</string>
+    <string name="action_short">Short action</string>
+    <string name="action_long">Long action</string>
+    <string name="action_double">Double tap action</string>
+    <string name="action_icon">Custom icon</string>
+    <string name="navring_target_amount_text">Aktuelle Anzahl von Verknüpfungen</string>
+    <string name="navring_target_longpress_text">Longpress actions</string>
+    <string name="description_target_unlock">Entsperren</string>
+    <string name="description_direction_up">Nach oben schieben zum Entsperren</string>
+    <string name="description_direction_down">Nach unten schieben zum Entsperren</string>
+    <string name="description_direction_left">"Nach links schieben zum Entsperren</string>
+    <string name="description_direction_right">Nach rechts schieben zum Entsperren</string>
+    <string name="one_target">1 Ziel</string>
+    <string name="two_targets">2 Ziel</string>
+    <string name="three_targets">3 Ziel</string>
+    <string name="four_targets">4 Ziel</string>
+    <string name="five_targets">5 Ziel</string>
+    <string name="custom_app_icon_successfully">"'Symbol s erfolgreich gesetzt!"</string>
+    <string name="add_button">Button hinzufügen</string>
+    <string name="category_navbar">Navigationsleiste</string>
+    <string name="navbar_tab_arrange">Sortieren</string>
+    <string name="navbar_tab_settings">Einstellungen</string>
+    <string name="toggles_arrange_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
+
+    <!-- Shortcut picker -->
+    <string name="select_custom_app_title">Wähle eine benutzerdefinierte Anwendung</string>
+    <string name="group_applications">Anwendungen</string>
+
+    <!-- Navigation bar -->
+    <string name="navbar_enable_bar">Aktiviere die Navigationsleiste/-ringe</string>
+    <string name="navbar_enable_bar_summary">Aktiviere die Navigationsleiste/-ringe</string>
+    <string name="navbar_style_dimen_title">Navigationsleisten - Größe</string>
+    <string name="navbar_dimensions_reset_message">Alle Größeneinstellungen auf Standard zurücksetzen?</string>
+    <string name="navigation_bar_height_title">Navigationsleisten - Höhe</string>
+    <string name="navigation_bar_height_summary">Navigationsleisten - Höhe während du dich im Portrait - Modus befindest</string>
+    <string name="navigation_bar_width_title">Navigationleisten - Breite</string>
+    <string name="navigation_bar_width_summary">Navigationsleisten - Höhe wenn die Leiste sich an der Seite befindet</string>
+    <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
+    <string name="navigation_bar_size_36_dp">36 dp</string>
+    <string name="navigation_bar_size_30_dp">30 dp</string>
+    <string name="navigation_bar_size_24_dp">24 dp</string>
+    <string name="navigation_bar_size_48_dp_default">48 dp (default)</string>
+    <string name="navigation_bar_size_44_dp">44 dp</string>
+    <string name="navigation_bar_size_40_dp">40 dp</string>
+    <string name="navigation_bar_size_42_dp">42 dp</string>
+    <string name="navigation_bar_size_0_dp">0 dp (off)</string>
+
+    <!-- Show 4G icon instead of LTE. User defined settings -->
+    <string name="show_lte_or_fourgee_title">4G anzeigen</string>
+    <string name="show_lte_or_fourgee_summary">Es wird 4G anstatt LTE angezeigt</string>
+
+    <!-- Power Menu -->
+    <string name="power_menu_screenrecord_title">Display aufnehmen</string>
 
 </resources>
