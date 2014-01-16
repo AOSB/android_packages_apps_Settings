@@ -12,18 +12,18 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>
     <string name="save">Save</string>
-    <string name="probam_changelog_title">ProBAM Changelogs</string>
+    <string name="probam_changelog_title">AOSB Changelogs</string>
 
-    <!-- Donate to ProBAM Builds -->
-    <string name="donate_probam_title">Support ProBAM</string>
-    <string name="donate_probam_summary">Donate to ProBAM Builds</string>
+    <!-- Donate to AOSB Builds -->
+    <string name="donate_probam_title">Support AOSB</string>
+    <string name="donate_probam_summary">Donate to AOSB Builds</string>
     <string name="donate_link" formatted="false">https://fundrazr.com/campaigns/8fKfe/</string>
 
-    <!-- About ProBAM -->
-    <string name="about_probam_settings_title">About ProBAM</string>
-    <string name="about_probam">About ProBAM</string>
+    <!-- About AOSB -->
+    <string name="about_probam_settings_title">About AOSB</string>
+    <string name="about_probam">About AOSB</string>
     <string name="about_probam_summary">@null</string>
-    <string name="app_name">ProBAM</string>
+    <string name="app_name">AOSB</string>
     <string name="devs">Developer</string>
 
     <string name="github_hany_alsamman">https://github.com/codex-corp</string>
@@ -33,20 +33,20 @@
     <string name="github_cyanogenmod">https://github.com/CyanogenMod</string>
     <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
 
-    <string name="probam_site_title">ProBAM website</string>
-    <string name="probam_site_summary">Visit the ProBAM website for latest news about the ROM.</string>
+    <string name="probam_site_title">AOSB website</string>
+    <string name="probam_site_summary">Visit the AOSB website for latest news about the ROM.</string>
 
-    <string name="probam">ProBAM Build</string>
-    <string name="probam_website_title">ProBAM Blog</string>
-    <string name="probam_website_summary">Find latest news and updates about ProBAM.</string>
-    <string name="probam_source_title">ProBAM Sources</string>
-    <string name="probam_source_summary">ProBAM source can be found at www.github.com/ProBAMKK</string>
+    <string name="probam">AOSB Build</string>
+    <string name="probam_website_title">AOSB Blog</string>
+    <string name="probam_website_summary">Find latest news and updates about AOSB.</string>
+    <string name="probam_source_title">AOSB Sources</string>
+    <string name="probam_source_summary">AOSB source can be found at www.github.com/ProBAMKK</string>
     <string name="facebook_probam">http://www.facebook.com/CodexCorp</string>
     <string name="google_probam">https://plus.google.com/+ProBamNet</string>
     <string name="github_probam">https://github.com/ProBAMKK</string>
 
     <string name="probam_facebook_title">Facebook Page</string>
-    <string name="probam_facebook_summary">Subscribe to ProBAM Facebook page for updates.</string>
+    <string name="probam_facebook_summary">Subscribe to AOSB Facebook page for updates.</string>
 
     <!-- Init.d -->
     <string name="header_summary_init_d">@null</string>
@@ -332,7 +332,7 @@
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">ProBAM in black</string>
+    <string name="theme_settings_title">AOSB in black</string>
     <string name="theme_auto_mode_title">Switch theme</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">On light condition change</string>
