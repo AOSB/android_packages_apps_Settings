@@ -7,7 +7,7 @@
     <string name="enabled">Aktiviert</string>
     <string name="attention">Achtung</string>
     <string name="disabled">Deaktiviert</string>
-    <string name="default_string">Standart</string>
+    <string name="default_string">Standard</string>
     <string name="additional_options_title">Extra Optionen</string>
     <string name="reset_message">Alle Eingaben zurücksetzen?</string>
     <string name="style_title">Stil</string>
@@ -49,21 +49,21 @@
 
     <!-- Init.d -->
     <string name="header_summary_init_d">@null</string>
-    <string name="init_d_title">Init.d</string>
-    <string name="app_name">Init.d Configuration</string>
+    <string name="init_d_title">init.d</string>
+    <string name="app_name">init.d Configuration</string>
     <string name="pt_general">Allgemein</string>
     <string name="pt_zipalign_apks">Zipalign Apps</string>
     <string name="ps_zipalign_apks">Zipalign alle Apps beim Boot</string>
     <string name="pt_fix_permissions">Fix permissions</string> 
-    <string name="ps_fix_permissions">Fix permissions aller Apps und ihre Daten nach jedem Boot</string>
-    <string name="pt_enable_sysctl">Aktivier sysctl</string>
-    <string name="ps_enable_sysctl">Aktivier	 sysctl Optimierungen während Boot</string>
+    <string name="ps_fix_permissions">Fix permissions aller Apps und ihrer Daten nach jedem Boot</string>
+    <string name="pt_enable_sysctl">Aktiviere sysctl</string>
+    <string name="ps_enable_sysctl">Aktiviere	 sysctl Optimierungen während Boot</string>
     <string name="pt_free_mem">RAM freisetzen</string>
     <string name="ps_free_mem">Setze minfree Werte beim Boot</string> <!--I don't know what minfree is so I can't translate it -->
     <string name="pt_clear_data_cache">Cache leeren</string>
     <string name="ps_clear_data_cache">Leere App Cache Dateien während Boot</string>
-    <string name="pt_enable_cron">Aktivier geplante Tasks</string>
-    <string name="ps_enable_cron">Aktivier geplante Cronjobs</string>
+    <string name="pt_enable_cron">Aktiviere geplante Tasks</string>
+    <string name="ps_enable_cron">Aktiviere geplante Cronjobs</string>
     <string name="pt_sd_boost">Aktivier SD Verbesserung</string>
     <string name="ps_sd_boost">Aktivier/Deaktivier SD-Karten Geschwindigkeitsverbesserung</string>
     <string name="pt_file_system_speedups">Dateisystembeschleunigung</string>
@@ -81,8 +81,8 @@
     <string name="pt_minfree_values">Minfree values</string>
     <string name="pt_init_d_credits">Entwickelt von:</string>
     <string name="ps_init_d_credits">Jared Rummler (JRummy16)</string>
-    <string name="dt_init_d_error">Init.d Fehler</string>
-    <string name="dm_init_d_error">Es sieht danach aus, dass Init.d nicht korrekt eingerichtet ist. Bitte kontaktier deinen Rom Entwickler.</string>
+    <string name="dt_init_d_error">init.d Fehler</string>
+    <string name="dm_init_d_error">Es sieht danach aus, dass init.d nicht korrekt eingerichtet ist. Bitte kontaktiere deinen Rom Entwickler.</string>
     <string name="db_exit">Beenden</string>
 
     <!-- Color Picker -->
@@ -93,11 +93,11 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Setze</string>
-    <string name="color_default">Standart</string>
+    <string name="color_default">Standard</string>
 
     <!-- Halo -->
-    <string name="halo_enabled_title">Aktivier Halo ODER MultiWindow</string>
-    <string name="halo_enabled_summary">Wenn Halo aktiviert ist, dann wird Multi Window komplett deaktiviert</string>
+    <string name="halo_enabled_title">Aktiviere Halo ODER MultiWindow</string>
+    <string name="halo_enabled_summary">Wenn Halo aktiviert ist, dann wird MultiWindow komplett deaktiviert</string>
     <string name="halo_settings_title">Halo und MultiWindow</string>
     <string name="halo_behavior_title">Halo Verhalten</string>
     <string name="halo_hide_title">Verstecke Halo nach Aktivität</string>
@@ -105,14 +105,14 @@
     <string name="halo_reversed_title">Halo umkehren</string>
     <string name="halo_reversed_summary">Gilt für Taskwechsel und Gestenbewegung.</string>
     <string name="halo_state_title">Halo Grundsatz</string>
-    <string name="halo_state_summary">Aktiviert Black/White listen der Benachrichtigung</string>
+    <string name="halo_state_summary">Aktiviert Black/Whitelisten der Benachrichtigung</string>
     <string name="halo_state_black">Blacklist</string>
     <string name="halo_state_white">Whitelist</string>
     <string name="halo_pause_title">Pausiert offene App</string>
     <string name="halo_pause_summary">Wenn eine App mit Halo geöffnet wird, wird die unterliegende pausiert.</string>
     <string name="halo_ninja_title">Ninja Modus</string>
     <string name="halo_ninja_summary">Halo wird komplett verschwinden wenn es leer ist</string>
-    <string name="halo_notification_msgbox_title">Aktivier Nachrichten Pop-Up</string>
+    <string name="halo_notification_msgbox_title">Aktiviere Nachrichten Pop-Up</string>
     <string name="halo_notification_msgbox_summary">Zeige Nachrichtenbox für eintreffende Benachrichtigungen</string>
     <string name="halo_unlock_ping_title">Zeige wenn entsperrt</string>
     <string name="halo_unlock_ping_summary">Halo wird sich zeigen wenn das Handy entsperrt wird und eine Benachrichtigung empfangen wurde</string>
@@ -121,13 +121,13 @@
     <string name="halo_size_summary">Legt fest wie groß Halo sein wird</string>
     <string name="halo_size_miniscule">Winzig</string>
     <string name="halo_size_small">Klein</string>
-    <string name="halo_size_default">Normal (Standart)</string>
+    <string name="halo_size_default">Normal (Standard)</string>
     <string name="halo_size_large">Groß</string>
     <string name="halo_size_gigantic">Gigantisch</string>
     <string name="halo_size_monster">Monströs</string>
 
-    <string name="halo_notification_count_title">Benachrichtigungs Zähler</string>
-    <string name="halo_notification_count_summary">Zeige Benachrichtigungs Zähler auf Halo</string>
+    <string name="halo_notification_count_title">Benachrichtigungszähler</string>
+    <string name="halo_notification_count_summary">Zeige Benachrichtigungszähler auf Halo</string>
     <string name="halo_notification_count_none">Keine</string>
     <string name="halo_notification_count_total">Total</string>
     <string name="halo_notification_count_individual">Per App</string>
@@ -149,13 +149,13 @@
     <string name="xposed_per_app_title">Per App Einstellung</string>
     <string name="xposed_per_app__summary">DPI anpassen, UI Anordung, und mehr Per App Einstellungen nach deinem Belieben</string>
     <string name="xposed_netflix_title">Netflix Umgehung</string>
-    <string name="xposed_netflix_summary">Netflix Umgehung für Exynos4 Geräte auf AOSP 4.4.x+ Aktivier Modul zum benützen</string>
+    <string name="xposed_netflix_summary">Netflix Umgehung für Exynos4 Geräte auf AOSP 4.4.x+ Aktiviere Modul zum benützen</string>
     <string name="xposed_warning_title">Warnung</string>
     <string name="xposed_warning_summary">Diese Mods können die Performance und Stabilität nachteilig beeinflussen. Benutzung auf eigene Gefahr!</string>
 
     <!-- Navigation bar -->
-    <string name="navbar_enable_bar">Aktivier Navigationsleiste</string>
-    <string name="navbar_enable_bar_summary">Aktivier die Navigationsleiste</string>
+    <string name="navbar_enable_bar">Aktiviere Navigationsleiste</string>
+    <string name="navbar_enable_bar_summary">Aktiviere die Navigationsleiste</string>
     <string name="navbar_style_dimen_title">Dimensionen</string>
     <string name="navbar_dimensions_reset_message">Setze alle Werte auf Standard zurück?</string>
     <string name="navigation_bar_height_title">Navigationsleiste Höhe</string>
@@ -175,9 +175,9 @@
     <!-- Recents Ram Bar -->
     <string name="ram_bar">Ram-Anzeige</string>
     <string name="ram_bar_note_title">Notiz</string>
-    <string name="ram_bar_note_summary">Diese Ram-Anzeige zeigt die Verwendung des Arbeitsspeichers (RAM). Merke: Gecachte Apps werden schneller geladen. Für mehr Erklärungen wie Ram-Verwendung funktioniert, überprüf das Hilfe Menü.</string>
+    <string name="ram_bar_note_summary">Diese Ram-Anzeige zeigt die Verwendung des Arbeitsspeichers (RAM). Merke: Gecachte Apps werden schneller geladen. Für mehr Erklärungen wie Ram-Verwendung funktioniert, überprüfe das Hilfe Menü.</string>
     <string name="ram_bar_mode_title">Ram-Anzeige</string>
-    <string name="ram_bar_mode_dialog_title">Zeige Ram-Anzeige innerhalt kürzlich geöffneter Apps.</string>
+    <string name="ram_bar_mode_dialog_title">Zeige Ram-Anzeige innerhalb kürzlich geöffneter Apps.</string>
     <string name="ram_bar_none">Keine</string>
     <string name="ram_bar_apps">Apps</string>
     <string name="ram_bar_cache">Apps und Cache</string>
@@ -190,28 +190,28 @@
     <string name="ram_bar_color_disabled">Deaktiviert</string>
     <string name="ram_bar_button_help">Hilfe</string>
     <string name="ram_bar_button_reset">Farben zurücksetzen</string>
-    <string name="ram_bar_reset">Zurüclsetzen</string>
+    <string name="ram_bar_reset">Zurücksetzen</string>
     <string name="ram_bar_reset_message">Ram-Anzeige auf Standard zurücksetzen?</string>
 
     <!-- PropModder -->
     <string name="propmodder_title">Build.prop Mods</string>
     <string name="propmodder_switches">Schalter</string>
     <string name="buildprop_title">build.prop mods (Neustart erforderlich)</string>
-    <string name="buildprop_settings_warning">Diese Einstellungen sind für Experimentier Lustige integriert und alle Änderungen können Instabilität, Abstürze, Datenverlust oder Hardwarefehler verursachen.\n\nWie bitten sie keine Fehlerberichte zu senden wenn diese Einstellungen von Standard geändert wurden.</string>
-    <string name="nonprop_cat_title">Mods involving init.d script</string>
-    <string name="pref_wifi_scan_interval_title">Wifi scan interval</string>
-    <string name="pref_wifi_scan_interval_summary">The time between wifi scans when no stored access points are available</string>
-    <string name="pref_wifi_scan_alt_summary">Time between wifi scans: %s</string>
-    <string name="pref_max_events_title">Windows Manager\'s max events per second</string>
-    <string name="pref_max_events_summary">This is a runtime value that controls the number of events the system will allow in a second</string>
-    <string name="pref_max_events_alt_summary">Max number of system events: %s</string>
-    <string name="pref_ring_delay_title">Telephone ringer delay</string>
-    <string name="pref_ring_delay_summary">The amount of time from when the system registers an incoming phone call until the ringer</string>
-    <string name="pref_ring_delay_alt_summary">Incoming call Delay: %s</string>
-    <string name="pref_vm_heapsize_title">Dalvik cache heapsize</string>
-    <string name="pref_vm_heapsize_summary">This controls the size of the cache the Dalvik VM has access to</string>
+    <string name="buildprop_settings_warning">Diese Einstellungen sind für Experimentierfreudige integriert und alle Änderungen können Instabilität, Abstürze, Datenverlust oder Hardwarefehler verursachen.\n\nWir bitten sie keine Fehlerberichte zu senden wenn diese Einstellungen geändert wurden.</string>
+    <string name="nonprop_cat_title">Mods involving init.d script </string>
+    <string name="pref_wifi_scan_interval_title">Wifi scan Interval</string>
+    <string name="pref_wifi_scan_interval_summary">Die Zeit zwischen Wifiscans, wenn keine gespeicherten Zugangspunkte zur Verfügung stehen</string>
+    <string name="pref_wifi_scan_alt_summary">Zeit zwischen WifiScans: %s</string>
+    <string name="pref_max_events_title">Windows Manager\'s max Ereignisse in der Sekunde</string>
+    <string name="pref_max_events_summary">Dies ist ein Laufzeitwert , der die Anzahl der Ereignisse steuert welches das System in einer Sekunde erlauben</string>
+    <string name="pref_max_events_alt_summary">Max. Anzahl von Systemereignissen: number of system events: %s</string>
+    <string name="pref_ring_delay_title">Telefon Klingelverzögerung</string>
+    <string name="pref_ring_delay_summary">Die Zeit, wie lange das System wartet wenn es einen Anruf registriert, bis der Rufton ertönt</string>
+    <string name="pref_ring_delay_alt_summary">Anrufverzögerung: %s</string>
+    <string name="pref_vm_heapsize_title">Dalvik cache Speichergröße</string>
+    <string name="pref_vm_heapsize_summary">Dies steuert die Größe auf die Dalvik VM Zugriff hat</string>
     <string name="pref_vm_heapsize_alt_summary">Dalvik VM cache size: %s</string>
-    <string name="showbuild_title">Show The Build.Prop</string>
+    <string name="showbuild_title">Zeige Build.Prop</string>
     <string name="buildprop_summary">Find out whats in there</string>
     <string name="showbuild_dialog">Displaying /system/Build.Prop</string>
     <string name="showbuild_loading">Loading build.prop\u2026</string>
@@ -250,7 +250,7 @@
     <string name="ad_enable_summary_on">Active Display aktiviert</string>
     <string name="ad_enable_summary_off">Active Display deaktiviert</string>
     <string name="ad_text_title">Benachrichtigungstext</string>
-    <string name="ad_text_summary">Benachrichtigungstext um Active Display Ring</string>
+    <string name="ad_text_summary">Benachrichtigungstext um Active-Display-Ring</string>
     <string name="ad_all_notifications_title">Alle Benachrichtigungen</string>
     <string name="ad_all_notifications_summary">Zeige alle Benachrichtigungen inkl. fortlaufende und nicht löschbare.</string>
     <string name="ad_hide_low_priority_title">Verstecke niedrige Priorität</string>
@@ -289,13 +289,13 @@
     <string name="ad_pocket_mode_always">Immer</string>
 
     <!-- Low battery warning policy -->
-    <string name="pref_low_battery_warning_policy_title">Niedrige Battery Warnung</string>
-    <string name="pref_low_battery_warning_policy_dialog_title">Zeige Niedrige Battery Warnung mit</string>
+    <string name="pref_low_battery_warning_policy_title">Niedrige Batterie Warnung</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Zeige niedrige Batteriewarnung mit</string>
     <string name="low_battery_warning_policy_popup_sound">Pop-up und Ton</string>
     <string name="low_battery_warning_policy_notif_sound">Benachrichtigung und Ton</string>
-    <string name="low_battery_warning_policy_popup">Nur Pop-up Dialog</string>
-    <string name="low_battery_warning_policy_notif">Nur Benachrichtigung</string>
-    <string name="low_battery_warning_policy_sound">Nur Ton</string>
+    <string name="low_battery_warning_policy_popup">nur Pop-up Dialog</string>
+    <string name="low_battery_warning_policy_notif">nur Benachrichtigung</string>
+    <string name="low_battery_warning_policy_sound">nur Ton</string>
     <string name="battery_prefs_title">Optionen</string>
     <string name="battery_stats_title">Statistik</string>
 
@@ -305,7 +305,7 @@
     <string name="app_sidebar_enable_summaryOn">\@appbar ist aktiviert</string>
     <string name="app_sidebar_enable_summaryOff">\@appbar is deaktiviert</string>
     <string name="app_sidebar_setup_items_title">Appbar-Einstellung</string>
-    <string name="app_sidebar_setup_items_summary">Hinzufügen, entfernen, und Position aller Items in @ppbar</string>
+    <string name="app_sidebar_setup_items_summary">Hinzufügen, entfernen, und Position aller Items in Appbar</string>
     <string name="app_sidebar_transparency_title">Appbar Durchsichtigkeit</string>
     <string name="app_sidebar_transparency_summary">Anpassen des Appbar-Durchsichtigkeitslevel</string>
     <string name="app_sidebar_position_title">Appbar Position</string>
@@ -316,7 +316,7 @@
     <string name="app_sidebar_hide_labels_summary">Verstecke Appbar Iconbeschriftungen</string>
     <string name="tab_category">Sichtbar Tab</string>
     <string name="use_tab_title">Display tab</string>
-    <string name="use_tab_summary">Zeige einen Sichtbaren Tab an der Seite der \@appbar wenn sie berührt wird.</string>
+    <string name="use_tab_summary">Zeige einen sichtbaren Tab an der Seite der \@appbar wenn sie berührt wird.</string>
     <string name="tab_position_title">Tab Position</string>
     <string name="tab_position_summary">Zeige den Tab an der oberen, mittleren oder unteren Seite des Bildschirms.</string>
     <string name="tab_size_title">Tab Größe</string>
@@ -335,7 +335,7 @@
     <string name="status_bar_network_stats_update_title">Häufigkeit der Aktualisierungen</string>
 
     <!-- MediaScanner behavior on boot -->
-    <string name="media_scanner_on_boot_title">MediaScanner Verhalten beim Boot</string>
+    <string name="media_scanner_on_boot_title">Mediascanner Verhalten beim Boot</string>
     <string name="media_scanner_on_boot_enabled">Scanne Medien</string>
     <string name="media_scanner_on_boot_ask">Frage zum scannen (Benachrichtigung)</string>
     <string name="media_scanner_on_boot_disabled">Medien nicht scannen</string>
@@ -343,16 +343,16 @@
     <!-- Themes -->
     <string name="theme_settings_title">ProBAM in Schwarz</string>
     <string name="theme_auto_mode_title">Ändere Theme</string>
-    <string name="theme_auto_mode_off">Manuel</string>
-    <string name="theme_auto_mode_lightsensor">Ändere Aufgrund Lichtstärke</string>
+    <string name="theme_auto_mode_off">Manuell</string>
+    <string name="theme_auto_mode_lightsensor">Ändere aufgrund Lichtstärke</string>
     <string name="theme_auto_mode_twilight">Bei Tageszeiten</string>
-    <string name="theme_auto_switch_mode_error">Automatischer Lichstärke Änderungsmodus aktiviert. Manueles ändern nicht möglich.</string>
+    <string name="theme_auto_switch_mode_error">Automatischer Lichstärke Änderungsmodus aktiviert. Manuelles ändern nicht möglich.</string>
     
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
     <string name="su_dialog_error_title">Warnung</string>
-    <string name="su_dialog_error_message">Ein Fehler ist passiert.\n\nBitte überprüfe Rootzugang. Zum Aktivieren gehe in die Superuser einstellungen und aktiviere Rootzugang.</string>
+    <string name="su_dialog_error_message">Ein Fehler ist passiert.\n\nBitte überprüfe Rootzugang. Zum Aktivieren gehe in die Superusereinstellungen und aktiviere Rootzugang.</string>
     <string name="lcd_density_title">LCD-Dichte</string>
     <string name="lcd_density_summary">Unbekannt</string>
     <string name="current_lcd_density">"Jetztige LCD-Dichte: "</string>
@@ -366,8 +366,8 @@
     <string name="clear_market_data_cleared">Daten erfolgreich gelöscht.</string>
     <string name="reboot_cleardata_title">Neu starten!</string>
     <string name="reboot_cleardata_summary">Nach Neustart zurückkehren und letze Schritte verfolständigen!</string>
-    <string name="open_market_title">Öffne Play Store und drück bestätigen.</string>
-    <string name="open_market_summary">Drück Zurück wenn fertig!</string>
+    <string name="open_market_title">Öffne Play Store und drücke bestätigen.</string>
+    <string name="open_market_summary">Drücke Zurück wenn fertig!</string>
     <string name="open_market_summary_could_not_open">"Konnte Play Store nicht öffnen! Wenn du dir sicher bist es installiert zu haben, öffne den Playstore vom Launcher aus!"</string>
     <string name="custom_density_title">Ändere benutzerdefinierte Werte</string>
     <string name="custom_density_summary">Manche Werte könnten Probleme mit dem Play Store verursachen!</string>
@@ -376,13 +376,13 @@
     <string name="set_custom_density_title">Setz eigene Dichte</string>
     <string name="set_custom_density_set">Setze</string>
     <string name="custom_density_dialog_title">"WARNUNG!"</string>
-    <string name="custom_density_dialog_summary">"LCD-Dichte ändern kann unerwahrtete Fehler verursachen. Wenn soetwas auftritt, kehre zu Schritt 1 zurück."</string>
-    <string name="custom_density_dialog_button_got">Geschaft!</string>
+    <string name="custom_density_dialog_summary">"LCD-Dichte ändern kann unerwahrtete Fehler verursachen. Wenn so etwas auftritt, kehre zu Schritt 1 zurück."</string>
+    <string name="custom_density_dialog_button_got">Geschafft!</string>
     <string name="custom_density_dialog_button_reboot">Jetzt neustarten</string>
     
     <!-- LCD Density Warning -->
     <string name="lcd_warning_title">LCD-Dichte-Warnung</string>
-    <string name="lcd_warning">Hinweis: Es ist empfolen den Multi-DPI Play Store zu nutzen. Verstehst du?</string>
+    <string name="lcd_warning">Hinweis: Es ist empfolen den Multi-DPI Play Store zu nutzen!! </string>
     <string name="lcd_warning_yes">JA</string>
     <string name="lcd_warning_no">NEIN</string>
 
@@ -408,7 +408,7 @@
     <string name="hide_low_priority_summary">Verstecke unwichtige Benachrichtigungen, wie zum Beispiel Google Now Wetterbenachrichtigungen</string>
     <string name="hide_non_clearable">Verstecke unlöschbare</string>
     <string name="hide_non_clearable_summary">Verstecke alle nicht löschbaren Benachrichtigungen</string>
-    <string name="dismiss_all">Erlaube das löschen aller Benachrichtigungen</string>
+    <string name="dismiss_all">Erlaube das Löschen aller Benachrichtigungen</string>
     <string name="dismiss_all_summary">Erlaube das Entfernen von eigentlich nicht löschbaren Benachrichtigen. Natürlich werden sie nur auf dem Sperrbildschirm gelöscht aber nicht aus der Benachrichtigungsleiste.</string>
     <string name="expanded_view">Erweiterte Benachrichtigungsleisten - Ansicht</string>
     <string name="expanded_view_summary">Füge die Möglichkeit hinzu zwischen normaler und erweiterter Ansicht durch langes drücken umzuschalten. Die erweiterte Ansicht zeigt manchmal mehr private Informationen. Es könnte also sein, dass du es darum deaktivieren mÃchtest.</string>
@@ -506,9 +506,9 @@
     <string name="navbar_style_dimen_title">Navigationsleisten - Größe</string>
     <string name="navbar_dimensions_reset_message">Alle Größeneinstellungen auf Standard zurücksetzen?</string>
     <string name="navigation_bar_height_title">Navigationsleisten - Höhe</string>
-    <string name="navigation_bar_height_summary">Navigationsleisten - Höhe während du dich im Portrait - Modus befindest</string>
+    <string name="navigation_bar_height_summary">Navigationsleistenhöhe während du dich im Portrait-Modus befindest</string>
     <string name="navigation_bar_width_title">Navigationleisten - Breite</string>
-    <string name="navigation_bar_width_summary">Navigationsleisten - Höhe wenn die Leiste sich an der Seite befindet</string>
+    <string name="navigation_bar_width_summary">Navigationsleistenbreite wenn die Leiste sich an der Seite im Landscapemodus befindet</string>
     <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
     <string name="navigation_bar_size_36_dp">36 dp</string>
     <string name="navigation_bar_size_30_dp">30 dp</string>
