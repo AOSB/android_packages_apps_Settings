@@ -25,6 +25,8 @@
     <string name="about_probam_summary">@null</string>
     <string name="app_name">AOSB</string>
     <string name="devs">Developer</string>
+    <string name="beta_testers">Beta Testers</string>
+    <string name="aosb_supporter">AOSB Supporter</string>
 
     <string name="github_hany_alsamman">https://github.com/codex-corp</string>
     <string name="google_hany_alsamman">https://plus.google.com/+hanyalsamman/about</string>

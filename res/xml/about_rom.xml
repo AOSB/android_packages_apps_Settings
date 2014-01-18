@@ -17,28 +17,28 @@ xmlns:rb="http://schemas.android.com/apk/res/com.android.settings">
 	    android:summary="@string/probam_site_summary" />
 
 	<com.android.settings.widgets.DeveloperPreference
-                        android:title="ProBAM"
-                        rb:nameDev="ProBAM"
+                        android:title="AOSB"
+                        rb:nameDev="AOSB"
                         rb:facebookLink="@string/facebook_probam"
                         rb:githubLink="@string/github_probam"
             		rb:twitterHandle="CodeXperts"
 			rb:googleLink="@string/google_probam"
                         rb:emailDev="hany.alsamman@gmail.com"/>
 
-	</PreferenceCategory>
+</PreferenceCategory>
 
 	<PreferenceCategory
 	    android:key="devs"
             android:title="@string/devs">
 
-	<com.android.settings.widgets.DeveloperPreference
+        <com.android.settings.widgets.DeveloperPreference
             android:title="hany_alsamman"
             rb:nameDev="hany.alsamman"
             rb:twitterHandle="CodeXperts"
+	    rb:githubLink="@string/github_hany_alsamman"
             rb:donateLink="@string/donate_hany_alsamman"
-            rb:githubLink="@string/github_hany_alsamman"
-	    rb:googleLink="@string/google_hany_alsamman"
-	    rb:emailDev="hany.alsamman@gmail.com"/>
+            rb:googleLink="@string/google_hany_alsamman"
+	    rb:emailDev="hany@codexc.com"/>
 
 </PreferenceCategory>
 
@@ -49,10 +49,21 @@ android:title="@string/contributors_title">
 	<com.android.settings.widgets.DeveloperPreference
             android:title="CyanogenMod"
             rb:nameDev="CyanogenMod"
-            rb:twitterHandle="cyanogenmod"
-            rb:donateLink="@string/donate_cyanogenmod"
+	    rb:twitterHandle="CodeXperts"
             rb:githubLink="@string/github_cyanogenmod"
             rb:emailDev="hany.alsamman@gmail.com"/>
+
+</PreferenceCategory>
+
+<PreferenceCategory
+android:key="betatesters"
+android:title="@string/beta_testers">
+
+	<com.android.settings.widgets.DeveloperPreference
+            android:title="MikeGreen"
+            rb:nameDev="MikeGreen"
+	    rb:twitterHandle="CodeXperts"
+	    rb:emailDev="hany.alsamman@gmail.com"/>
 
 </PreferenceCategory>
 
