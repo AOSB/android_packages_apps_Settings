@@ -523,7 +523,4 @@
     <string name="show_lte_or_fourgee_title">4G anzeigen</string>
     <string name="show_lte_or_fourgee_summary">Es wird 4G anstatt LTE angezeigt</string>
 
-    <!-- Power Menu -->
-    <string name="power_menu_screenrecord_title">Display aufnehmen</string>
-
 </resources>
