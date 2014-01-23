@@ -223,6 +223,12 @@
 	<!-- Notification Drawer Style -->
 	<activity android:name=".pac.NotificationDrawerStyle" />
 
+	<!-- Lockscreen Notifications -->
+        <activity
+            android:name=".probam.LockscreenNotifications"
+            android:label="@string/Lockscreen_notifications_header" >
+        </activity>
+
 	<!-- Nav Ring -->
 	<activity android:name=".probam.NavRingTargets" />
 
