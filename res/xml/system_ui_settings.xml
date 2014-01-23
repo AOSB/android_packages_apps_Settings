@@ -64,12 +64,6 @@
         android:fragment="com.android.settings.quicksettings.QuickSettings"
         android:title="@string/quick_settings_panel_title" />
 
-    <PreferenceScreen
-        android:id="@+id/lockscreen_notifcation_settings"
-	android:icon="@drawable/ic_aosb_lockscreen"
-        android:fragment="com.android.settings.probam.LockscreenNotifications"
-        android:title="@string/lockscreen_notifications" />
-
     <ListPreference
             android:key="expanded_desktop"
             android:title="@string/power_menu_expanded_desktop"
