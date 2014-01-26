@@ -19,11 +19,15 @@
     android:title="@string/performance_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Performance Control -->
-        <PreferenceScreen
-        android:key="performance_controls"
-        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
-        android:title="@string/performance_settings" />
+    <PreferenceScreen
+        android:key="processor"
+        android:fragment="com.android.settings.cyanogenmod.Processor"
+        android:title="@string/processor_title" />
+
+    <PreferenceScreen
+        android:key="ioscheduler"
+        android:fragment="com.android.settings.cyanogenmod.IOScheduler"
+        android:title="@string/io_scheds_title" />
 
     <ListPreference
         android:key="pref_perf_profile"
