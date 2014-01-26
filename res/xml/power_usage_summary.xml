@@ -24,7 +24,6 @@
         android:defaultValue="true"
         android:fragment="com.android.settings.probam.PowerSaverSettings"
         android:title="@string/power_saver_settings_title"
-        android:summary="@string/power_saver_settings_summary"
         android:widgetLayout="@layout/switch_preference" />
 
     <PreferenceCategory

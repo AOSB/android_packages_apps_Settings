@@ -596,9 +596,6 @@
     <string name="tiles_per_row_duplicate_landscape_title">Scale landscape quantity</string>
     <string name="tiles_per_row_duplicate_landscape_summary">Landscape view doubles tiles per row quantity</string>
 
-    <!-- Performance control -->
-    <string name="performance_settings">Performance control</string>
-
     <!-- Custom Carrier Label -->
     <string name="notification_carrier_label_title">Carrier label</string>
     <string name="notification_custom_carrier_label_title">Custom carrier label</string>
