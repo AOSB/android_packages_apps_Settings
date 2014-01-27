@@ -19,6 +19,12 @@
     android:title="@string/system_interface_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+   <!-- Recents RAM bar -->
+   <PreferenceScreen
+    	android:key="recents_ram_bar"
+    	android:fragment="com.android.settings.crdroid.RamBar"
+    	android:title="@string/ram_bar" /> 
+
    <PreferenceScreen
         android:key="screen_recorder"
         android:title="@string/screen_recorder_title"

@@ -18,12 +18,6 @@
         android:title="@string/display_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-	<!-- Recents RAM bar -->
-  	<PreferenceScreen
-            android:key="recents_ram_bar"
-            android:fragment="com.android.settings.crdroid.RamBar"
-            android:title="@string/ram_bar" /> 
-
         <com.android.settings.BrightnessPreference
                 android:title="@string/brightness"
                 android:persistent="false"/>
