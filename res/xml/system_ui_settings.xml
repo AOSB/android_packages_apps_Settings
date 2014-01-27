@@ -30,6 +30,18 @@
         android:title="@string/screen_recorder_title"
         android:fragment="com.android.settings.chameleonos.ScreenRecorderSettings" />
 
+
+   <PreferenceScreen
+  	android:key="lcd_density_setup"
+        android:fragment="com.android.settings.util.DensityChanger"
+        android:title="@string/lcd_density_title" />
+
+
+   <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.chameleonos.labs.gestureanywhere.GestureAnywhereSettings"
+        android:title="@string/gesture_anywhere_title" />
+
    <!-- Active display -->	
    <PreferenceScreen	
     	android:key="active_display"	
@@ -38,18 +50,13 @@
 	android:icon="@drawable/ic_aosb_activedisplay"
     	android:summary="@string/ad_settings_summary" /> 
 
-     <PreferenceScreen
+   <PreferenceScreen
         android:key="app_sidebar"
 	android:icon="@drawable/ic_aosb_sidebar"
         android:fragment="com.android.settings.crdroid.AppSidebar"
         android:title="@string/app_sidebar_title"/>
 
-    <PreferenceScreen
-        android:key="gesture_anywhere"
-        android:fragment="com.android.settings.chameleonos.labs.gestureanywhere.GestureAnywhereSettings"
-        android:title="@string/gesture_anywhere_title" />
-
-    <PreferenceScreen
+   <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.InitD"
         android:icon="@drawable/ic_aosb_init"
@@ -57,11 +64,6 @@
         android:summary="@string/header_summary_init_d" />
 
     <PreferenceScreen
-  	android:key="lcd_density_setup"
-        android:fragment="com.android.settings.util.DensityChanger"
-        android:title="@string/lcd_density_title" />
-
-     <PreferenceScreen
         android:key="buildprop_modder"
 	android:icon="@drawable/ic_aosb_buildprop"
         android:title="@string/propmodder_title"
