@@ -42,6 +42,13 @@
         android:fragment="com.android.settings.chameleonos.labs.gestureanywhere.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title" />
 
+    <!-- SlimSizer -->
+    <PreferenceScreen
+        android:id="@+id/system_app_remover"
+        android:icon="@drawable/ic_settings_slim_sizer"
+        android:title="@string/system_app_remover"
+        android:fragment="com.android.settings.slim.SystemappRemover" />
+
    <!-- Active display -->	
    <PreferenceScreen	
     	android:key="active_display"	
