@@ -2010,15 +2010,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-             android:name=".probam.PowerSaverSettings"
-            android:label="@string/power_saver_settings_title" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.SHORTCUT" />
-              </intent-filter>
-        </activity>
-
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"

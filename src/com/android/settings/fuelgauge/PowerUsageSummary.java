@@ -44,7 +44,6 @@ import android.view.MenuItem;
 import com.android.internal.os.PowerProfile;
 import com.android.settings.HelpUtils;
 import com.android.settings.R;
-import com.android.settings.widget.PowerSaverPreference;
 
 import java.util.List;
 
@@ -61,7 +60,6 @@ public class PowerUsageSummary extends PreferenceFragment implements
 
     private static final String KEY_APP_LIST = "app_list";
     private static final String KEY_BATTERY_STATUS = "battery_status";
-    private static final String KEY_POWER_SAVER = "power_saver";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String KEY_BATTERY_PREFS_CATEGORY = "battery_prefs";
     private static final String KEY_BATTERY_STATS_CATEGORY = "battery_stats";
@@ -73,7 +71,6 @@ public class PowerUsageSummary extends PreferenceFragment implements
 
     private PreferenceGroup mAppListGroup;
     private Preference mBatteryStatusPref;
-    private PowerSaverPreference mPowerSaverPref;
     private ListPreference mLowBatteryWarning;
     private PreferenceCategory mBatteryPrefsCat;
     private PreferenceCategory mBatteryStatsCat;
@@ -119,7 +116,6 @@ public class PowerUsageSummary extends PreferenceFragment implements
         addPreferencesFromResource(R.xml.power_usage_summary);
         mAppListGroup = (PreferenceGroup) findPreference(KEY_APP_LIST);
         mBatteryStatusPref = mAppListGroup.findPreference(KEY_BATTERY_STATUS);
-        mPowerSaverPref = (PowerSaverPreference) mAppListGroup.findPreference(KEY_POWER_SAVER);
 
 	mBatteryPrefsCat =
             (PreferenceCategory) mAppListGroup.findPreference(KEY_BATTERY_PREFS_CATEGORY);
@@ -177,9 +173,6 @@ public class PowerUsageSummary extends PreferenceFragment implements
             PreferenceActivity pa = (PreferenceActivity)getActivity();
             pa.startPreferencePanel(BatteryHistoryDetail.class.getName(), args,
                     R.string.history_details_title, null, null, 0);
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
-        }
-        if (preference instanceof PowerSaverPreference) {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         if (!(preference instanceof PowerGaugePreference)) {
@@ -271,8 +264,6 @@ public class PowerUsageSummary extends PreferenceFragment implements
         mBatteryStatsCat.setOrder(-3);
         mAppListGroup.addPreference(mBatteryStatsCat);
 
-        mAppListGroup.addPreference(mPowerSaverPref);
-        mPowerSaverPref.setOrder(-3);
         mBatteryStatusPref.setOrder(-2);
         mAppListGroup.addPreference(mBatteryStatusPref);
         BatteryHistoryPreference hist = new BatteryHistoryPreference(
