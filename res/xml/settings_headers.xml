@@ -76,6 +76,14 @@
         android:title="@string/lock_screen_title"
         android:icon="@drawable/ic_settings_lockscreen" />
 
+    <!-- Animation Control -->
+    <header
+        android:id="@+id/interface_animation"
+        android:title="@string/interface_animation_title"
+        android:breadCrumbTitle="@string/interface_animation_title"
+        android:fragment="com.android.settings.probam.interfacesettings.AnimationInterfaceSettings"
+        android:icon="@drawable/ic_rom_control_animations" />
+
     <!-- Themes -->
     <header
         android:id="@+id/theme_settings"

@@ -19,6 +19,8 @@
 -keep class com.koushikdutta.**
 -keep class com.android.settings.cyanogenmod.superuser.**
 -keep class com.android.settings.crdroid.*
+-keep class com.android.settings.probam.**
+-keep class com.android.settings.probam.interfacesettings.**
 
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
