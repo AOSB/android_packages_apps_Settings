@@ -713,4 +713,7 @@
     <string name="select_sound_pack_summary">Select the active sound pack</string>
     <string name="default_sound_pack">Default (System)</string>
     <string name="error_pack_install">Error while installing the sound pack</string>
+
+    <!-- OmniSwitch -->
+    <string name="omniswitch_settings_title">OmniSwitch</string>
 </resources>
