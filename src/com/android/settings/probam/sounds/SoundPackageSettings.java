@@ -1,5 +1,6 @@
 /*
  *  Copyright (C) 2014 The OmniROM Project
+ *  Copyright (C) 2014 The AOSB Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,7 +51,7 @@ public class SoundPackageSettings extends SettingsPreferenceFragment implements
     private static final String INSTALL_SOUND_PACK = "install_sound_pack";
     private static final String SELECT_SOUND_PACK = "select_sound_pack";
 
-    private static final String SOUND_PACKS_LOCATION = Environment
+    private static String SOUND_PACKS_LOCATION = Environment
             .getExternalStorageDirectory().getAbsolutePath() + "/SoundPacks/";
     private static final String INSTALLED_PACKS_LOCATION = "/data/system/soundpacks/";
 
@@ -67,6 +68,21 @@ public class SoundPackageSettings extends SettingsPreferenceFragment implements
 
         if (!SOUND_PACKS_LOCATION_FOLDER.exists()) {
             	SOUND_PACKS_LOCATION_FOLDER.mkdir();
+	}
+
+	//check if sound pack not installed
+	String DEFAULT_SOUND_PACK_INSTALLED = "plodeys";
+    	File rootDir = new File(INSTALLED_PACKS_LOCATION + DEFAULT_SOUND_PACK_INSTALLED);
+	if (!rootDir.exists()) {
+	    //install default sound pack
+	    try {
+		installPack((String) DEFAULT_SOUND_PACK_INSTALLED, true);
+            } catch (IOException e) {
+                Toast.makeText(getActivity(),
+                        getResources().getString(R.string.error_pack_install),
+                        Toast.LENGTH_LONG).show();
+                Log.e(TAG, "Unable to install sound pack", e);
+            }
 	}
 
         PreferenceScreen prefSet = getPreferenceScreen();
@@ -132,7 +148,7 @@ public class SoundPackageSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mInstallSoundPack) {
             try {
-                installPack((String) objValue);
+                installPack((String) objValue, false);
             } catch (IOException e) {
                 Toast.makeText(getActivity(),
                         getResources().getString(R.string.error_pack_install),
@@ -256,7 +272,7 @@ public class SoundPackageSettings extends SettingsPreferenceFragment implements
 
     }
 
-    private void installPack(String packName) throws IOException {
+    private void installPack(String packName, boolean InternalPack) throws IOException {
         // Copy package contents (.ogg and .xml only) to
         // /data/system/soundpacks/<name>/
         File rootDir = new File(INSTALLED_PACKS_LOCATION);
@@ -274,10 +290,13 @@ public class SoundPackageSettings extends SettingsPreferenceFragment implements
             destDir.setExecutable(true, false);
         }
 
-        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(
-                SOUND_PACKS_LOCATION + packName + ".zip"));
+	if(InternalPack == true){
+		SOUND_PACKS_LOCATION = "/system/media/audio/";
+	}
 
-        ZipEntry entry = zipIn.getNextEntry();
+	ZipInputStream zipIn = new ZipInputStream(new FileInputStream(
+		SOUND_PACKS_LOCATION + packName + ".zip"));		
+	ZipEntry entry = zipIn.getNextEntry();
 
         while (entry != null) {
             if (!entry.getName().endsWith(".xml")
