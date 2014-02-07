@@ -95,7 +95,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <PreferenceCategory android:key="switches_category"
         android:title="@string/propmodder_switches">
 
         <CheckBoxPreference android:key="pref_g_speed"

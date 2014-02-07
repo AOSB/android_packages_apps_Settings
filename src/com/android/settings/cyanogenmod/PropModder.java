@@ -34,6 +34,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.PreferenceCategory;
 import android.text.InputFilter;
 import android.text.InputFilter.LengthFilter;
 import android.util.Log;
@@ -45,6 +46,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import android.telephony.TelephonyManager;
+import android.hardware.SensorManager;
+import android.hardware.Sensor;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
@@ -71,6 +75,8 @@ public class PropModder extends PreferenceFragment implements
     private static final String DISABLE = "disable";
     private static final String SHOWBUILD_PATH = "/system/tmp/showbuild";
     private static final String INIT_SCRIPT_TEMP_PATH = "/system/tmp/init_script";
+    private static final String GENERAL_CAT = "general_category";
+    private static final String SWITCHES_CAT = "switches_category";
     private static final String WIFI_SCAN_PREF = "pref_wifi_scan_interval";
     private static final String WIFI_SCAN_PROP = "wifi.supplicant_scan_interval";
     private static final String WIFI_SCAN_PERSIST_PROP = "persist.wifi_scan_interval";
@@ -146,6 +152,8 @@ public class PropModder extends PreferenceFragment implements
     private final int MENU_REBOOT = 2;
     private int NOTE_ID;
 
+    private PreferenceCategory mGeneralCat;
+    private PreferenceCategory mSwitchesCat;
     private ListPreference mWifiScanPref;
     private ListPreference mMaxEventsPref;
     private ListPreference mRingDelayPref;
@@ -174,6 +182,17 @@ public class PropModder extends PreferenceFragment implements
 
         addPreferencesFromResource(R.xml.propmodder);
         prefSet = getPreferenceScreen();
+        
+        TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        
+        SensorManager sm = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        
+        boolean isPhone = tm.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE;
+        
+        boolean hasProximity = !sm.getSensorList(Sensor.TYPE_PROXIMITY).isEmpty();
+        
+        mGeneralCat = (PreferenceCategory) prefSet.findPreference(GENERAL_CAT);
+        mSwitchesCat = (PreferenceCategory) prefSet.findPreference(SWITCHES_CAT);
 
         mWifiScanPref = (ListPreference) prefSet.findPreference(WIFI_SCAN_PREF);
         mWifiScanPref.setOnPreferenceChangeListener(this);
@@ -181,17 +200,37 @@ public class PropModder extends PreferenceFragment implements
         mMaxEventsPref = (ListPreference) prefSet.findPreference(MAX_EVENTS_PREF);
         mMaxEventsPref.setOnPreferenceChangeListener(this);
 
+		//Don't show ringer options if we are not a phone.
         mRingDelayPref = (ListPreference) prefSet.findPreference(RING_DELAY_PREF);
-        mRingDelayPref.setOnPreferenceChangeListener(this);
+        if(isPhone){
+			mRingDelayPref.setOnPreferenceChangeListener(this);
+		}
+		else {
+			mRingDelayPref.setEnabled(false);
+			mGeneralCat.removePreference(mRingDelayPref);
+		}
 
         mVmHeapsizePref = (ListPreference) prefSet.findPreference(VM_HEAPSIZE_PREF);
         mVmHeapsizePref.setOnPreferenceChangeListener(this);
 
+		//Don't show HSPA+ options if we are not a phone.
         mFastUpPref = (ListPreference) prefSet.findPreference(FAST_UP_PREF);
-        mFastUpPref.setOnPreferenceChangeListener(this);
-
+		if(isPhone){
+			mFastUpPref.setOnPreferenceChangeListener(this);
+		}
+		else{
+			mFastUpPref.setEnabled(false);
+			mGeneralCat.removePreference(mFastUpPref);
+		}
+        // Don't show proximity options if we don't have a proximity sensor
         mProxDelayPref = (ListPreference) prefSet.findPreference(PROX_DELAY_PREF);
-        mProxDelayPref.setOnPreferenceChangeListener(this);
+		if(hasProximity){
+			mProxDelayPref.setOnPreferenceChangeListener(this);
+		}
+		else{
+			mProxDelayPref.setEnabled(false);
+			mGeneralCat.removePreference(mProxDelayPref);
+		}
 
         mSleepPref = (ListPreference) prefSet.findPreference(SLEEP_PREF);
         mSleepPref.setOnPreferenceChangeListener(this);
@@ -215,7 +254,12 @@ public class PropModder extends PreferenceFragment implements
         Log.d(TAG, String.format("ModPrefHoler = '%s' found build number = '%s'", ModPrefHolder, mod));
         mModVersionPref.setOnPreferenceChangeListener(this);
 
-        m3gSpeedPref = (CheckBoxPreference) prefSet.findPreference(THREE_G_PREF);
+        //Don't show 3g options if we are not a phone.
+        m3gSpeedPref = (CheckBoxPreference) prefSet.findPreference(THREE_G_PREF);  
+        if(!isPhone){
+			m3gSpeedPref.setEnabled(false);
+            mSwitchesCat.removePreference(m3gSpeedPref);
+		}
 
         mGpuPref = (CheckBoxPreference) prefSet.findPreference(GPU_PREF);
 
