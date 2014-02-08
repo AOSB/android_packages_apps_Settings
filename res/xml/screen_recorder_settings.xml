@@ -6,8 +6,6 @@
     <ListPreference
         android:key="screen_recorder_size"
         android:title="@string/screen_recorder_video_dimensions_title"
-        android:entries="@array/screen_recorder_video_sizes"
-        android:entryValues="@array/screen_recorder_video_sizes"
         android:defaultValue="720x1280" />
 
     <ListPreference

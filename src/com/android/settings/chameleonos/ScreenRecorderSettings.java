@@ -18,6 +18,7 @@ package com.android.settings.chameleonos;
 
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
+import android.media.CamcorderProfile;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -26,6 +27,10 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import java.lang.CharSequence;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ScreenRecorderSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -45,6 +50,9 @@ public class ScreenRecorderSettings extends SettingsPreferenceFragment implement
 
         final ContentResolver resolver = getContentResolver();
         mVideoSizePref = (ListPreference) findPreference(KEY_VIDEO_SIZE);
+        CharSequence[] videoSizes = getSupportedVideoSizes();
+        mVideoSizePref.setEntries(videoSizes);
+        mVideoSizePref.setEntryValues(videoSizes);
         mVideoSizePref.setOnPreferenceChangeListener(this);
         String size = Settings.System.getString(resolver,
                 Settings.System.SCREEN_RECORDER_OUTPUT_DIMENSIONS);
@@ -79,20 +87,53 @@ public class ScreenRecorderSettings extends SettingsPreferenceFragment implement
         }
         return false;
     }
+    
+    private CharSequence[] getSupportedVideoSizes(){
+		//TODO: Seems eneficiant to keep calling in here
+		// make "quality" a global var and only fill once.
+		// the return it instead.
+		ArrayList<CharSequence> quality = new ArrayList<CharSequence>();
+        if(CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_1080P)){
+			quality.add("1080x1920");
+		}
+		if(CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_720P)){
+			quality.add("720x1280");
+		}
+		if(CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_480P)){
+			quality.add("480x720");
+		}		
+        if(CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_CIF)){
+			quality.add("288x352");
+		}
+		if(CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_QVGA)){
+			quality.add("240x320");
+		}
+		if(CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_QCIF)){
+			quality.add("144x176");
+		}
+		return quality.toArray(new CharSequence[quality.size()]);
+	}
+	
+	private String getMaxSupportedVideoSize(){
+			return (String)getSupportedVideoSizes()[0];
+	}
+	private boolean isSupportedVideoSize(String videoSize){
+			return Arrays.asList(getSupportedVideoSizes()).contains(videoSize);
+	}
 
     private void updateVideoSizePreference(String value) {
-        if (TextUtils.isEmpty(value)) value = getString(R.string.screen_recorder_size_720x1280);
-        mVideoSizePref.setSummary(mVideoSizePref
-                .getEntries()[mVideoSizePref.findIndexOfValue(value)]);
+        if (TextUtils.isEmpty(value) || !isSupportedVideoSize(value)) 
+			value = getMaxSupportedVideoSize();
+			
+        mVideoSizePref.setSummary(value);
         Settings.System.putString(getContentResolver(),
-                Settings.System.SCREEN_RECORDER_OUTPUT_DIMENSIONS,
-                value);
+        Settings.System.SCREEN_RECORDER_OUTPUT_DIMENSIONS, value);       
     }
 
     private void updateVideoBitratePreference(String value) {
         if (TextUtils.isEmpty(value)) value = getString(R.string.screen_recorder_bitrate_4000000);
-        mVideoBitratePref.setSummary(mVideoBitratePref
-                .getEntries()[mVideoBitratePref.findIndexOfValue(value)]);
+        
+        mVideoBitratePref.setSummary(value);
         Settings.System.putInt(getContentResolver(),
                 Settings.System.SCREEN_RECORDER_BITRATE,
                 Integer.valueOf(value));
