@@ -18,18 +18,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_title">
 
-
-    <!-- Status bar tweaks -->
-    <PreferenceCategory
-        android:title="@string/status_bar_style_title">
-
-	<PreferenceScreen
-	android:fragment="com.android.settings.probam.StatusBarClockStyle"
-	android:key="clock_style_pref"
-	android:title="@string/status_bar_clock" />
-
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:key="category_status_bar_battery"
         android:title="@string/status_bar_battery_cat_title">
