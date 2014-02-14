@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- PB Updater -->
+    <string name="pbupdate_settings_title">AOSB 更新</string>
+    <string name="pbupdate_settings_summary">检查，查看或安装可用的更新</string>
+
+    <!-- PB Stats -->
+    <string name="pbstats_settings_title">AOSB 统计</string>
+    <string name="pbstats_settings_summary">你想知道更多吗？</string>
+
+    <string name="probam_version">AOSB KitKat 版本</string>
+    <string name="probam_version_default">未知</string>
+</resources> 
