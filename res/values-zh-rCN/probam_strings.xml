@@ -309,7 +309,7 @@
     <string name="app_sidebar_hide_labels_summary">在应用程序栏中隐藏图标标签</string>
     <string name="tab_category">可见标签</string>
     <string name="use_tab_title">显示标签</string>
-    <string name="use_tab_summary"触摸时应用程序栏一侧会显示标签。</string>
+    <string name="use_tab_summary">触摸时应用程序栏一侧会显示标签。</string>
     <string name="tab_position_title">标签位置</string>
     <string name="tab_position_summary">显示在屏幕的上面、中间或底部的一侧。</string>
     <string name="tab_size_title">标签大小</string>
