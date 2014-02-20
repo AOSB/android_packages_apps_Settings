@@ -903,4 +903,7 @@
     <string name="volume_steps_ring_title">Ringer</string>
     <string name="volume_steps_system_title">System</string>
     <string name="volume_steps_voice_call_title">Voice Call</string>
+
+    <!-- allow multiuser -->
+    <string name="multiuser_preference_title">Multiuser support</string>
 </resources>
