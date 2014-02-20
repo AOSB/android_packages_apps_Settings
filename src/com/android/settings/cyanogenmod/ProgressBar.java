@@ -80,11 +80,14 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 		getPreferenceScreen().addPreference(PreviewLayout);
 		addPreferencesFromResource(R.xml.progressbar);
 
+		boolean progressbar_mirror_enabled = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 0) == 1;
+		boolean progressbar_reverse_enabled = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 0) == 1;
+
 		mprogressbar_mirror = (CheckBoxPreference) findPreference(PROGRESSBAR_MIRROR);
-		mprogressbar_mirror.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 0) == 1);
+		mprogressbar_mirror.setChecked(progressbar_mirror_enabled);
 
 		mprogressbar_reverse = (CheckBoxPreference) findPreference(PROGRESSBAR_REVERSE);
-		mprogressbar_mirror.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 0) == 1);
+		mprogressbar_reverse.setChecked(progressbar_reverse_enabled);
 
 		mprogressbar_speed = (SeekBarPreference) findPreference(PROGRESSBAR_SPEED);
 		mprogressbar_speed.setValue(Settings.System.getInt(getContentResolver(),
