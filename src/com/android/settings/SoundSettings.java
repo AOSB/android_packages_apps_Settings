@@ -192,7 +192,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
 
         // Volume panel timeout
-        mVolumePanelTimeout = (SeekBarPreferenceCHOS) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
+        mVolumePanelTimeout = (SeekBarPreferenceChOS) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
         int statusVolumePanelTimeout = Settings.System.getInt(resolver,
                 Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
         mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
