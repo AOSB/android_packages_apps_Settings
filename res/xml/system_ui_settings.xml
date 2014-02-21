@@ -116,6 +116,11 @@
         android:title="@string/lockscreen_notifications"
         android:fragment="com.android.settings.probam.LockscreenNotifications" />
 
+    <PreferenceScreen
+        android:key="interface_battery_saver"
+        android:fragment="com.android.settings.probam.BatterySaverSettings"
+        android:title="@string/battery_saver_title" />
+
     <ListPreference
             android:key="expanded_desktop"
             android:title="@string/power_menu_expanded_desktop"

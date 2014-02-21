@@ -31,6 +31,7 @@ import com.android.settings.hardware.DisplayColor;
 import com.android.settings.hardware.DisplayGamma;
 import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.probam.BatterySaverHelper;
 
 import java.util.Arrays;
 import java.util.List;
@@ -69,6 +70,10 @@ public class BootReceiver extends BroadcastReceiver {
             } else {
                 SystemProperties.set(KSM_SETTINGS_PROP, "false");
             }
+        }
+
+        if (BatterySaverHelper.deviceSupportsMobileData(ctx)) {
+            BatterySaverHelper.scheduleService(ctx);
         }
 
         /* Restore the hardware tunable values */
