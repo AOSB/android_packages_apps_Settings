@@ -229,4 +229,10 @@ public class SeekBarPreferenceChOS extends Preference implements OnSeekBarChange
     public void setValue(int value) {
         mCurrentValue = value;
     }
+
+    @Override
+    public void setEnabled (boolean enabled) {
+        mSeekBar.setEnabled(enabled);
+        super.setEnabled(enabled);
+    }
 }

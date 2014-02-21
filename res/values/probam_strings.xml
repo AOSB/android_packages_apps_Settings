@@ -915,4 +915,8 @@
 
     <!-- Lockscreen battery ring -->
     <string name="battery_around_lockscreen_ring">Battery around unlock ring</string>
+
+    <!-- Volume pane timeout -->
+    <string name="volume_panel_timeout_title">Timeout</string>
+    <string name="volume_panel_timeout_summary">Time until the panel will be hidden</string>
 </resources>
