@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2014 MoKee OpenSource Project
+     Modification Copyright (C) 2014 AOSB Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,28 +29,9 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="power_saver_toggles_mobile_key"
-        android:title="@string/power_saver_toggles_mobile_title">
-
-        <CheckBoxPreference
-            android:key="power_saver_toggles_mobile_data"
-            android:title="@string/power_saver_toggles_mobile_data_title"
-            android:summary="@string/power_saver_toggles_mobile_data_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="power_saver_toggles_location_key"
-        android:title="@string/power_saver_toggles_location_title">
-
-        <CheckBoxPreference
-            android:key="power_saver_toggles_gps"
-            android:title="@string/power_saver_toggles_gps_title"
-            android:summary="@string/power_saver_toggles_gps_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
+    <PreferenceScreen
+        android:key="interface_battery_saver"
+        android:fragment="com.android.settings.probam.BatterySaverSettings"
+        android:title="@string/battery_saver_title" />
 
 </PreferenceScreen>

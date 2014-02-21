@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The MoKee OpenSource Project
+ * Modification Copyright (C) 2014 AOSB Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +41,10 @@ public class PowerSaverSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "PowerSaverSettings";
     private static final String KEY_TOGGLES_CPU = "power_saver_toggles_cpu";
-    private static final String KEY_TOGGLES_MOBILE_DATA = "power_saver_toggles_mobile_data";
-    private static final String KEY_TOGGLES_GPS = "power_saver_toggles_gps";
+
     private ContentResolver resolver;
     private Switch mEnabledSwitch;
     private CheckBoxPreference mTogglesCPU;
-    private CheckBoxPreference mTogglesMobileData;
-    private CheckBoxPreference mTogglesGPS;
     private PreferenceScreen prefSet;
     private Activity mActivity;
 
@@ -85,12 +83,6 @@ public class PowerSaverSettings extends SettingsPreferenceFragment implements
             mTogglesCPU.setChecked(Settings.System.getInt(resolver,
                     Settings.System.POWER_SAVER_CPU, 1) != 0);
         }
-        mTogglesMobileData = (CheckBoxPreference) prefSet.findPreference(KEY_TOGGLES_MOBILE_DATA);
-        mTogglesMobileData.setChecked(Settings.System.getInt(resolver,
-                Settings.System.POWER_SAVER_MOBILE_DATA, 0) != 0);
-        mTogglesGPS = (CheckBoxPreference) prefSet.findPreference(KEY_TOGGLES_GPS);
-        mTogglesGPS.setChecked(Settings.System.getInt(resolver,
-                Settings.System.POWER_SAVER_GPS, 0) != 0);
         setPrefsEnabledState(powerSaverEnabled);
     }
 
@@ -115,12 +107,6 @@ public class PowerSaverSettings extends SettingsPreferenceFragment implements
         if (preference == mTogglesCPU) {
             Settings.System.putInt(resolver, Settings.System.POWER_SAVER_CPU,
                     mTogglesCPU.isChecked() ? 1 : 0);
-        } else if (preference == mTogglesMobileData) {
-            Settings.System.putInt(resolver, Settings.System.POWER_SAVER_MOBILE_DATA,
-                    mTogglesMobileData.isChecked() ? 1 : 0);
-        } else if (preference == mTogglesGPS) {
-            Settings.System.putInt(resolver, Settings.System.POWER_SAVER_GPS,
-                    mTogglesGPS.isChecked() ? 1 : 0);
         }
         Intent intent = new Intent("android.intent.action.POWER_SAVER_SERVICE_UPDATE");
         mActivity.sendBroadcast(intent);

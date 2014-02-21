@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--  Copyright (C) 2013 The OmniROM Project
-
+  Modification Copyright (C) 2014 AOSB Project
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 2 of the License, or
@@ -29,6 +29,10 @@
     <com.android.settings.cyanogenmod.TimeRangePreference
         android:key="pref_battery_saver_timerange"
         android:dependency="pref_battery_saver_enable" />
+
+    <PreferenceCategory
+        android:key="power_saver_toggles_location_key"
+        android:title="@string/power_saver_toggles_mobile_title">
 
     <CheckBoxPreference
         android:key="pref_battery_saver_mode_data"
@@ -89,6 +93,8 @@
         android:entryValues="@array/enabled_networks_cdma_values"
         android:persistent="false" />
 
+    </PreferenceCategory>
+
     <CheckBoxPreference
         android:key="pref_battery_saver_screen_off"
         android:persistent="false"
@@ -122,5 +128,18 @@
         settings:unitsRight=" %"
         android:defaultValue="20"
         android:dependency="pref_battery_saver_mode_battery" />
+
+    <PreferenceCategory
+        android:key="power_saver_toggles_mobile_key"
+        android:title="@string/power_saver_toggles_location_title">
+
+    <CheckBoxPreference
+	android:key="power_saver_toggles_gps"
+	android:title="@string/power_saver_toggles_gps_title"
+	android:summary="@string/power_saver_toggles_gps_summary"
+	android:defaultValue="false"
+	android:dependency="pref_battery_saver_enable"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

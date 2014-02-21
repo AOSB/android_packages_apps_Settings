@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The OmniROM Project
- *
+ * Modification Copyright (C) 2014 AOSB Project
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,6 +58,7 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
     private static final String PREF_KEY_BATTERY_SAVER_MODE_DATA = "pref_battery_saver_mode_data";
     private static final String PREF_KEY_BATTERY_SAVER_MODE_WIFI = "pref_battery_saver_mode_wifi";
     private static final String PREF_KEY_BATTERY_SAVER_TIMERANGE = "pref_battery_saver_timerange";
+    private static final String KEY_TOGGLES_GPS = "power_saver_toggles_gps";
 
     private ContentResolver mResolver;
     private Context mContext;
@@ -79,6 +80,7 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSmartDataEnabled;
     private CheckBoxPreference mSmartWifiEnabled;
     private TimeRangePreference mBatterySaverTimeRange;
+    private CheckBoxPreference mTogglesGPS;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -208,6 +210,11 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
             prefSet.removePreference(mPowerSavingCdmaPreferredNetworkMode);
         }
 
+        mTogglesGPS = (CheckBoxPreference) prefSet.findPreference(KEY_TOGGLES_GPS);
+        mTogglesGPS.setChecked(Settings.System.getInt(mResolver,
+                Settings.System.POWER_SAVER_GPS, 0) != 0);
+	mTogglesGPS.setOnPreferenceChangeListener(this);
+
         mBatterySaverDelay = (SeekBarPreference) prefSet.findPreference(PREF_KEY_BATTERY_SAVER_MODE_CHANGE_DELAY);
         mBatterySaverDelay.setValue(Settings.Global.getInt(mResolver,
                      Settings.Global.BATTERY_SAVER_MODE_CHANGE_DELAY, 5));
@@ -326,6 +333,10 @@ public class BatterySaverSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Global.putInt(mResolver,
                      Settings.Global.BATTERY_SAVER_WIFI_MODE, value ? 1 : 0);
+        } else if (preference == mTogglesGPS) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(mResolver, 
+                     Settings.System.POWER_SAVER_GPS, value ? 1 : 0);
         } else {
             return false;
         }
