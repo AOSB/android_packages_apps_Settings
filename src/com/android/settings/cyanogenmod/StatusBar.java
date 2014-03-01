@@ -111,10 +111,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
             prefSet.removePreference(mStatusBarCmSignal);
         }
 
-        if (Utils.isTablet(getActivity())) {
-            prefSet.removePreference(statusBarBrightnessControl);
-        }
-
         mStatusBarNetworkStats.setChecked((Settings.System.getInt(resolver, Settings.System.STATUS_BAR_NETWORK_STATS, 0) == 1));
 
         long statsUpdate = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, 500);
