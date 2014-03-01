@@ -19,6 +19,14 @@
     android:title="@string/system_interface_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen android:title="@string/aosb_gps_settings_title" 
+	android:key="aosb_gps"
+	android:summary="@string/aosb_gps_settings_summary">
+    <intent android:targetPackage="com.aosb.gps"
+	    android:action="android.intent.action.MAIN"
+	    android:targetClass="com.aosb.gps.GPSCountryChangerInterface" />
+    </PreferenceScreen>
+
     <PreferenceCategory
 	android:key="progressbar"
 	android:title="@string/progressbar_title" >

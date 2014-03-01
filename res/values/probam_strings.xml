@@ -970,4 +970,8 @@
     <string name="toast_Translucent_animation">Translucent Animation</string>
     <string name="toast_SlideLeftRight_animation">Slide Left To Right Animation</string>
     <string name="toast_SlideRightLeft_animation">Slide Right To Left Animation</string>
+
+    <!-- GPS Settings -->
+    <string name="aosb_gps_settings_title">GPS Optimizer</string>
+    <string name="aosb_gps_settings_summary">Modify gps.conf to specific country</string>
 </resources>
