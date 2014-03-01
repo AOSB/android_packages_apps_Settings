@@ -27,17 +27,11 @@
 	    android:targetClass="com.aosb.gps.GPSCountryChangerInterface" />
     </PreferenceScreen>
 
-    <PreferenceCategory
-	android:key="progressbar"
-	android:title="@string/progressbar_title" >
-
     <PreferenceScreen
         android:key="progressbar_settings"
         android:fragment="com.android.settings.cyanogenmod.ProgressBar"
         android:title="@string/progressbar_title" >
     </PreferenceScreen>
-
-    </PreferenceCategory>
 
    <!-- OmniSwitch -->
    <PreferenceScreen
