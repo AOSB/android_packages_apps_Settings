@@ -118,6 +118,12 @@
         android:title="@string/lockscreen_notifications"
         android:fragment="com.android.settings.probam.LockscreenNotifications" />
 
+    <CheckBoxPreference
+            android:key="custom_recent_mode"
+            android:title="@string/custom_recent_title"
+            android:summary="@string/custom_recent_summary"
+            android:persistent="false" />
+
     <ListPreference
             android:key="expanded_desktop"
             android:title="@string/power_menu_expanded_desktop"

@@ -974,4 +974,8 @@
     <!-- GPS Settings -->
     <string name="aosb_gps_settings_title">GPS Optimizer</string>
     <string name="aosb_gps_settings_summary">Modify gps.conf to specific country</string>
+
+    <!-- Custom Recent Settings -->
+    <string name="custom_recent_title">Enable Slim Recents</string>
+    <string name="custom_recent_summary">Tick this box to switch between Slim/AOSB RecentApps</string>
 </resources>
