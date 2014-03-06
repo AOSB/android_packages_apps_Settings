@@ -32,6 +32,13 @@
         android:entries="@array/notification_drawer_collapse_on_dismiss_entries"
         android:entryValues="@array/notification_drawer_collapse_on_dismiss_values" />
 
+    <ListPreference
+        android:key="smart_pulldown"
+        android:title="@string/smart_pulldown_title"
+        android:entries="@array/smart_pulldown_entries"
+        android:entryValues="@array/smart_pulldown_values"
+        android:persistent="false" />
+
     <CheckBoxPreference
         android:key="custom_status_bar_header"
         android:title="@string/custom_statusbar_header_title"

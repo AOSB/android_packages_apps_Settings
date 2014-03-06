@@ -16,6 +16,7 @@
 
 package com.android.settings.cyanogenmod;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.net.Uri;
@@ -32,6 +33,7 @@ import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.util.crdroid.DeviceUtils;
 
 public class NotificationDrawer extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -44,8 +46,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private static final String PREF_NOTI_REMINDER_ENABLED = "noti_reminder_enabled";
     private static final String PREF_NOTI_REMINDER_RINGTONE = "noti_reminder_ringtone";
     private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
+    private static final String PRE_SMART_PULLDOWN = "smart_pulldown";
 
     private ListPreference mCollapseOnDismiss;
+    private ListPreference mSmartPulldown;
     private CheckBoxPreference mStatusBarCustomHeader;
     private CheckBoxPreference mFullScreenDetection;
     private Preference mHeadsUp;
@@ -117,6 +121,18 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         mReminderRingtone.setSummary(alert.getTitle(getActivity()));
         mReminderRingtone.setOnPreferenceChangeListener(this);
         mReminderRingtone.setEnabled(mode != 0);
+
+        // Smart Pulldown
+        mSmartPulldown = (ListPreference) findPreference(PRE_SMART_PULLDOWN);
+        if (!DeviceUtils.isPhone(getActivity())) {
+                prefScreen.removePreference(mSmartPulldown);
+        } else {
+                mSmartPulldown.setOnPreferenceChangeListener(this);
+                int smartPulldown = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+                mSmartPulldown.setValue(String.valueOf(smartPulldown));
+                updateSmartPulldownSummary(smartPulldown);
+        }
     }
 
     @Override
@@ -173,6 +189,12 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
                     Settings.System.REMINDER_ALERT_INTERVAL,
                     interval, UserHandle.USER_CURRENT);
             updateReminderIntervalSummary(interval);
+        } else if (preference == mSmartPulldown) {
+                int smartPulldown = Integer.valueOf((String) objValue);
+                Settings.System.putInt(getContentResolver(), Settings.System.QS_SMART_PULLDOWN,
+                        smartPulldown);
+                updateSmartPulldownSummary(smartPulldown);
+                return true;
         }
 
         return false;
@@ -227,5 +249,18 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         }
         mReminderInterval.setValue(Integer.toString(value));
         mReminderInterval.setSummary(getResources().getString(resId));
+    }
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+        if (value == 0) {
+                // Smart pulldown deactivated
+                mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+                } else {
+                String type = res.getString(value == 2
+                        ? R.string.smart_pulldown_persistent
+                        : R.string.smart_pulldown_dismissable);
+                mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+        }
     }
 }
