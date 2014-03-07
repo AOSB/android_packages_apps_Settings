@@ -43,12 +43,14 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String CATEGORY_NAVBAR = "navigation_bar";
     private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";    
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar"; // Enable/disable nav bar
+    private static final String ENABLE_NAVIGATION_RING = "enable_nav_ring"; // Enable/disable nav bar
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
 
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;    
     private CheckBoxPreference mEnableNavigationBar; // Enable/disable nav bar
+    private CheckBoxPreference mEnableNavigationRing; // Enable/disable nav ring
     private CheckBoxPreference mRecentsCustom;
     private CheckBoxPreference mNavigationBarLeftPref;
 
@@ -79,7 +81,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         int expandedDesktopValue = Settings.System.getInt(getContentResolver(),
                 Settings.System.EXPANDED_DESKTOP_STYLE, 0);
 
-        // Booleans to enable/disable nav bar
+        // Booleans to enable/disable nav bar || ring without navbar
         // overriding overlays
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -88,8 +90,14 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mEnableNavigationBar = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_BAR);
         mEnableNavigationBar.setChecked(enableNavigationBar);
         mEnableNavigationBar.setOnPreferenceChangeListener(this);
-        updateNavbarPreferences(enableNavigationBar);
 
+        boolean EnableNavigationRing = Settings.System.getBoolean(getContentResolver(),
+                                      Settings.System.ENABLE_NAVRING_SWIPE, false);
+        mEnableNavigationRing = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_RING);
+        mEnableNavigationRing.setChecked(EnableNavigationRing);
+        mEnableNavigationRing.setOnPreferenceChangeListener(this);
+
+        updateNavbarPreferences(enableNavigationBar);
         try {
             boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar();
 
@@ -131,6 +139,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((Boolean) objValue) ? 1 : 0);
             updateNavbarPreferences((Boolean) objValue);
+            return true;
+        } else if (preference == mEnableNavigationRing) { // Enable||disbale nav ring
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ENABLE_NAVRING_SWIPE,
+                    ((Boolean) objValue) ? true : false);
             return true;
         } else if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
             Settings.System.putBoolean(getActivity().getContentResolver(),
