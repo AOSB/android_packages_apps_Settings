@@ -203,7 +203,7 @@
     <string name="showbuild_error">Błąd podczas ładowania build.prop\u2026</string>
     <string name="showbuild_unknown">Nieznane</string>
     <string name="showbuild_version">Wersja</string>
-    <string name="showbuild_label">We should look because knowing is half the battle</string>
+    <string name="showbuild_label">Powinniśmy spojrzeć, ponieważ wiedza jest połową walki</string>
     <string name="pref_fast_up_title">Modyfikacja prędkości wysyłania HSUPA</string>
     <string name="pref_fast_up_summary">*OSTRZEŻENIE* jeżeli zmienisz tą wartość doda to potrzebne wartości do Twojego pliku build.prop jeżeli nie są one jeszcze obecne</string>
     <string name="pref_fast_up_alt_summary">Znalezione aktywne przyśpieszenie: %s</string>
