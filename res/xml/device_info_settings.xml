@@ -52,13 +52,13 @@
         </PreferenceScreen>
 
 	<!-- ProBAM Stats -->
-        <PreferenceScreen 
-	    android:title="@string/pbstats_settings_title"
-            android:key="probam_stats"
-	    android:summary="@string/pbstats_settings_summary">
-            <intent android:targetPackage="android.probamstats"
-		    android:action="android.intent.action.MAIN"
-		    android:targetClass="android.probamstats.ProBamStats" />
+	<PreferenceScreen
+		android:title="@string/pbstats_settings_title"
+		android:key="aosb_stats"
+		android:summary="@string/pbstats_settings_summary">
+	<intent android:action="android.intent.action.MAIN"
+		android:targetPackage="android.romstats"
+		android:targetClass="android.romstats.AnonymousStats" />
 	</PreferenceScreen>
 
         <PreferenceScreen android:key="changelog"
