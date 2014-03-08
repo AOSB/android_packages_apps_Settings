@@ -423,8 +423,6 @@
     <string name="category_navring">Navigation ring</string>
     <string name="navbar_ring_cat">Navigation ring Targets</string>
     <string name="navbar_ring">Custom Ring targets</string>
-    <string name="navring_enable">Enable navigation ring</string>
-    <string name="navring_enable_summary">enable navigation ring without navbar</string>
     <string name="navring_enable_long">Enable longpress for navigation ring</string>
     <string name="navring_target_save">Navigation rings saved</string>
     <string name="navring_target_reset_message">Do you want to reset the navigation ring?</string>
@@ -467,8 +465,8 @@
     <string name="group_applications">Applications</string>
 
     <!-- Navigation bar -->
-    <string name="navbar_enable_bar">Enable navigation bar</string>
-    <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
+    <string name="navbar_enable_bar">Enable navigation bar/rings</string>
+    <string name="navbar_enable_bar_summary">Enable the navigation bar/rings</string>
     <string name="navbar_style_dimen_title">Navigation Bar Dimensions</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>

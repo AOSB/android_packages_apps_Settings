@@ -158,16 +158,11 @@
         android:title="@string/category_navbar"
 	android:dependency="enable_nav_bar" />
 
-    <CheckBoxPreference
-            android:key="enable_nav_ring"
-            android:title="@string/navring_enable"
-            android:summary="@string/navring_enable_summary" />
-
     <PreferenceScreen
         android:key="navigation_bar_ring"
         android:fragment="com.android.settings.probam.NavRingTargets"
         android:title="@string/category_navring"
-	android:dependency="enable_nav_ring" />
+	android:dependency="enable_nav_bar" />
 
     <PreferenceCategory
             android:key="expanded_desktop_category"
