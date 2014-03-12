@@ -30,6 +30,12 @@
         android:key="battery_prefs"
         android:title="@string/battery_prefs_title" />
 
+    <CheckBoxPreference
+        android:key="screen_on_notification_led"
+        android:title="@string/screen_on_notification_led_title"
+        android:summary="@string/screen_on_notification_led_summary"
+        android:defaultValue="true" />
+
     <ListPreference
         android:key="pref_low_battery_warning_policy"
         android:title="@string/pref_low_battery_warning_policy_title"
