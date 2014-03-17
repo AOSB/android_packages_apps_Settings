@@ -45,12 +45,14 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar"; // Enable/disable nav bar
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
+    private static final String POWER_MENU_ONTHEGO_ENABLED = "power_menu_onthego_enabled";
 
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;    
     private CheckBoxPreference mEnableNavigationBar; // Enable/disable nav bar
     private CheckBoxPreference mRecentsCustom;
     private CheckBoxPreference mNavigationBarLeftPref;
+    private CheckBoxPreference mOnTheGoPowerMenu;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
         mRecentsCustom.setChecked(enableRecentsCustom);
         mRecentsCustom.setOnPreferenceChangeListener(this);
+
+        mOnTheGoPowerMenu = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
+        mOnTheGoPowerMenu.setChecked(Settings.System.getInt(resolver,
+                Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1);
+        mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_GESTURE_SETTINGS);
@@ -138,8 +145,10 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                     ((Boolean) objValue) ? true : false);
             Helpers.restartSystemUI();
             return true;
+        } else if (preference == mOnTheGoPowerMenu) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(resolver, Settings.System.POWER_MENU_ONTHEGO_ENABLED, value ? 1 : 0);
         }
-
         return false;
     }
 
