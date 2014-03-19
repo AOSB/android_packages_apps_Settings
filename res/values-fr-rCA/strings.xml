@@ -20,14 +20,14 @@
     <string name="no" msgid="6731231425810196216">"Non"</string>
     <string name="create" msgid="3578857613172647409">"Créer"</string>
     <string name="allow" msgid="3349662621170855910">"Autoriser"</string>
-    <string name="deny" msgid="6947806159746484865">"Refusers"</string>
+    <string name="deny" msgid="6947806159746484865">"Refuser"</string>
     <string name="device_info_default" msgid="7847265875578739287">"Inconnu"</string>
   <plurals name="show_dev_countdown">
     <item quantity="one" msgid="5295687242294085452">"Plus que <xliff:g id="STEP_COUNT">%1$d</xliff:g> étape pour devenir un développeur."</item>
     <item quantity="other" msgid="6722953419953594148">"Plus que <xliff:g id="STEP_COUNT">%1$d</xliff:g> étapes pour devenir un développeur."</item>
   </plurals>
     <string name="show_dev_on" msgid="1110711554982716293">"Vous êtes désormais un développeur!"</string>
-    <string name="show_dev_already" msgid="2151632240145446227">"Inuti, vous êtes déjà un développeur."</string>
+    <string name="show_dev_already" msgid="2151632240145446227">"Inutile, vous êtes déjà un développeur."</string>
     <string name="header_category_wireless_networks" msgid="4944823405420438623">"SANS FIL ET RÉSEAUX"</string>
     <string name="header_category_device" msgid="5781174212691167553">"APPAREIL"</string>
     <string name="header_category_personal" msgid="6225932173498802187">"PERSONNEL"</string>
@@ -298,7 +298,7 @@
     <string name="date_time_set_time" msgid="5716856602742530696">"Définir l\'heure"</string>
     <string name="date_time_set_timezone" msgid="5045627174274377814">"Sélectionner le fuseau horaire"</string>
     <string name="date_time_set_date" msgid="7021491668550232105">"Définir la date"</string>
-    <string name="date_time_date_format" msgid="6951498879879281102">"Sél le format de la date"</string>
+    <string name="date_time_date_format" msgid="6951498879879281102">"Sélectionner le format de la date"</string>
     <string name="zone_list_menu_sort_alphabetically" msgid="5683377702671088588">"Trier par ordre alphabétique"</string>
     <string name="zone_list_menu_sort_by_timezone" msgid="2720190443744884114">"Trier par fuseau horaire"</string>
     <string name="date_picker_title" msgid="1338210036394128512">"Date"</string>
@@ -461,7 +461,7 @@
     <string name="bluetooth_connecting_error_message" msgid="229861986106185022">"Impossible de se connecter à <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_preference_scan_title" msgid="2277464653118896016">"Recherche d\'appareils"</string>
     <string name="bluetooth_search_for_devices" msgid="5957007154213560390">"Rechercher des appareils"</string>
-    <string name="bluetooth_searching_for_devices" msgid="9203739709307871727">"Searching…"</string>
+    <string name="bluetooth_searching_for_devices" msgid="9203739709307871727">"Recherche…"</string>
     <string name="bluetooth_preference_device_settings" msgid="907776049862799122">"Paramètres de l\'appareil"</string>
     <string name="bluetooth_preference_paired_devices" msgid="1970524193086791964">"Périphériques associés"</string>
     <string name="bluetooth_preference_found_devices" msgid="1647983835063249680">"Appareils disponibles"</string>
@@ -995,7 +995,7 @@
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"Aucun site Web de configuration connu pour %1$s"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Insérez la carte SIM, puis redémarrez."</string>
     <string name="mobile_connect_to_internet" msgid="1733894125065249639">"Connectez-vous à Internet."</string>
-    <string name="location_title" msgid="1029961368397484576">"My Location"</string>
+    <string name="location_title" msgid="1029961368397484576">"Ma position"</string>
     <string name="location_mode_title" msgid="3982009713118421689">"Mode"</string>
     <string name="location_mode_high_accuracy_title" msgid="8241802585110932849">"Haute précision"</string>
     <string name="location_mode_battery_saving_title" msgid="711273645208158637">"Économie de la pile"</string>
@@ -1112,7 +1112,7 @@
     <string name="external_data_size_label" product="nosdcard" msgid="7533821466482000453">"Données sur USB"</string>
     <string name="external_data_size_label" product="default" msgid="626414192825329708">"Carte SD"</string>
     <string name="uninstall_text" msgid="3644892466144802466">"Désinstaller"</string>
-    <string name="uninstall_all_users_text" msgid="851857393177950340">"Uninstall for all users"</string>
+    <string name="uninstall_all_users_text" msgid="851857393177950340">"Désinstaller pour tous les utilisateurs"</string>
     <string name="install_text" msgid="884360662922471113">"Installer"</string>
     <string name="disable_text" msgid="6544054052049395202">"Désactiver"</string>
     <string name="enable_text" msgid="9217362512327828987">"enable"</string>
@@ -1346,11 +1346,11 @@
     <string name="verify_apps_over_usb_summary" msgid="9164096969924529200">"Vérifiez que les applications installées par ADB/ADT ne présentent pas de comportement dangereux."</string>
     <string name="enforce_read_external_title" product="nosdcard" msgid="7733257271454664956">"Protéger mémoire de stockage USB"</string>
     <string name="enforce_read_external_summary" product="nosdcard" msgid="1798088409346660567">"Les applis doivent demander l\'autorisation pour lire la mémoire"</string>
-    <string name="enforce_read_external_confirm_title" product="nosdcard" msgid="2112813067171502209">"Protéger mémoire stockage USB?"</string>
+    <string name="enforce_read_external_confirm_title" product="nosdcard" msgid="2112813067171502209">"Protéger mémoire stockage USB ?"</string>
     <string name="enforce_read_external_confirm_message" product="nosdcard" msgid="605444326545922054">"Lorsque la mémoire de stockage USB est protégée, les applications doivent demander l\'autorisation de lire les données de la mémoire de stockage externe.\n\nCertaines applications peuvent ne pas fonctionner jusqu\'à ce que leurs développeurs les mettent à jour."</string>
     <string name="enforce_read_external_title" product="default" msgid="2226662853797940829">"Protéger la carte SD"</string>
     <string name="enforce_read_external_summary" product="default" msgid="2750027486786530064">"Les applications doivent demander autorisation de lire carte SD."</string>
-    <string name="enforce_read_external_confirm_title" product="default" msgid="273220585729800783">"Protéger la carte SD?"</string>
+    <string name="enforce_read_external_confirm_title" product="default" msgid="273220585729800783">"Protéger la carte SD ?"</string>
     <string name="enforce_read_external_confirm_message" product="default" msgid="3858482712337574407">"Lorsque la carte SD est protégée, les applications doivent demander l\'autorisation de lire les données de la mémoire de stockage externe.\n\nCertaines applications peuvent ne pas fonctionner jusqu\'à ce que leurs développeurs les mettent à jour."</string>
     <string name="enable_terminal_title" msgid="95572094356054120">"Terminal local"</string>
     <string name="enable_terminal_summary" msgid="67667852659359206">"Activer l\'application Terminal permettant l\'accès au shell local"</string>
