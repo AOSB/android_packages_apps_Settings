@@ -28,11 +28,19 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.crdroid.AppMultiSelectListPreference;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.lang.Thread;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SystemUiSettings extends SettingsPreferenceFragment  implements
         Preference.OnPreferenceChangeListener {
@@ -44,8 +52,12 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String CATEGORY_NAVBAR = "navigation_bar_options";
     private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
+    private static final String PREF_ENABLE_APP_CIRCLE_BAR = "enable_app_circle_bar";
+    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
 
+    private AppMultiSelectListPreference mIncludedAppCircleBar;
     private ListPreference mExpandedDesktopPref;
+    private CheckBoxPreference mEnableAppCircleBar;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;    
     private CheckBoxPreference mNavigationBarLeftPref;
 
@@ -55,6 +67,16 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         addPreferencesFromResource(R.xml.system_ui_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // App circle bar
+        mEnableAppCircleBar = (CheckBoxPreference) prefScreen.findPreference(PREF_ENABLE_APP_CIRCLE_BAR);
+        mEnableAppCircleBar.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.ENABLE_APP_CIRCLE_BAR, 0) == 1));
+
+        mIncludedAppCircleBar = (AppMultiSelectListPreference) prefScreen.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
+        Set<String> includedApps = getIncludedApps();
+        if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
+        mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
 
         PreferenceCategory expandedCategory = (PreferenceCategory) findPreference(CATEGORY_EXPANDED_DESKTOP);
         // Expanded desktop
@@ -98,6 +120,22 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         }
     }
 
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean value;
+        if (preference == mEnableAppCircleBar) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(resolver,
+                    Settings.System.ENABLE_APP_CIRCLE_BAR, checked ? 1:0);
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+
+        return true;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mExpandedDesktopPref) {
             int expandedDesktopValue = Integer.valueOf((String) objValue);
@@ -107,6 +145,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             boolean value = (Boolean) objValue;
             updateExpandedDesktop(value ? 2 : 0);
             return true;
+        } else if (preference == mIncludedAppCircleBar) {
+            storeIncludedApps((Set<String>) objValue);
         }
         return false;
     }
@@ -134,5 +174,26 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         if (mExpandedDesktopPref != null && summary != -1) {
             mExpandedDesktopPref.setSummary(res.getString(summary));
         }
+    }
+
+    private Set<String> getIncludedApps() {
+        String included = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.WHITELIST_APP_CIRCLE_BAR);
+        if (TextUtils.isEmpty(included)) {
+            return null;
+        }
+        return new HashSet<String>(Arrays.asList(included.split("\\|")));
+    }
+
+    private void storeIncludedApps(Set<String> values) {
+        StringBuilder builder = new StringBuilder();
+        String delimiter = "";
+        for (String value : values) {
+            builder.append(delimiter);
+            builder.append(value);
+            delimiter = "|";
+        }
+        Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
     }
 }
