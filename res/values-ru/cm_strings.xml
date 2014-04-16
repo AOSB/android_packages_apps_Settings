@@ -346,7 +346,6 @@
     <string name="wake_when_plugged_or_unplugged_summary">Включать экран при подключении или отключении зарядного устройства</string>
     <string name="double_tap_to_wake_title">Включение при двойном нажатии</string>
     <string name="screen_animation_off_title">Анимация выключения</string>
-    <string name="screen_animation_style_title">Стиль анимации</string>
     <string name="screen_animation_style_electronbeam">Пучок электронов</string>
     <string name="screen_animation_style_fade">Затухание</string>
     <string name="lights_category_title">Индикация</string>

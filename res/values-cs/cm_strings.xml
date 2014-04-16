@@ -175,7 +175,6 @@
     <string name="wake_when_plugged_or_unplugged_summary">Zapnout obrazovku při připojení nebo odpojení od nabíječky</string>
 
     <string name="screen_animation_off_title">Animace vypnutí obrazovky</string>
-    <string name="screen_animation_style_title">Vzhled animace</string>
     <string name="screen_animation_style_electronbeam">Elektronový paprsek</string>
     <string name="screen_animation_style_fade">Pozvolné ztmavnutí</string>
 

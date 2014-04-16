@@ -707,7 +707,6 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="sms_security_check_limit_summary_none">Aplicativos não são permitidos a enviar qualquer mensagem sem confirmação</string>
     <string name="sms_security_check_limit_none">Nenhum</string>
     <string name="screen_animation_off_title">Animação ao desligar tela</string>
-    <string name="screen_animation_style_title">Estilo de animação</string>
     <string name="screen_animation_style_electronbeam">Feixe de elétrons</string>
     <string name="screen_animation_style_fade">Esmaecer</string>
     <string name="double_tap_to_wake_title">Toque duplo para acordar</string>

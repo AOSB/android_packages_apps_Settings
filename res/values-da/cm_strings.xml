@@ -628,7 +628,6 @@ to for at indsætte yderligere kontrolpunkter. \'Fjern\' sletter den valgte linj
     <string name="wake_when_plugged_or_unplugged_title">Væk ved strøm</string>
     <string name="wake_when_plugged_or_unplugged_summary">Tænd skærmen, når opladeren til- eller frakobles</string>
     <string name="screen_animation_off_title">Animation ved slukning af skærm</string>
-    <string name="screen_animation_style_title">Animationstype</string>
     <string name="screen_animation_style_electronbeam">Elektronstråle</string>
     <string name="screen_animation_style_fade">Udtoning</string>
     <string name="confirm_delete_apn">APN\'en vil blive slettet.</string>

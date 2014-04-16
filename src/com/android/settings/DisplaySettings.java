@@ -172,6 +172,39 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mWakeWhenPluggedOrUnplugged =
                 (CheckBoxPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
 
+        boolean allowsScreenOffAnimation = res.getBoolean(
+                com.android.internal.R.bool.config_screenOffAnimation);
+        boolean requiresFadeAnimation = res.getBoolean(
+                com.android.internal.R.bool.config_animateScreenLights);
+        mScreenOffAnimation = (CheckBoxPreference)
+                findPreference(KEY_SCREEN_ANIMATION_OFF);
+        mScreenAnimationStylePreference =
+                (ListPreference) findPreference(KEY_SCREEN_ANIMATION_STYLE);
+
+        if (allowsScreenOffAnimation) {
+            if (!requiresFadeAnimation) {
+                getPreferenceScreen().removePreference(mScreenOffAnimation);
+                final boolean animationEnabled =
+                        Settings.System.getInt(resolver,
+                                Settings.System.SCREEN_OFF_ANIMATION, 1) != 0;
+                final int currentAnimation =
+                        Settings.System.getInt(resolver, SCREEN_ANIMATION_STYLE, 0);
+
+                mScreenAnimationStylePreference.setOnPreferenceChangeListener(this);
+                if (animationEnabled) {
+                    mScreenAnimationStylePreference.setValue(String.valueOf(currentAnimation));
+                    updateScreenAnimationStylePreferenceDescription(currentAnimation + 1);
+                } else {
+                    mScreenAnimationStylePreference.setValue(String.valueOf(-1));
+                    updateScreenAnimationStylePreferenceDescription(0);
+                }
+            } else {
+                getPreferenceScreen().removePreference(mScreenAnimationStylePreference);
+            }
+        } else {
+            getPreferenceScreen().removePreference(mScreenAnimationStylePreference);
+        }
+
         boolean hasNotificationLed = res.getBoolean(
                 com.android.internal.R.bool.config_intrusiveNotificationLed);
         boolean hasBatteryLed = res.getBoolean(
@@ -491,11 +524,26 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         if (KEY_POWER_CRT_MODE.equals(key)) {
             int value = Integer.parseInt((String) objValue);
-            int index = mCrtMode.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.SYSTEM_POWER_CRT_MODE,
-                    value);
-            mCrtMode.setSummary(mCrtMode.getEntries()[index]);
+            try {
+                if (value == -1) {
+                    // disabled
+                    Settings.System.putInt(getContentResolver(),
+                            Settings.System.SCREEN_OFF_ANIMATION, 0);
+                    updateScreenAnimationStylePreferenceDescription(0);
+                } else {
+                    // enabled
+                    Settings.System.putInt(getContentResolver(),
+                            Settings.System.SCREEN_OFF_ANIMATION, 1);
+                    Settings.System.putInt(getContentResolver(),
+                            SCREEN_ANIMATION_STYLE, value);
+
+                    // the indexing here is off by one since the first (disabled)
+                    // value is -1 and the method expects an index.
+                    updateScreenAnimationStylePreferenceDescription(value + 1);
+                }
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist screen animation style setting", e);
+            }
         }
 
         return true;
