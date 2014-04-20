@@ -15,11 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string-array name="multi_sim_entries">
-        <item>Poskytovatel 1</item>
-        <item>Poskytovatel 2</item>
-        <item>Poskytovatel 3</item>
-    </string-array>
 
     <string-array name="screen_color_setting">
         <item>Standardní</item>

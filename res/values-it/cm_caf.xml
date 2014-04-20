@@ -15,11 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string-array name="multi_sim_entries">
-        <item>Abbonamento 1</item>
-        <item>Abbonamento 2</item>
-        <item>Abbonamento 3</item>
-    </string-array>
     <string name="bluetooth_enter_pin_msg_hs">Per eseguire l\'accoppiamento con:<xliff:g id="bold">&lt;br>&lt;b></xliff:g><xliff:g id="device_name">%1$s</xliff:g><xliff:g id="end_bold">&lt;/b>&lt;br>&lt;br></xliff:g>, digita il PIN richiesto del dispositivo (16 o più cifre):</string>
     <string name="bluetooth_profile_sap">Accesso SIM</string>
     <string name="bluetooth_profile_dun">Accesso rete remota</string>
