@@ -86,4 +86,18 @@
             android:title="@string/lockscreen_maximize_widgets_title" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_background_category"
+        android:title="@string/lockscreen_background">
+
+        <Preference
+            android:id="@+id/lockscreen_wallpaper_settings"
+            android:title="@string/lockscreen_wallpaper_settings_title">
+            <intent android:targetPackage="com.cyanogenmod.trebuchet"
+                    android:targetClass="com.android.launcher3.LockWallpaperPickerActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
