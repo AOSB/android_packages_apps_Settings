@@ -60,6 +60,11 @@
             android:key="lockscreen_modlock_enabled"
             android:title="@string/lockscreen_enable_modlock_title" />
 
+        <PreferenceScreen
+            android:title="@string/notifications_on_lockscreen"
+            android:fragment="com.android.settings.probam.LockscreenNotifications"
+            android:summary="@string/notifications_on_lockscreen_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
