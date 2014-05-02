@@ -118,23 +118,6 @@
         android:title="@string/lockscreen_notifications"
         android:fragment="com.android.settings.probam.LockscreenNotifications" />
 
-    <!-- Device Specific Touchscreen gestures. Avoid duplicating CMHW functionality, please -->
-    <Preference
-        android:key="touch_screen_gesture_settings">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_TOUCHSCREEN_GESTURE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
-    </Preference>
-
-    <PreferenceScreen
-        android:key="notification_drawer"
-	android:icon="@drawable/ic_aosb_notification"
-        android:fragment="com.android.settings.cyanogenmod.NotificationDrawer"
-        android:title="@string/notification_drawer_title" />
-
-
-
     <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="navigation_bar_left"
             android:title="@string/navigation_bar_left_title"
@@ -151,6 +134,15 @@
         android:key="navigation_bar"
         android:fragment="com.android.settings.probam.navbar.NavbarTabHostFragment"
         android:title="@string/category_navbar" />
+
+    <!-- Device Specific Touchscreen gestures. Avoid duplicating CMHW functionality, please -->
+    <Preference
+        android:key="touch_screen_gesture_settings">
+        <intent
+            android:action="com.cyanogenmod.action.LAUNCH_TOUCHSCREEN_GESTURE_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
+    </Preference>
 
     <PreferenceCategory
             android:key="expanded_desktop_category"
