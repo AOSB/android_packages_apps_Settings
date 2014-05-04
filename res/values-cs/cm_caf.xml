@@ -38,12 +38,6 @@
     <string name="no_sim_info">Informace o SIM kartě není dsotupné.\nNabídka nemůže být zobrazena</string>
     <string name="subs_settings">Stavy SUBS</string>
     <string name="multi_sim_settings_title">Nastavení pro více SIM</string>
-    <string name="multi_sim_settings_summary">Nastavení více SIM karet pro hlas, data a SMS</string>
-    <string name="voice_title">Hlas/USSD/MMI</string>
-    <string name="voice_summary">Zvolte poskytovatele pro hlasové volání</string>
-    <string name="data_title">Datové volání</string>
-    <string name="data_summary">Zvolte poskytovatele pro datové volání</string>
-    <string name="sms_summary">Zvolte poskytovatele pro odesílání SMS</string>
 
     <string name="set_data_subscription_progress">Nastavování datového poskytovatele\u2026</string>
     <string name="set_dds_success">Poskytovatel dat úspěšně nastaven</string>
@@ -58,9 +52,6 @@
 
     <string name="tune_away_enabled">TuneAway povolen</string>
     <string name="tune_away_disabled">TuneAway zakázán</string>
-
-    <string name="priority_sub_title">Priorita poskytovatele</string>
-    <string name="priority_sub_summary">Zvolte prioritu poskytovatele</string>
 
     <string name="screencolor">Barvy obrazovky</string>
     <string name="custom_screencolor">Vlastní barvy obrazovky</string>
