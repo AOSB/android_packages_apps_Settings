@@ -23,7 +23,6 @@
     <string name="bluetooth_dun_profile_summary_connected">Verbunden mit Einwahldienst</string>
     <string name="bluetooth_sap_profile_summary_use_for">Für SIM-Zugriff verwenden</string>
     <string name="bluetooth_dun_profile_summary_use_for">Für Einwahlverbindungen verwenden</string>
-    <string name="multi_sim_settings_title">MultiSIM-Einstellungen</string>
     <string name="data_usage_tab_slot">SIM</string>
     <string name="sel_sub_title">SIM auswählen</string>
     <string name="sel_sub_summary">SIM-Karte auswählen: SIM1, SIM2, usw.</string>
