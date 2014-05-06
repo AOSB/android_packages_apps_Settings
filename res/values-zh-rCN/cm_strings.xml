@@ -835,15 +835,12 @@
     <string name="hardware_keys_action_voice_search">语音搜索</string>
     <string name="hardware_keys_action_in_app_search">程序内搜索</string>
     <string name="hardware_keys_action_launch_camera">打开相机</string>
-    <string name="home_wake_title">Home键唤醒</string>
     <string name="home_wake_summary">长按Home键会唤醒你的设备</string>
-    <string name="camera_wake_title">相机键唤醒</string>
     <string name="camera_wake_summary">按下相机键会唤醒你的设备</string>
     <string name="camera_sleep_on_release_title">屏幕窥探</string>
     <string name="camera_sleep_on_release_summary">仅当按钮被按下的时候，半按将会保持屏幕点亮</string>
     <string name="camera_music_controls_title">相机键音乐控制</string>
     <string name="camera_music_controls_summary">当屏幕变暗的时候，长按相机键将播放/暂停当前的音乐</string>
-    <string name="volume_wake_title">音量键唤醒</string>
     <string name="volume_wake_summary">当屏幕变暗的时候，长按相机键将播放/暂停当前的音乐</string>
     <string name="volbtn_music_controls_title">音量键音乐控制</string>
     <string name="volbtn_music_controls_summary">当屏幕关闭时，长按音量键即可改变音乐曲目</string>

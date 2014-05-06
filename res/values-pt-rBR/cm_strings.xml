@@ -482,9 +482,7 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="hardware_keys_volume_keys_title">Botões de volume</string>
     <string name="hardware_keys_short_press_title">Ação de toque rápido</string>
     <string name="hardware_keys_long_press_title">Ação de toque longo</string>
-    <string name="home_wake_title">Acordar com botão home</string>
     <string name="home_wake_summary">Ao pressionar o botão home, seu dispositivo irá acordar</string>
-    <string name="volume_wake_title">Acordar com botões de volume</string>
     <string name="volume_wake_summary">Ao pressionar um botão de volume, seu dispositivo irá acordar</string>
     <string name="auto_brightness_setup_title">Brilho automático</string>
     <string name="auto_brightness_adjustment_title">Ajuste de brilho</string>
@@ -556,8 +554,7 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="performance_set_on_boot_summary">Restaurar configurações na inicialização</string>
     <string name="gamma_tuning_saturation">Saturação</string>
     <string name="camera_sleep_on_release_summary">Um meio toque irá manter a tela ligada somente enquanto o botão for segurado</string>
-    <string name="camera_wake_title">Acordar com o botão da câmera</string>
-    <string name="gamma_tuning_control_set_header">Grupo <xliff:g id="index" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">%d</xliff:g></string>
+        <string name="gamma_tuning_control_set_header">Grupo <xliff:g id="index" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">%d</xliff:g></string>
     <string name="camera_music_controls_title">Controle de reprodução</string>
     <string name="camera_wake_summary">Ao pressionar o botão da câmera, o dispositivo irá acordar</string>
     <string name="camera_sleep_on_release_title">Espreitar a tela</string>
