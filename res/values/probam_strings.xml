@@ -1068,4 +1068,8 @@
     <string name="power_menu_onthego_summary">Show the camera overlay under all windows</string>
 
 
+    <!-- Statusbar Second Clock -->
+    <string name="clock_use_second">Use second clock</string>
+    <string name="clock_use_second_summary">Show second in clock</string>
+
 </resources>
