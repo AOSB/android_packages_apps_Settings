@@ -105,6 +105,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String RING_MODE_VIBRATE = "vibrate";
     private static final String RING_MODE_MUTE = "mute";
 
+    private static final String RING_MODE_NORMAL = "normal";
+    private static final String RING_MODE_VIBRATE = "vibrate";
+    private static final String RING_MODE_MUTE = "mute";
+
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
             KEY_EMERGENCY_TONE, KEY_INCREASING_RING, KEY_VIBRATE
@@ -272,6 +276,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     getPreferenceScreen().removePreference(pref);
                 }
             }
+            mRingtonePreference = null;
         }
 
         mRingtoneLookupRunnable = new Runnable() {
@@ -426,6 +431,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             } else {
                 mAudioManager.unloadSoundEffects();
             }
+
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent
             return false;

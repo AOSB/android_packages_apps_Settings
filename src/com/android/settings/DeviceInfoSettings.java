@@ -19,6 +19,8 @@ package com.android.settings;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.Bundle;
@@ -32,6 +34,8 @@ import android.preference.PreferenceScreen;
 import android.telephony.MSimTelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.android.settings.deviceinfo.msim.MSimStatus;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -119,7 +123,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
 
         if (MSimTelephonyManager.getDefault().isMultiSimEnabled()) {
             findPreference(KEY_STATUS).getIntent().setClassName(
-                    "com.android.settings","com.android.settings.deviceinfo.MSimStatus");
+                    getActivity().getPackageName(), MSimStatus.class.getName());
         }
 
         // Remove selinux information if property is not present
@@ -184,6 +188,9 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
             Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference,
                     KEY_SYSTEM_UPDATE_SETTINGS,
                     Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
+            /* Make sure the activity is provided by who we want... */
+            if (findPreference(KEY_SYSTEM_UPDATE_SETTINGS) != null)
+                removePreferenceIfPackageNotInstalled(findPreference(KEY_SYSTEM_UPDATE_SETTINGS));
         } else {
             // Remove for secondary users
             removePreference(KEY_SYSTEM_UPDATE_SETTINGS);
@@ -460,7 +467,13 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         String packageName=matcher.find()?matcher.group(1):null;
         if(packageName != null) {
             try {
-                getPackageManager().getPackageInfo(packageName, 0);
+                PackageInfo pi = getPackageManager().getPackageInfo(packageName,
+                        PackageManager.GET_ACTIVITIES);
+                if (!pi.applicationInfo.enabled) {
+                    Log.e(LOG_TAG,"package "+packageName+" is disabled, hiding preference.");
+                    getPreferenceScreen().removePreference(preference);
+                    return true;
+                }
             } catch (NameNotFoundException e) {
                 Log.e(LOG_TAG,"package "+packageName+" not installed, hiding preference.");
                 getPreferenceScreen().removePreference(preference);

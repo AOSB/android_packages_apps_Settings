@@ -25,8 +25,20 @@
     <string name="wifi_setting_priority_title">Wi-Fi priority</string>
     <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi priority-->
     <string name="wifi_setting_priority_summary">Specify the priority of the Wi-Fi networks</string>
+<<<<<<< HEAD
     <!-- WiFi forget all networks -->
     <string name="wifi_menu_forget_all">Forget all networks</string>
+=======
+
+    <!--  Title for PreferenceScreen to change encryption password [CHAR LIMIT=22]  -->
+    <string name="change_crypt_password_title">Change password</string>
+
+    <!--  Summary for PreferenceScreen to change encryption password [CHAR LIMIT=45]  -->
+    <string name="change_crypt_password_summary">Change the password used for device encryption</string>
+
+    <!-- Header on first screen of choose encryption password [CHAR LIMIT=30] -->
+    <string name="encryptionpassword_choose_your_password_header">Set encryption password</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
 
     <string name="lock_screen_title">Lock screen</string>
 
@@ -161,7 +173,35 @@
     <string name="volume_ring_only_description">Ringtone</string>
     <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
     <string name="link_volume_mutes">Silent mode affects notifications</string>
-    <string name="volume_keys_control_ring_stream">Volume keys control ringtone volume</string>
+    <string name="volume_keys_control_ring_stream">Volume buttons control ringtone volume</string>
+
+    <!-- Ring mode -->
+    <string name="ring_mode_title">Ring mode</string>
+    <string name="ring_mode_normal">Normal</string>
+    <string name="ring_mode_vibrate">Vibrate</string>
+    <string name="ring_mode_mute">Mute</string>
+
+    <!-- Volume panel style -->
+    <string name="volume_overlay_title">Volume panel style</string>
+    <string name="volume_overlay_single">Single</string>
+    <string name="volume_overlay_expandable">Expandable</string>
+    <string name="volume_overlay_expanded">Expanded</string>
+    <string name="volume_overlay_none">None</string>
+
+    <!-- Automatation and effects category -->
+    <string name="automation_effects_title">Automation &amp; Effects</string>
+
+    <!-- Convert sound to vibration toggle -->
+    <string name="notification_convert_sound_to_vibration_title">Vibrate on notification</string>
+    <string name="notification_convert_sound_to_vibration_summary">In vibrate mode, all notifications will vibrate regardless of individual app settings</string>
+
+    <!-- Vibrate during phone calls -->
+    <string name="notification_vibrate_during_calls_title">Vibrate during call</string>
+    <string name="notification_vibrate_during_calls_summary">Incoming notifications will softly vibrate during phone calls</string>
+
+    <!-- Volume adjustment sound -->
+    <string name="volume_adjust_sounds_enable_title">Volume adjustment sound</string>
+    <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with volume buttons</string>
 
     <!-- Ring mode -->
     <string name="ring_mode_title">Ring mode</string>
@@ -213,11 +253,18 @@
 
     <!-- Backlight brightness settings screen -->
     <string name="adaptive_backlight_title">Adaptive backlight</string>
-    <string name="adaptive_backlight_summary">Intelligently vary the backlight brightness of the display and help maximize battery life</string>
+    <string name="adaptive_backlight_summary">Dynamically adjust the brightness of the display\'s backlight to maximize battery life while maintaining usability</string>
 
     <!-- Turn on display when power connected; turn off display when power disconnected -->
     <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
-    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting the charger</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
+
+    <!-- Lights settings screen, screen animation options -->
+    <string name="screen_animation_off_title">Screen-off animation</string>
+    <string name="screen_animation_style_title">Screen-off animation style</string>
+    <string name="screen_animation_style_disabled">Disabled</string>
+    <string name="screen_animation_style_electronbeam">Electron beam</string>
+    <string name="screen_animation_style_fade">Fade out</string>
 
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Edit light settings</string>
@@ -272,6 +319,7 @@
     <string name="unlock_camera_unlock_summary">Pressing the camera button unlocks the device</string>
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+    <string name="unlock_buttons_disabled_by_security">Lock screen is secure</string>
 
     <!-- Slide lock delay -->
     <string name="delay_and_timeout_title">Lock delay</string>
@@ -308,6 +356,8 @@
     <string name="tile_picker_title">Tiles and layout</string>
     <string name="tile_picker_summary">View, select or change the layout of the displayed tiles</string>
     <string name="tile_choose_title">Choose a tile</string>
+    <string name="title_qs_small_icons">Show smaller tiles</string>
+    <string name="summary_qs_small_icons">Use smaller tiles to increase the number of columns</string>
 
     <string name="title_tile_airplane">Airplane mode</string>
     <string name="title_tile_battery">Battery stats</string>
@@ -341,13 +391,13 @@
 
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
-    <string name="dynamic_tiles_note_summary">Dynamic tiles are not always visible and will only show up if triggered by a system event</string>
+    <string name="dynamic_tiles_note_summary">Dynamic tiles are not always visible and will only appear if triggered by a system event</string>
     <string name="title_dynamic_alarm">Alarm clock</string>
     <string name="title_dynamic_bugreport">Bug report</string>
     <string name="title_dynamic_dock_battery">Dock battery</string>
     <string name="title_dynamic_ime">IME changer</string>
     <string name="title_dynamic_usbtether">USB Tether</string>
-    <string name="title_dynamic_wifi">Wi-Fi display</string>
+    <string name="title_dynamic_wifi">Cast screen</string>
 
     <string name="title_general">General</string>
     <string name="title_quick_pulldown">Quick pulldown</string>
@@ -417,8 +467,8 @@ Each line in the brightness list corresponds to one <i>control point</i> of the
 brightness curve. To edit the brightness level of the point, you can use the slider
 present in each line. The screen brightness will be changed accordingly while touching
 the slider to give a preview of the light level.\n
-Additional options are available by long-pressing a line. By selecting \'Edit\', you can
-both edit the ambient brightness level of the control point as well as manually input the
+Additional options are available by long pressing a line. By selecting \'Edit\', you can
+adjust the ambient brightness level of the control point as well as manually input the
 desired screen brightness. Selecting \'Split\' allows you to to duplicate one line into
 two in order to insert additional control points. \'Remove\' deletes the selected line.
     </string>
@@ -463,11 +513,24 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quiet_hours_summary">Configure the hours the device should be quiet</string>
     <string name="quiet_hours_enabled">Enforce quiet hours</string>
     <string name="quiet_hours_ringer">Phone ringer</string>
+<<<<<<< HEAD
     <string name="quiet_hours_mute">Mute notifications</string>
     <string name="quiet_hours_system">Disable system sounds</string>
     <string name="quiet_hours_still">Disable vibrations</string>
     <string name="quiet_hours_dim">Disable notification light</string>
     <string name="quiet_hours_haptic">Disable haptic feedback</string>
+=======
+    <string name="quiet_hours_mute">Notifications</string>
+    <string name="quiet_hours_mute_summary">Mute notifications</string>
+    <string name="quiet_hours_system">System sounds</string>
+    <string name="quiet_hours_system_summary">Disable system sounds</string>
+    <string name="quiet_hours_still">Vibrations</string>
+    <string name="quiet_hours_still_summary">Disable vibrations</string>
+    <string name="quiet_hours_dim">Notification light</string>
+    <string name="quiet_hours_dim_summary">Disable notification light</string>
+    <string name="quiet_hours_haptic">Haptic feedback</string>
+    <string name="quiet_hours_haptic_summary">Disable haptic feedback</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <string name="quiet_hours_active_from">Active from</string>
     <string name="quiet_hours_active_to">to</string>
 
@@ -491,7 +554,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="cpu_info">CPU</string>
     <!-- About phone screen, Free memory info -->
     <string name="mem_info">Memory</string>
-    <!-- About phone screen, status item label -->
+    <!-- About phone screen, service state -->
+    <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
 
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
@@ -521,19 +585,34 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_interface">Personalization</string>
 
-    <!-- Themes settings -->
+    <!-- Themes Settings -->
+    <!-- Settings main menu entry -->
     <string name="themes_settings_title">Themes</string>
+
+    <!-- The following are entries under the themes menu -->
+    <string name="themepacks_settings_title">Theme packs</string>
+    <string name="styles_settings_title">Styles</string>
+    <string name="icons_settings_title">Icons</string>
+    <string name="fonts_settings_title">Fonts</string>
+    <string name="wallpaper_settings_title">Wallpapers</string>
+    <string name="lockscreen_wallpaper_settings_title">Lock screen wallpapers</string>
+    <string name="bootanim_settings_title">Boot animations</string>
+    <string name="soundpack_settings_title">Sound packs</string>
 
     <!-- Performance settings -->
     <string name="performance_settings_title">Performance</string>
 
     <!-- Performance Settings : Warning dialog -->
     <string name="performance_settings_warning_title">Proceed with caution</string>
+<<<<<<< HEAD
     <string name="performance_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request you do not file bug reports if any of these settings have been changed from the defaults.</string>
+=======
+    <string name="performance_settings_warning">These settings are experimental and any applied changes have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request that you do not file bug reports if any settings are changed from their defaults.</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
 
     <!-- Performance Settings : Set on boot option -->
     <string name="performance_set_on_boot">Set on boot</string>
-    <string name="performance_set_on_boot_summary">Restore the settings on boot</string>
+    <string name="performance_set_on_boot_summary">Restore applied settings on boot</string>
 
     <!-- Performance Settings : Processor Settings -->
     <!-- Performance Settings : Processor settings title -->
@@ -576,9 +655,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
     <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
 
+<<<<<<< HEAD
     <!-- Kill app long-press back -->
+=======
+    <!-- Kill app long press back -->
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <string name="kill_app_longpress_back">Kill app back button</string>
-    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back button</string>
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long pressing the back button</string>
 
     <!-- Change Log strings -->
     <string name="changelog_title">View changelog</string>
@@ -586,6 +669,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="changelog_error">Unable to load changelog</string>
     <string name="changelog_unknown">Unknown</string>
     <string name="changelog_version">Version</string>
+
+    <string name="contributor_cloud_title">View contributors</string>
 
     <!-- CM Updater -->
     <string name="cmupdate_settings_title">CyanogenMod updates</string>
@@ -596,6 +681,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Launch Tools</string>
+    <!-- Whether to allow mock SMS -->
+    <string name="allow_mock_sms">Allow mock SMS</string>
+
+    <!-- Privacy Settings Header item -->
+    <string name="privacy_settings_cyanogenmod_title">Privacy</string>
 
     <!-- Privacy Settings Header item -->
     <string name="privacy_settings_cyanogenmod_title">Privacy</string>
@@ -614,7 +704,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="privacy_guard_help_title">Help</string>
     <string name="privacy_guard_reset_title">Reset</string>
     <string name="privacy_guard_reset_text">Reset permissions?</string>
+<<<<<<< HEAD
     <string name="privacy_guard_help_text">In this screen you can choose for which apps Privacy Guard should be active by simply tapping on them. Selected apps will not be able to access your personal data, such as contacts, messages or call logs. Long pressing on an entry opens the app details screen for that app.\n\nBy default built-in apps are not shown. If you want to show them, select the respective option in the menu.</string>
+=======
+    <string name="privacy_guard_help_text">In this screen you can choose which apps Privacy Guard should be active for by simply tapping on them. Selected apps will not be able to access your personal data such as contacts, messages or call logs. Long pressing an app\'s entry opens its app details screen.\n\nBuilt-in apps are not shown by default but can be revealed by selecting the respective menu option.</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
     <string name="privacy_guard_manager_filter_permissions">Permission filter</string>
     <string name="privacy_guard_advanced_settings_title">Advanced</string>
@@ -627,7 +721,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="blacklist_empty_text">You don\'t have any blacklisted numbers. Add an entry by touching the Add (+) button.</string>
     <string name="blacklist_disabled_empty_text">To blacklist calls and/or messages from certain numbers, enable the blacklist.</string>
     <string name="blacklist_summary_disabled">Disabled</string>
-    <string name="blacklist_summary">Incoming calls and messages from phone numbers in the blacklist will be blocked</string>
+    <string name="blacklist_summary">Incoming calls and messages from blacklisted phone numbers will be blocked</string>
     <string name="blacklist_notify">Show notification</string>
     <string name="blacklist_private_numbers_title">Private numbers</string>
     <string name="blacklist_private_numbers_summary_disabled">Don\'t block calls from private numbers</string>
@@ -742,7 +836,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Sound settings, Charging sounds enable/disable, setting check box label -->
     <string name="power_notifications_enable_title">Enable</string>
-    <string name="power_notifications_enable_summary">Play a sound when connecting or disconnecting the charger</string>
+    <string name="power_notifications_enable_summary">Play a sound when connecting or disconnecting a power source</string>
     <!-- Sound settings, Charging sounds vibrate enable/disable, setting check box label -->
     <string name="power_notifications_vibrate_title">Vibrate</string>
     <!-- Sound settings, Charging sounds ringtone selection, preference label -->
@@ -803,12 +897,50 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_long_press_home_title">Long press Home button</string>
     <string name="lockscreen_long_press_menu_title">Long press Menu button</string>
     <string name="lockscreen_buttons_no_action">No action</string>
+<<<<<<< HEAD
     <string name="lockscreen_buttons_flashlight">Flashlight</string>
+=======
+    <string name="lockscreen_buttons_flashlight">Torch</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <string name="lockscreen_buttons_next">Next song</string>
     <string name="lockscreen_buttons_previous">Previous song</string>
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
     <string name="lockscreen_buttons_sleep">Go to sleep</string>
+<<<<<<< HEAD
+=======
+    <string name="lockscreen_enable_modlock_title">Custom lock screen</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar_category">Navigation bar</string>
+    <string name="navigation_bar_title">Buttons and layout</string>
+    <string name="navigation_bar_left_title">Left handed mode</string>
+    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+    <string name="navigation_bar_help_text">1 - To begin editing, tap the lock icon\n\n2 - Tap any button to assign or change functionality\n\n3 - Long press any button to rearrange the order\n\n4 - To save, tap the lock icon again\n\n5 - To restore system default, tap the reset button\n\n</string>
+    <string name="navigation_bar_tips">\u2022 Actions can only be assigned to one button at a time\n\n\u2022 The home button cannot be re-assigned\n\n\u2022 Side buttons cannot be rearranged</string>
+    <string name="navigation_bar_tips_title">Quick tips</string>
+    <string name="navigation_bar_reset_message">Delete current settings and restore to default?</string>
+    <string name="navigation_bar_save_message">Navigation bar settings saved</string>
+    <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
+    <string name="navigation_bar_menu_editable">Editable</string>
+    <string name="navigation_bar_menu_locked">Locked</string>
+
+    <!-- Navigation ring shortcuts -->
+    <string name="navigation_ring_title">Quick launch shortcuts</string>
+    <string name="navring_target_reset_message">Delete all user created navigation bar shortcuts and restore to default?</string>
+    <string name="navring_target_reset">Navigation bar shortcuts reset to default</string>
+    <string name="navring_action_open_ime_switcher">Open IME Switcher</string>
+    <string name="navring_action_kill_app">Kill app</string>
+    <string name="navring_action_none">None</string>
+    <string name="navring_action_take_screenshot">Take screenshot</string>
+    <string name="navring_action_ring_vibrate">Ring/Vibration</string>
+    <string name="navring_action_ring_silent">Ring/Silent</string>
+    <string name="navring_action_ring_vibrate_silent">Ring/Vibration/Silent</string>
+    <string name="navring_action_screen_off">Screen off</string>
+    <string name="navring_action_torch">Toggle torch</string>
+    <string name="navring_action_google_now">Google Now</string>
+    <string name="navring_choose_action_title">Choose action</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
 
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Power menu</string>
@@ -820,8 +952,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="expanded_desktop_disabled">Disabled</string>
     <string name="expanded_desktop_status_bar">Status bar visible</string>
     <string name="expanded_desktop_no_status_bar">Status bar hidden</string>
+<<<<<<< HEAD
     <string name="expanded_desktop_system_bars_visibility">Disable in lock screen</string>
     <string name="expanded_desktop_system_bars_visibility_summary">Show status and navigation bar in lock screen during expanded desktop mode</string>
+=======
+    <string name="expanded_desktop_system_bars_visibility">Disable on lock screen</string>
+    <string name="expanded_desktop_system_bars_visibility_summary">Show status and navigation bar on lock screen during expanded desktop mode</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <string name="power_menu_profiles_title">Profile switcher</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
     <string name="power_menu_user_title">User switcher</string>
@@ -845,15 +982,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_launch_camera">Launch Camera</string>
-    <string name="home_wake_title">Home button wake</string>
+    <string name="button_wake_title">Wake up</string>
     <string name="home_wake_summary">Pressing the home button will wake your device</string>
-    <string name="camera_wake_title">Camera button wake</string>
     <string name="camera_wake_summary">Pressing the camera button will wake your device</string>
     <string name="camera_sleep_on_release_title">Screen peek</string>
     <string name="camera_sleep_on_release_summary">A half press will keep the screen on only while the button is held down</string>
     <string name="camera_music_controls_title">Playback control</string>
     <string name="camera_music_controls_summary">When the screen is off, long pressing the camera key will play/pause current music track</string>
-    <string name="volume_wake_title">Volume button wake</string>
     <string name="volume_wake_summary">Pressing either volume button will wake your device</string>
     <string name="volbtn_music_controls_title">Playback control</string>
     <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
@@ -861,7 +996,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="volbtn_cursor_control_off">Disabled</string>
     <string name="volbtn_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
-    <string name="swap_volume_buttons_title">Reorient volume buttons</string>
+    <string name="swap_volume_buttons_title">Reorient</string>
     <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
 
     <!-- Hardware tunables - Key backlight -->
@@ -876,6 +1011,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
 
+<<<<<<< HEAD
+=======
+    <!-- Lockscreen background -->
+    <string name="lockscreen_background">Background</string>
+    <string name="lockscreen_background_style_title">Lock screen background</string>
+    <string name="background_default">Default background</string>
+    <string name="background_wallpaper">Custom wallpaper</string>
+    <string name="background_result_successful">Background changed</string>
+    <string name="background_result_not_successful">Background not changed</string>
+    <string name="setting_lockscreen_background">Applying background</string>
+
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <!-- Title for the accessibility preference to home button to answers a call. [CHAR LIMIT=35] -->
     <string name="accessibility_home_button_answers_call_prerefence_title">Home button answers call</string>
 
@@ -900,6 +1047,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+<<<<<<< HEAD
+=======
+    <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
 
     <!-- Development shortcut -->
     <string name="development_shortcut_title">Development shortcut</string>
@@ -907,17 +1058,25 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- USB Mass Storage -->
     <string name="usb_mass_storage_title">Mass storage (UMS)</string>
+<<<<<<< HEAD
     <string name="usb_mass_storage_summary">Lets you transfer any files between your computer and your SD card by mounting it as a flash device</string>
+=======
+    <string name="usb_mass_storage_summary">Lets you transfer files between your computer and SD card by mounting it as a flash device</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <string name="storage_rescan_media">Rescan media for the storage volume</string>
     <string name="storage_rescan_media_complete">Scan completed</string>
 
     <!-- WhisperPush -->
     <string name="whisperpush_title">WhisperPush</string>
+<<<<<<< HEAD
     <string name="whisperpush_summary">Manage secure SMS settings.</string>
+=======
+    <string name="whisperpush_summary">Manage secure SMS settings</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Warning</string>
-    <string name="custom_runtime_warning_message">ART is not supported by CyanogenMod. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string>
+    <string name="custom_runtime_warning_message">ART is not officially supported by CyanogenMod as it is highly experimental and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string>
 
     <!-- GPS download data over wi-fi only -->
     <string name="gps_download_data_wifi_only">Download GPS assisted data only over Wi-Fi networks</string>
@@ -969,6 +1128,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
     <!-- App ops -->
+<<<<<<< HEAD
     <string name="app_ops_summaries_wifi_change">wifi change</string>
     <string name="app_ops_labels_wifi_change">Wi-Fi change</string>
     <string name="app_ops_summaries_bluetooth_change">bluetooth change</string>
@@ -988,11 +1148,119 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- App ops categories -->
     <string name="app_ops_categories_bootup">Bootup</string>
+=======
+    <string name="app_ops_summaries_coarse_location">coarse location</string>
+    <string name="app_ops_summaries_fine_location">fine location</string>
+    <string name="app_ops_summaries_gps">GPS</string>
+    <string name="app_ops_summaries_vibrate">vibrate</string>
+    <string name="app_ops_summaries_read_contacts">read contacts</string>
+    <string name="app_ops_summaries_modify_contacts">modify contacts</string>
+    <string name="app_ops_summaries_read_call_log">read call log</string>
+    <string name="app_ops_summaries_modify_call_log">modify call log</string>
+    <string name="app_ops_summaries_read_calendar">read calendar</string>
+    <string name="app_ops_summaries_modify_calendar">modify calendar</string>
+    <string name="app_ops_summaries_wifi_scan">wi-fi scan</string>
+    <string name="app_ops_summaries_notification">notification</string>
+    <string name="app_ops_summaries_cell_scan">cell scan</string>
+    <string name="app_ops_summaries_call_phone">call phone</string>
+    <string name="app_ops_summaries_read_sms">read SMS</string>
+    <string name="app_ops_summaries_write_sms">write SMS</string>
+    <string name="app_ops_summaries_receive_sms">receive SMS</string>
+    <string name="app_ops_summaries_receive_emergency_sms">receive emergency SMS</string>
+    <string name="app_ops_summaries_receive_mms">receive MMS</string>
+    <string name="app_ops_summaries_receive_wap_push">receive WAP push</string>
+    <string name="app_ops_summaries_send_sms">send SMS</string>
+    <string name="app_ops_summaries_read_icc_sms">read ICC SMS</string>
+    <string name="app_ops_summaries_write_icc_sms">write ICC SMS</string>
+    <string name="app_ops_summaries_modify_settings">modify settings</string>
+    <string name="app_ops_summaries_draw_on_top">draw on top</string>
+    <string name="app_ops_summaries_access_notifications">access notifications</string>
+    <string name="app_ops_summaries_camera">camera</string>
+    <string name="app_ops_summaries_record_audio">record audio</string>
+    <string name="app_ops_summaries_play_audio">play audio</string>
+    <string name="app_ops_summaries_read_clipboard">read clipboard</string>
+    <string name="app_ops_summaries_modify_clipboard">modify clipboard</string>
+    <string name="app_ops_summaries_media_buttons">media buttons</string>
+    <string name="app_ops_summaries_audio_focus">audio focus</string>
+    <string name="app_ops_summaries_master_volume">master volume</string>
+    <string name="app_ops_summaries_voice_volume">voice volume</string>
+    <string name="app_ops_summaries_ring_volume">ring volume</string>
+    <string name="app_ops_summaries_media_volume">media volume</string>
+    <string name="app_ops_summaries_alarm_volume">alarm volume</string>
+    <string name="app_ops_summaries_notification_volume">notification volume</string>
+    <string name="app_ops_summaries_bluetooth_volume">bluetooth volume</string>
+    <string name="app_ops_summaries_keep_awake">keep awake</string>
+    <string name="app_ops_summaries_monitor_location">monitor location</string>
+    <string name="app_ops_summaries_monitor_high_power_location">monitor high power location</string>
+    <string name="app_ops_summaries_wifi_change">wifi change</string>
+    <string name="app_ops_summaries_bluetooth_change">bluetooth change</string>
+    <string name="app_ops_summaries_data_change">data change</string>
+    <string name="app_ops_summaries_alarm_wakeup">wake up</string>
+    <string name="app_ops_summaries_send_mms">send MMS</string>
+    <string name="app_ops_summaries_read_mms">read MMS</string>
+    <string name="app_ops_summaries_write_mms">write MMS</string>
+    <string name="app_ops_summaries_auto_start">auto start</string>
+
+    <string name="app_ops_labels_location">Location</string>
+    <string name="app_ops_labels_vibrate">Vibrate</string>
+    <string name="app_ops_labels_read_contacts">Read contacts</string>
+    <string name="app_ops_labels_modify_contacts">Modify contacts</string>
+    <string name="app_ops_labels_read_call_log">Read call log</string>
+    <string name="app_ops_labels_modify_call_log">Modify call log</string>
+    <string name="app_ops_labels_read_calendar">Read calendar</string>
+    <string name="app_ops_labels_modify_calendar">Modify calendar</string>
+    <string name="app_ops_labels_notification_toast">Notification/Toast</string>
+    <string name="app_ops_labels_call_phone">Call phone</string>
+    <string name="app_ops_labels_read_sms_db">Read SMS DB</string>
+    <string name="app_ops_labels_write_sms_db">Write SMS DB</string>
+    <string name="app_ops_labels_receive_sms">Receive SMS</string>
+    <string name="app_ops_labels_receive_mms">Receive MMS</string>
+    <string name="app_ops_labels_send_sms">Send SMS</string>
+    <string name="app_ops_labels_modify_settings">Modify settings</string>
+    <string name="app_ops_labels_draw_on_top">Draw on top</string>
+    <string name="app_ops_labels_access_notifications">Access notifications</string>
+    <string name="app_ops_labels_camera">Camera</string>
+    <string name="app_ops_labels_record_audio">Record audio</string>
+    <string name="app_ops_labels_play_audio">Play audio</string>
+    <string name="app_ops_labels_read_clipboard">Read clipboard</string>
+    <string name="app_ops_labels_modify_clipboard">Modify clipboard</string>
+    <string name="app_ops_labels_media_buttons">Media buttons</string>
+    <string name="app_ops_labels_audio_focus">Audio focus</string>
+    <string name="app_ops_labels_master_volume">Master volume</string>
+    <string name="app_ops_labels_voice_volume">Voice volume</string>
+    <string name="app_ops_labels_ring_volume">Ring volume</string>
+    <string name="app_ops_labels_media_volume">Media volume</string>
+    <string name="app_ops_labels_alarm_volume">Alarm volume</string>
+    <string name="app_ops_labels_notification_volume">Notification volume</string>
+    <string name="app_ops_labels_bluetooth_volume">Bluetooth volume</string>
+    <string name="app_ops_labels_keep_awake">Keep awake</string>
+    <string name="app_ops_labels_wifi_change">Wi-Fi change</string>
+    <string name="app_ops_labels_bluetooth_change">Bluetooth change</string>
+    <string name="app_ops_labels_data_change">Data change</string>
+    <string name="app_ops_labels_alarm_wakeup">Wake up</string>
+    <string name="app_ops_labels_send_mms">Send MMS</string>
+    <string name="app_ops_labels_read_mms">Read MMS</string>
+    <string name="app_ops_labels_write_mms">Write MMS</string>
+    <string name="app_ops_labels_auto_start">Auto start</string>
+
+    <!-- App ops categories -->
+    <string name="app_ops_categories_location">Location</string>
+    <string name="app_ops_categories_personal">Personal</string>
+    <string name="app_ops_categories_messaging">Messaging</string>
+    <string name="app_ops_categories_media">Media</string>
+    <string name="app_ops_categories_device">Device</string>
+    <string name="app_ops_categories_bootup">Bootup</string>
+
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <!-- App ops detail -->
     <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (used <xliff:g id="count">%2$s</xliff:g>)</string>
     <string name="app_ops_allowed_count">Allowed <xliff:g id="count" example="2 times">%s</xliff:g></string>
     <string name="app_ops_ignored_count">Denied <xliff:g id="count" example="2 times">%s</xliff:g></string>
     <string name="app_ops_both_count">Allowed <xliff:g id="count">%1$s</xliff:g>, denied <xliff:g id="count">%2$s</xliff:g></string>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
     <!-- App ops menu options -->
     <string name="app_ops_show_user_apps">Show user apps</string>
     <string name="app_ops_show_system_apps">Show built-in apps</string>
@@ -1003,4 +1271,60 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
     <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
+<<<<<<< HEAD
+=======
+
+    <!-- Data Usage -->
+    <!-- Subtitle of dialog for editing data usage cycle reset date. [CHAR LIMIT=32] -->
+    <string name="data_usage_cycle_editor_subtitle_cm">Date of each cycle:</string>
+    <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
+    <string name="data_usage_lengths_spinner_subtitle">Cycle length:</string>
+
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Enable on-screen nav bar</string>
+    <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
+
+    <!-- Voice+ -->
+    <string name="voice_plus_title" translatable="false">Voice+</string>
+    <string name="voice_plus_summary">Enable all apps to send SMS messages through Google Voice</string>
+
+    <!-- Content description of the sync in progress icon for accessibility. [CHAR LIMIT=NONE] -->
+    <string name="accessibility_sync_in_progress">Sync in progress.</string>
+
+    <!-- Ad-hoc (IBSS) networks -->
+    <string name="wifi_mode">Mode</string>
+    <string name="wifi_mode_ibss">Ad-Hoc (IBSS) Network</string>
+    <string name="wifi_mode_ibss_short">Ad-Hoc</string>
+    <string name="wifi_ibss_freq_title">Channel / Frequency</string>
+    <string name="wifi_channel">Channel</string>
+    <string name="wifi_mhz">MHz</string>
+
+    <!-- Voice Wakeup -->
+    <string name="voice_wakeup_settings_title">Voice wakeup</string>
+    <string name="voice_wakeup_retrain_title">Retrain your voice</string>
+    <string name="voice_wakeup_activity_title">Activity to launch</string>
+    <string name="voice_wakeup_default_activity">Google Now</string>
+
+    <!-- Set Subscription screen: label no sim -->
+    <string name="sub_no_sim">No SIM</string>
+    <string name="multi_sim_entry_format" translatable="false"><xliff:g id="operator">%1$s</xliff:g>-<xliff:g id="index">%2$d</xliff:g></string>
+
+    <!-- Main settings screen, Multi Sim settings title for item to go into the Multi settings -->
+    <string name="multi_sim_settings_title">Multi SIM</string>
+
+    <!-- Multi Sim settings group title -->
+    <string name="multi_sim_settings_group_summary">Default SIM selection</string>
+
+    <!-- Multi Sim Settings screen, Voice box label -->
+    <string name="voice_title">Voice calls</string>
+
+    <!-- Multi Sim Settings screen, Data box label -->
+    <string name="data_title">Data calls</string>
+
+    <!-- Multi Sim Settings screen, SMS box label -->
+    <string name="sms_title">Sending SMS</string>
+
+    <!-- Priority subscription settings -->
+    <string name="priority_sub_title">Priority subscription</string>
+>>>>>>> 05b7aee71f0b167bfe1575194abd1582c22ef78c
 </resources>

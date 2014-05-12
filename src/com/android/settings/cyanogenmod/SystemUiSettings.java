@@ -60,6 +60,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         addPreferencesFromResource(R.xml.system_ui_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
+        PreferenceCategory expandedCategory =
+                (PreferenceCategory) findPreference(CATEGORY_EXPANDED_DESKTOP);
 
         PreferenceCategory expandedCategory = (PreferenceCategory) findPreference(CATEGORY_EXPANDED_DESKTOP);
         // Expanded desktop
@@ -80,6 +82,9 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1);
         mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
 
+        // Navigation bar left
+        mNavigationBarLeftPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
+
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_GESTURE_SETTINGS);
 
@@ -98,7 +103,12 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         updateNavbarPreferences(enableNavigationBar);
 
         try {
-            boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar();
+            // Only show the navigation bar category on devices that has a navigation bar
+            // unless we are forcing it via development settings
+            boolean forceNavbar = android.provider.Settings.System.getInt(getContentResolver(),
+                    android.provider.Settings.System.DEV_FORCE_SHOW_NAVBAR, 0) == 1;
+            boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar()
+                    || forceNavbar;
 
             if (hasNavBar) {
                 mExpandedDesktopPref.setOnPreferenceChangeListener(this);
@@ -107,7 +117,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 expandedCategory.removePreference(mExpandedDesktopNoNavbarPref);
 
                 if (!Utils.isPhone(getActivity())) {
-                    PreferenceScreen navCategory = (PreferenceScreen) findPreference(CATEGORY_NAVBAR);
+                    PreferenceCategory navCategory =
+                            (PreferenceCategory) findPreference(CATEGORY_NAVBAR);
                     navCategory.removePreference(mNavigationBarLeftPref);
                 }
             } else {
@@ -115,6 +126,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 mExpandedDesktopNoNavbarPref.setOnPreferenceChangeListener(this);
                 mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
                 expandedCategory.removePreference(mExpandedDesktopPref);
+                // Hide navigation bar category
+                prefScreen.removePreference(findPreference(CATEGORY_NAVBAR));
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");

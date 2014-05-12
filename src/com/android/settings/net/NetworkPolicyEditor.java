@@ -189,6 +189,18 @@ public class NetworkPolicyEditor {
         writeAsync();
     }
 
+    public int getPolicyCycleLength(NetworkTemplate template) {
+        return getPolicy(template).cycleLength;
+    }
+
+    public void setPolicyCycleLength(NetworkTemplate template, int cycleLength) {
+        final NetworkPolicy policy = getOrCreatePolicy(template);
+        policy.cycleLength = cycleLength;
+        policy.inferred = false;
+        policy.clearSnooze();
+        writeAsync();
+    }
+
     public long getPolicyWarningBytes(NetworkTemplate template) {
         final NetworkPolicy policy = getPolicy(template);
         return (policy != null) ? policy.warningBytes : WARNING_DISABLED;
