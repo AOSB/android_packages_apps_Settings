@@ -51,24 +51,4 @@
         android:title="@string/priority_sub_title"
         android:persistent="false" />
 
-    <PreferenceCategory android:key="multi_sim_settings"
-        android:title="@string/multi_sim_settings_group_summary">
-
-        <ListPreference
-            android:key="voice"
-            android:title="@string/voice_title"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="data"
-            android:title="@string/data_title"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="sms"
-            android:title="@string/sms_title"
-            android:persistent="false" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
