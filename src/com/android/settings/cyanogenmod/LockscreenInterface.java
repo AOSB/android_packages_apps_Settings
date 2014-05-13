@@ -48,7 +48,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
     private static final String KEY_LOCKSCREEN_TARGETS = "lockscreen_targets";
 
-    private ListPreference mBatteryStatus;
     private CheckBoxPreference mEnableKeyguardWidgets;
     private CheckBoxPreference mEnableCameraWidget;
     private CheckBoxPreference mEnableModLock;
@@ -197,9 +196,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         } else if (KEY_ENABLE_CAMERA.equals(key)) {
             mLockUtils.setCameraEnabled(mEnableCameraWidget.isChecked());
             return true;
-        } else if (preference == mLockBeforeUnlock) {
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCK_BEFORE_UNLOCK,
-                    mLockBeforeUnlock.isChecked() ? 1 : 0);
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

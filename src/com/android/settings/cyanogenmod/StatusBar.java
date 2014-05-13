@@ -73,22 +73,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mStatusBarBattery = (ListPreference) prefSet.findPreference(STATUS_BAR_BATTERY);
-	    mStatusBarBatteryShowPercent = (CheckBoxPreference) findPreference(STATUS_BAR_BATTERY_SHOW_PERCENT);
-        mStatusBarCmSignal = (ListPreference) prefSet.findPreference(STATUS_BAR_SIGNAL);
-
-        CheckBoxPreference statusBarBrightnessControl = (CheckBoxPreference) prefSet.findPreference(Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL);
-
-        try {
-            if (Settings.System.getInt(resolver, Settings.System.SCREEN_BRIGHTNESS_MODE)
-                    == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
-                statusBarBrightnessControl.setEnabled(false);
-                statusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
-            }
-        } catch (SettingNotFoundException e) {
-            // Do nothing
-        }
-
         mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
         mMissedCallBreath = (CheckBoxPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
         mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);

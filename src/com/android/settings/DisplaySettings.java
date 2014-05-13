@@ -102,8 +102,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mAdaptiveBacklight;
     private CheckBoxPreference mTapToWake;
-
-    private CheckBoxPreference mTapToWake;
     private CheckBoxPreference mStatusBarBrightnessControl;
 
     private ListPreference mCrtMode;

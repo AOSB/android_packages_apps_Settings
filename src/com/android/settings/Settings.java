@@ -1190,16 +1190,6 @@ public class Settings extends PreferenceActivity
         invalidateHeaders();
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        if (newConfig.uiThemeMode != mCurrentState && HeaderAdapter.mThemeEnabler != null) {
-            mCurrentState = newConfig.uiThemeMode;
-            HeaderAdapter.mThemeEnabler.setSwitchState();
-        }
-    }
-
     public static void requestHomeNotice() {
         sShowNoHomeNotice = true;
     }

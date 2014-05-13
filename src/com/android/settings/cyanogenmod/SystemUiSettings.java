@@ -63,7 +63,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         PreferenceCategory expandedCategory =
                 (PreferenceCategory) findPreference(CATEGORY_EXPANDED_DESKTOP);
 
-        PreferenceCategory expandedCategory = (PreferenceCategory) findPreference(CATEGORY_EXPANDED_DESKTOP);
         // Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
         mExpandedDesktopNoNavbarPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP_NO_NAVBAR);
@@ -77,7 +76,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mRecentsCustom.setChecked(enableRecentsCustom);
         mRecentsCustom.setOnPreferenceChangeListener(this);
 
-        mOnTheGoPowerMenu = (CheckBoxPreference) prefSet.findPreference(POWER_MENU_ONTHEGO_ENABLED);
+        mOnTheGoPowerMenu = (CheckBoxPreference) findPreference(POWER_MENU_ONTHEGO_ENABLED);
         mOnTheGoPowerMenu.setChecked(Settings.System.getInt(resolver,
                 Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1);
         mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
