@@ -51,6 +51,7 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.telephony.MSimTelephonyManager;
+import static android.telephony.TelephonyManager.SIM_STATE_ABSENT;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -108,6 +109,8 @@ public class MultiSimSettings extends PreferenceActivity implements DialogInterf
 
     /* tune away initial/old state */
     private boolean mTuneAwayValue = false;
+    /* whether device RIL supports TuneAway/Priority subscription */
+    private boolean mHasTuneAway;
     /* Priority subscription initial/old state */
     private int mPrioritySubValue = 0;
     /* Default voice subscription initial/old state */
@@ -144,6 +147,12 @@ public class MultiSimSettings extends PreferenceActivity implements DialogInterf
         mPrioritySub = (ListPreference) findPreference(PRIORITY_SUB);
         mPrioritySub.setOnPreferenceChangeListener(this);
         mPhone = MSimPhoneFactory.getPhone(MSimConstants.SUB1);
+        mHasTuneAway = getResources().getBoolean(R.bool.config_HasTuneAway);
+
+        if (!mHasTuneAway) {
+            getPreferenceScreen().removePreference(mPrioritySub);
+            getPreferenceScreen().removePreference(mTuneAway);
+        }
 
         for (int subId = 0; subId < SubscriptionManager.NUM_SUBSCRIPTIONS; subId++) {
             mSubManager.registerForSubscriptionActivated(subId,
@@ -154,29 +163,27 @@ public class MultiSimSettings extends PreferenceActivity implements DialogInterf
 
         // Create and Intialize the strings required for MultiSIM
         // Dynamic creation of entries instead of using static array vlues.
-        // entries are Subscription1, Subscription2, Subscription3 ....
-        // EntryValues are 0, 1 ,2 ....
-        // Summaries are Subscription1, Subscription2, Subscription3 ....
+        // entries are based on operatorName-slotNumber
         entries = new CharSequence[MAX_SUBSCRIPTIONS];
         entryValues = new CharSequence[MAX_SUBSCRIPTIONS];
         summaries = new CharSequence[MAX_SUBSCRIPTIONS];
         entriesPrompt = new CharSequence[MAX_SUBSCRIPTIONS + 1];
         entryValuesPrompt = new CharSequence[MAX_SUBSCRIPTIONS + 1];
         summariesPrompt = new CharSequence[MAX_SUBSCRIPTIONS + 1];
-        CharSequence[] subString = getResources().getTextArray(R.array.multi_sim_entries);
+        MSimTelephonyManager tm = MSimTelephonyManager.getDefault();
         int i = 0;
         for (i = 0; i < MAX_SUBSCRIPTIONS; i++) {
-            entries[i] = subString[i];
-            summaries[i] = subString[i];
-            summariesPrompt[i] = subString[i];
-            entriesPrompt[i] = subString[i];
+            String operatorName = tm.getSimState(i) != SIM_STATE_ABSENT
+                    ? tm.getNetworkOperatorName(i) : getString(R.string.sub_no_sim);
+            String label = getString(R.string.multi_sim_entry_format, operatorName, i + 1);
+            entries[i] = summaries[i] = label;
+            entriesPrompt[i] = summariesPrompt[i] = label;
             entryValues[i] = Integer.toString(i);
             entryValuesPrompt[i] = Integer.toString(i);
         }
         entryValuesPrompt[i] = Integer.toString(i);
         entriesPrompt[i] = getResources().getString(R.string.prompt);
         summariesPrompt[i] = getResources().getString(R.string.prompt_user);
-
         mReceiver = new AirplaneModeBroadcastReceiver();
     }
 
@@ -227,8 +234,10 @@ public class MultiSimSettings extends PreferenceActivity implements DialogInterf
             updateMultiSimEntriesForData();
             updateMultiSimEntriesForSms();
             updateState();
-            updateTuneAwayState();
-            updatePrioritySubState();
+            if (mHasTuneAway) {
+                updateTuneAwayState();
+                updatePrioritySubState();
+            }
         } else {
             Log.d(TAG, "Invalid card count");
         }
@@ -392,14 +401,22 @@ public class MultiSimSettings extends PreferenceActivity implements DialogInterf
                     == SubscriptionStatus.SUB_ACTIVATED) {
                 Log.d(TAG, "setVoiceSubscription " + mVoiceSub);
                 MSimPhoneFactory.setPromptEnabled(false);
-                mHandler.sendMessage(mHandler.obtainMessage(EVENT_SET_VOICE_SUBSCRIPTION,
-                        mVoiceSub));
+                if (!mHasTuneAway) {
+                    MSimPhoneFactory.setVoiceSubscription(mVoiceSub);
+                    mVoice.setSummary(summaries[mVoiceSub]);
+                } else {
+                    mHandler.sendMessage(mHandler.obtainMessage(EVENT_SET_VOICE_SUBSCRIPTION,
+                            mVoiceSub));
+                }
             } else {
                 status = getResources().getString(R.string.set_voice_error);
                 displayAlertDialog(status);
                 Log.w(TAG, "setVoiceSubscription: sub=" + mVoiceSub
                         + " failed due to sub not activated");
                 return false;
+            }
+            if (!mHasTuneAway) {
+                mHandler.sendMessage(mHandler.obtainMessage(EVENT_SET_VOICE_SUBSCRIPTION));
             }
         }
 
@@ -582,7 +599,11 @@ public class MultiSimSettings extends PreferenceActivity implements DialogInterf
                     break;
 
                 case EVENT_SET_VOICE_SUBSCRIPTION:
-                    updateVoiceSub(msg.arg1);
+                    if (!mHasTuneAway) {
+                        updateVoiceSummary();
+                    } else {
+                        updateVoiceSub(msg.arg1);
+                    }
                     break;
                 case EVENT_SET_VOICE_SUBSCRIPTION_DONE:
                     Log.d(TAG, "EVENT_SET_VOICE_SUBSCRIPTION_DONE");

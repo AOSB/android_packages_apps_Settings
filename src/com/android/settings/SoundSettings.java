@@ -272,6 +272,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     getPreferenceScreen().removePreference(pref);
                 }
             }
+            mRingtonePreference = null;
         }
 
         mRingtoneLookupRunnable = new Runnable() {
@@ -426,6 +427,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             } else {
                 mAudioManager.unloadSoundEffects();
             }
+
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent
             return false;

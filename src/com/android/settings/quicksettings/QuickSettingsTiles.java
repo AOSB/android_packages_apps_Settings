@@ -17,7 +17,9 @@
 package com.android.settings.quicksettings;
 
 import android.app.AlertDialog;
+
 import android.app.Fragment;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -75,6 +77,8 @@ public class QuickSettingsTiles extends Fragment {
         mContainer.setClipToPadding(false);
         mInflater = inflater;
 
+        QuickSettingsUtil.removeUnsupportedTiles(getActivity());
+
         // We have both a panel and the ribbon config, see which one we are using
         Bundle args = getArguments();
         if (args != null) {
@@ -111,6 +115,7 @@ public class QuickSettingsTiles extends Fragment {
                         && mSystemUiResources.getBoolean(mSystemUiResources.getIdentifier(
                         "com.android.systemui:bool/config_hasFlipSettingsPanel", null, null))
                         && isLandscape();
+
 
         if (columnCount != 0) {
             mDragView.setColumnCount(duplicateOnLandScape ? (columnCount * 2) : columnCount);

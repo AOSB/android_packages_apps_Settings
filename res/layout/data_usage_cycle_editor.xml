@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/data_usage_cycle_editor_subtitle" />
+            android:text="@string/data_usage_cycle_editor_subtitle_cm" />
 
         <NumberPicker
             android:id="@+id/cycle_day"

@@ -46,7 +46,6 @@
             android:entries="@array/volume_overlay_entries"
             android:entryValues="@array/volume_overlay_values" />
 
-
     <com.android.settings.crdroid.SeekBarPreferenceChOS
             android:key="volume_panel_timeout"
             android:title="@string/volume_panel_timeout_title"
