@@ -110,6 +110,12 @@
         android:title="@string/aosb_tweaks_title">
 
 	   <PreferenceScreen
+		android:key="interface_voice_tts"
+		android:icon="@drawable/ic_settings_driving"
+		android:title="@string/voice_tts_title"
+		android:fragment="com.android.settings.aicp.TtsNotification" />
+
+	   <PreferenceScreen
 		android:id="@+id/wakelock_blocker"
 		android:layout="@layout/preference_wakelockblocker"
 		android:icon="@drawable/ic_settings_wakelock_blocker"

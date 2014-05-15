@@ -74,6 +74,8 @@
     <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO"/>
     <uses-permission android:name="android.permission.READ_PHONE_BLACKLIST" />
     <uses-permission android:name="android.permission.CHANGE_PHONE_BLACKLIST" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_NOTIFICATION_LISTENER" />
 
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
@@ -2215,6 +2217,21 @@
                 <action android:name="com.android.settings.probam.SCHEDULE_BATTERY_SAVER"/>
             </intent-filter>
         </receiver>
+
+        <receiver android:name=".tts.IntentReceiver" >
+            <intent-filter>
+                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                 <action android:name="android.intent.action.PHONE_STATE" />
+                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                 <action android:name="com.android.settings.tts.action.SPEAK_NOTIFICATION" />
+                 <action android:name="com.android.settings.tts.action.SPEAK_MUSIC" />
+                 <action android:name="com.android.settings.tts.action.RUN_DRIVEMODE" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".tts.NotifyService" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
