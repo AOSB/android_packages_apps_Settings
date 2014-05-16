@@ -19,6 +19,11 @@
 	
 	<PreferenceScreen android:layout="@layout/logo_row" android:key="probam_logo" />
 
+        <com.android.settings.BugreportPreference
+            android:key="bugreport"
+            android:title="@*android:string/bugreport_title"
+            android:dialogTitle="@*android:string/bugreport_title" />
+
         <!-- System update settings - launches activity -->
       <!--  <PreferenceScreen android:key="system_update_settings"
                 android:title="@string/system_update_settings_list_item_title" 
