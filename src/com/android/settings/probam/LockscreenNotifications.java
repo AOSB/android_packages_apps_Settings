@@ -36,6 +36,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
 
     private static final String KEY_PEEK = "notification_peek";
     private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
+    private static final String KEY_PEEK_WAKE_TIMEOUT = "peek_wake_timeout";
     private static final String KEY_LOCKSCREEN_NOTIFICATIONS = "lockscreen_notifications";
     private static final String KEY_POCKET_MODE = "pocket_mode";
     private static final String KEY_SHOW_ALWAYS = "show_always";
@@ -56,6 +57,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
 
     private CheckBoxPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
+    private ListPreference mPeekWakeTimeout;
     private CheckBoxPreference mLockscreenNotifications;
     private CheckBoxPreference mPocketMode;
     private CheckBoxPreference mShowAlways;
@@ -86,11 +88,18 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mNotificationPeek.setPersistent(false);
 
         mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
-        int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT, 0, UserHandle.USER_CURRENT);
-        mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
+        int peekPickupTimeout = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.PEEK_PICKUP_TIMEOUT, 10000, UserHandle.USER_CURRENT);
+        mPeekPickupTimeout.setValue(String.valueOf(peekPickupTimeout));
         mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);
+
+        mPeekWakeTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_WAKE_TIMEOUT);
+        int peekWakeTimeout = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.PEEK_WAKE_TIMEOUT, 5000, UserHandle.USER_CURRENT);
+        mPeekWakeTimeout.setValue(String.valueOf(peekWakeTimeout));
+        mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntry());
+        mPeekWakeTimeout.setOnPreferenceChangeListener(this);
 
         mLockscreenNotifications = (CheckBoxPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATIONS);
         mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
@@ -298,11 +307,20 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_COLOR, intHex);
             return true;
         } else if (pref == mPeekPickupTimeout) {
-            int peekTimeout = Integer.valueOf((String) value);
+            int index = mPeekPickupTimeout.findIndexOfValue((String) value);
+            int peekPickupTimeout = Integer.valueOf((String) value);
             Settings.System.putIntForUser(getContentResolver(),
                 Settings.System.PEEK_PICKUP_TIMEOUT,
-                    peekTimeout, UserHandle.USER_CURRENT);
-            updatePeekTimeoutOptions(value);
+                    peekPickupTimeout, UserHandle.USER_CURRENT);
+            mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
+            return true;
+        } else if (pref == mPeekWakeTimeout) {
+            int index = mPeekWakeTimeout.findIndexOfValue((String) value);
+            int peekWakeTimeout = Integer.valueOf((String) value);
+            Settings.System.putIntForUser(getContentResolver(),
+                Settings.System.PEEK_WAKE_TIMEOUT,
+                    peekWakeTimeout, UserHandle.USER_CURRENT);
+            mPeekWakeTimeout.setSummary(mPeekWakeTimeout.getEntries()[index]);
             return true;
         } else if (pref == mExcludedAppsPref) {
             storeExcludedApps((Set<String>) value);
