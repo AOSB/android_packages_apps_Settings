@@ -17,48 +17,43 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string-array name="wifi_countrycode_entries">
-    <item>Yhdysvallat</item>
+    <item>Amerika Serikat</item>
     <item>Kanada, Taiwan</item>
-    <item>Saksa</item>
-    <item>Eurooppa</item>
-    <item>Japani, Venäjä</item>
+    <item>Jerman</item>
+    <item>Eropa</item>
+    <item>Jepang, Rusia</item>
     <item>Australia</item>
-    <item>Kiina</item>
+    <item>Cina</item>
     <item>Korea</item>
-    <item>Turkki</item>
-    <item>Singapore</item>
-    <item>Brasilia</item>
+    <item>Turki</item>
+    <item>Singapura</item>
+    <item>Brasil</item>
   </string-array>
   <string-array name="profile_entries">
-    <item>Päällä</item>
-    <item>Pois päältä</item>
-    <item>Ei ohitusta</item>
+    <item>Aktif</item>
+    <item>Nonaktif</item>
+    <item>Tidak menimpa</item>
   </string-array>
   <string-array name="profile_connection_entries">
-    <item>Poista käytöstä</item>
-    <item>Ota käyttöön</item>
+    <item>Nonaktifkan</item>
+    <item>Aktifkan</item>
   </string-array>
   <string-array name="entries_screentimeout_widget">
-    <item>15s | 1m | 5m</item>
-    <item>30s | 2m | 5m</item>
-  </string-array>
-  <string-array name="data_usage_cycle_length">
-    <item>Päivittäin</item>
-    <item>Viikoittain</item>
-    <item>Kuukausittain</item>
+    <item>15d | 1m | 5m</item>
+    <item>30d | 2m | 5m</item>
   </string-array>
   <string-array name="data_usage_cycle_weekdays">
-    <item>Sunnuntai</item>
-    <item>Maanantai</item>
-    <item>Tiistai</item>
-    <item>Keskiviikko</item>
-    <item>Torstai</item>
-    <item>Perjantai</item>
-    <item>Lauantai</item>
+    <item>Minggu</item>
+    <item>Senin</item>
+    <item>Selasa</item>
+    <item>Rabu</item>
+    <item>Kamis</item>
+    <item>Jumat</item>
+    <item>Sabtu</item>
   </string-array>
   <string-array name="app_ops_permissions">
-    <item>Sallittu</item>
-    <item>Estetty</item>
-    <item>Kysy aina</item>
+    <item>Diperbolehkan</item>
+    <item>Ditolak</item>
+    <item>Selalu tanya</item>
   </string-array>
 </resources>

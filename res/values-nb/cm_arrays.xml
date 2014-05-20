@@ -17,48 +17,43 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string-array name="wifi_countrycode_entries">
-    <item>Yhdysvallat</item>
-    <item>Kanada, Taiwan</item>
-    <item>Saksa</item>
-    <item>Eurooppa</item>
-    <item>Japani, Venäjä</item>
+    <item>USA</item>
+    <item>Canada, Taiwan</item>
+    <item>Tyskland</item>
+    <item>Europa</item>
+    <item>Japan, Russland</item>
     <item>Australia</item>
-    <item>Kiina</item>
+    <item>Kina</item>
     <item>Korea</item>
-    <item>Turkki</item>
+    <item>Tyrkia</item>
     <item>Singapore</item>
-    <item>Brasilia</item>
+    <item>Brasil</item>
   </string-array>
   <string-array name="profile_entries">
-    <item>Päällä</item>
-    <item>Pois päältä</item>
-    <item>Ei ohitusta</item>
+    <item>På</item>
+    <item>Av</item>
+    <item>Ingen overstyring</item>
   </string-array>
   <string-array name="profile_connection_entries">
-    <item>Poista käytöstä</item>
-    <item>Ota käyttöön</item>
+    <item>Deaktiver</item>
+    <item>Aktiver</item>
   </string-array>
   <string-array name="entries_screentimeout_widget">
     <item>15s | 1m | 5m</item>
     <item>30s | 2m | 5m</item>
   </string-array>
-  <string-array name="data_usage_cycle_length">
-    <item>Päivittäin</item>
-    <item>Viikoittain</item>
-    <item>Kuukausittain</item>
-  </string-array>
   <string-array name="data_usage_cycle_weekdays">
-    <item>Sunnuntai</item>
-    <item>Maanantai</item>
-    <item>Tiistai</item>
-    <item>Keskiviikko</item>
-    <item>Torstai</item>
-    <item>Perjantai</item>
-    <item>Lauantai</item>
+    <item>Søndag</item>
+    <item>Mandag</item>
+    <item>Tirsdag</item>
+    <item>Onsdag</item>
+    <item>Torsdag</item>
+    <item>Fredag</item>
+    <item>Lørdag</item>
   </string-array>
   <string-array name="app_ops_permissions">
-    <item>Sallittu</item>
-    <item>Estetty</item>
-    <item>Kysy aina</item>
+    <item>Tillatt</item>
+    <item>Avslått</item>
+    <item>Spør alltid</item>
   </string-array>
 </resources>
