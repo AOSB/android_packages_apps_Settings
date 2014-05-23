@@ -359,6 +359,14 @@
   <string name="preview_carrier_title">Portadora</string>
   <string name="header_category_interface">INTERFÍCIE</string>
   <string name="themes_settings_title">Temes</string>
+  <string name="themepacks_settings_title">Paquets de temes</string>
+  <string name="styles_settings_title">Estils</string>
+  <string name="icons_settings_title">Icones</string>
+  <string name="fonts_settings_title">Tipus de lletra</string>
+  <string name="wallpaper_settings_title_cm">Fons de pantalla</string>
+  <string name="lockscreen_wallpaper_settings_title">Fons de la pantalla de bloqueig</string>
+  <string name="bootanim_settings_title">Animacions d\'arrencada</string>
+  <string name="soundpack_settings_title">Paquets de sons</string>
   <string name="performance_settings_title">Rendiment</string>
   <string name="performance_settings_warning_title">Procedeix amb precaució</string>
   <string name="performance_settings_warning">Aquests ajustos estan inclosos per experimentar i qualsevol canvi fet en ells podria provocar inestabilitats, penjades, pèrdues de dades o fallades del maquinari.\n\nEt demanem de no reportar errors si algún d\'aquests paràmetres s\'ha canviat dels seus valors predeterminats.</string>

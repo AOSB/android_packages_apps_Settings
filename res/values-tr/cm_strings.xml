@@ -366,6 +366,14 @@
   <string name="preview_carrier_title">Şebeke</string>
   <string name="header_category_interface">Kişiselleştirme</string>
   <string name="themes_settings_title">Temalar</string>
+  <string name="themepacks_settings_title">Tema paketleri</string>
+  <string name="styles_settings_title">Stiller</string>
+  <string name="icons_settings_title">Simgeler</string>
+  <string name="fonts_settings_title">Yazı tipleri</string>
+  <string name="wallpaper_settings_title_cm">Duvar kağıtları</string>
+  <string name="lockscreen_wallpaper_settings_title">Kilit ekranı duvar kağıtları</string>
+  <string name="bootanim_settings_title">Açılış animasyonları</string>
+  <string name="soundpack_settings_title">Ses paketleri</string>
   <string name="performance_settings_title">Performans</string>
   <string name="performance_settings_warning_title">Dikkatle hareket edin</string>
   <string name="performance_settings_warning">Bu ayarlar deneysel olarak eklenmiştir ve herhangi bir değişiklik kararsızlık, çökmeler, veri kaybı ya da donanımsal sorunlara yol açabilir.\n\nVarsayılandan değiştirilen ayarlarla ilgili hata raporu oluşturmamanızı rica ediyoruz.</string>

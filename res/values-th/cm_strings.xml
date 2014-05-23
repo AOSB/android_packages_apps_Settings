@@ -319,6 +319,17 @@
   <string name="preview_carrier_title">ผู้ให้บริการ</string>
   <string name="header_category_interface">ลักษณะส่วนบุคคล</string>
   <string name="themes_settings_title">ธีม</string>
+<<<<<<< HEAD
+=======
+  <string name="themepacks_settings_title">ธีมแพ็ค</string>
+  <string name="styles_settings_title">ลักษณะ</string>
+  <string name="icons_settings_title">ไอคอน</string>
+  <string name="fonts_settings_title">แบบอักษร</string>
+  <string name="wallpaper_settings_title_cm">วอลเปเปอร์</string>
+  <string name="lockscreen_wallpaper_settings_title">วอลล์เปเปอร์ที่หน้าจอล็อค</string>
+  <string name="bootanim_settings_title">ภาพเปิดเครื่อง</string>
+  <string name="soundpack_settings_title">แพ็คเสียง</string>
+>>>>>>> 7593bcb... Settings: create cm string for wallpapers
   <string name="performance_settings_title">ประสิทธิภาพ</string>
   <string name="performance_settings_warning_title">ใช้ด้วยความระมัดระวัง</string>
   <string name="performance_settings_warning">การตั้งค่านี้รวมไปถึงการตั้งค่าสำหรับการทดลองและการเปลี่ยนแปลงอาจทำให้อุปกรณ์ไม่สเถียร,เกิดความผิดพลาด,ข้อมูลสูญหาย,อุปกรณ์เสียหาย\n\nพวกเราขอให้คุณไม่รายงานข้อผิดพลาดหากมีการเปลี่ยนการตั้งค่านี้ให้แตกต่างจากค่าเริ่มต้น</string>
