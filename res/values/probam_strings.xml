@@ -1007,4 +1007,11 @@
     <!-- Screen-On Notification Light -->
     <string name="screen_on_notification_led_title">Screen-On Notification Light</string>
     <string name="screen_on_notification_led_summary">Enable Notification Light even when screen is on</string>
+
+    <!-- Slim Recents -->
+    <string name="slim_recents_category">Slim Recents</string>
+    <string name="slim_recents_warning_title">Warning</string>
+    <string name="slim_recents_warning_message">SystemUI will restart to apply changes</string>
+    <string name="recents_use_slim_title">Use for recents</string>
+    <string name="recents_use_slim_summary">Use Slim Recents instead of AOSB recents view</string>
 </resources>

@@ -65,8 +65,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         // Navigation bar left
         mNavigationBarLeftPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
 
-        boolean enableRecentsCustom = Settings.System.getBoolean(getContentResolver(),
-                                      Settings.System.CUSTOM_RECENT, false);
+        boolean enableRecentsCustom = Settings.System.getBoolean(getContentResolver(), Settings.System.CUSTOM_RECENT, false);
+
         mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
         mRecentsCustom.setChecked(enableRecentsCustom);
         mRecentsCustom.setOnPreferenceChangeListener(this);
@@ -113,9 +113,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             updateExpandedDesktop(value ? 2 : 0);
             return true;
         } else if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
+            boolean value = (Boolean) objValue;
+
             Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.CUSTOM_RECENT,
-                    ((Boolean) objValue) ? true : false);
+                    Settings.System.CUSTOM_RECENT, value);
+
+            mRecentsCustom.setChecked(value);
+
+            openSlimRecentsWarning();
+
             Helpers.restartSystemUI();
             return true;
         }
@@ -146,5 +152,16 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         if (mExpandedDesktopPref != null && summary != -1) {
             mExpandedDesktopPref.setSummary(res.getString(summary));
         }
+    }
+
+    private void openSlimRecentsWarning() {
+        new AlertDialog.Builder(getActivity())
+            .setTitle(getResources().getString(R.string.slim_recents_warning_title))
+            .setMessage(getResources().getString(R.string.slim_recents_warning_message))
+            .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    Helpers.restartSystemUI();
+                }
+            }).show();
     }
 }
