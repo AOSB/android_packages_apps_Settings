@@ -29,14 +29,4 @@
     <dimen name="list_toggle_height">64dp</dimen>
     <dimen name="list_toggle_width">320dp</dimen>
     <dimen name="toggle_rearrange_dialog_title_height">68dp</dimen>
-
-    <!-- Navbar -->
-    <dimen name="navigation_bar_48">48dp</dimen>
-    <dimen name="navigation_bar_44">44dp</dimen>
-    <dimen name="navigation_bar_42">42dp</dimen>
-    <dimen name="navigation_bar_40">40dp</dimen>
-    <dimen name="navigation_bar_36">36dp</dimen>
-    <dimen name="navigation_bar_30">30dp</dimen>
-    <dimen name="navigation_bar_24">24dp</dimen>
-    <dimen name="navigation_bar_0">0dp</dimen>
 </resources>
