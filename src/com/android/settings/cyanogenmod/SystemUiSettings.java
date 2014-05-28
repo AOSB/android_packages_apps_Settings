@@ -18,6 +18,8 @@ package com.android.settings.cyanogenmod;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.preference.CheckBoxPreference;
