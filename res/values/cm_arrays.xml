@@ -589,53 +589,6 @@
         <item>3</item>
     </string-array>
 
-<<<<<<< HEAD
-   <!-- App ops, extension of AOSP app_ops_summaries and app_ops_labels -->
-    <string-array name="app_ops_summaries_cm">
-        <item>coarse location</item>
-        <item>fine location</item>
-        <item>GPS</item>
-        <item>vibrate</item>
-        <item>read contacts</item>
-        <item>modify contacts</item>
-        <item>read call log</item>
-        <item>modify call log</item>
-        <item>read calendar</item>
-        <item>modify calendar</item>
-        <item>wi-fi scan</item>
-        <item>notification</item>
-        <item>cell scan</item>
-        <item>call phone</item>
-        <item>read SMS</item>
-        <item>write SMS</item>
-        <item>receive SMS</item>
-        <item>receive emergency SMS</item>
-        <item>receive MMS</item>
-        <item>receive WAP push</item>
-        <item>send SMS</item>
-        <item>read ICC SMS</item>
-        <item>write ICC SMS</item>
-        <item>modify settings</item>
-        <item>draw on top</item>
-        <item>access notifications</item>
-        <item>camera</item>
-        <item>record audio</item>
-        <item>play audio</item>
-        <item>read clipboard</item>
-        <item>modify clipboard</item>
-        <item>media buttons</item>
-        <item>audio focus</item>
-        <item>master volume</item>
-        <item>voice volume</item>
-        <item>ring volume</item>
-        <item>media volume</item>
-        <item>alarm volume</item>
-        <item>notification volume</item>
-        <item>bluetooth volume</item>
-        <item>keep awake</item>
-        <item>monitor location</item>
-        <item>monitor high power location</item>
-=======
     <string-array name="screen_animation_style_entries" translatable="false">
         <item>@string/screen_animation_style_disabled</item>
         <item>@string/screen_animation_style_electronbeam</item>
@@ -693,7 +646,6 @@
         <item>@string/app_ops_summaries_keep_awake</item>
         <item>@string/app_ops_summaries_monitor_location</item>
         <item>@string/app_ops_summaries_monitor_high_power_location</item>
->>>>>>> 0297b9c... Settings: remove screen-off animation checkbox
         <item>@string/app_ops_summaries_wifi_change</item>
         <item>@string/app_ops_summaries_bluetooth_change</item>
         <item>@string/app_ops_summaries_data_change</item>
