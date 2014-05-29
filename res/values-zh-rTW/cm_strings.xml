@@ -342,14 +342,10 @@
   <string name="styles_settings_title">樣式</string>
   <string name="icons_settings_title">圖示</string>
   <string name="fonts_settings_title">字體</string>
-<<<<<<< HEAD
-  <string name="wallpaper_settings_title">桌布</string>
-=======
   <string name="wallpaper_settings_title_cm">桌布</string>
   <string name="lockscreen_wallpaper_settings_title">鎖定畫面桌布</string>
   <string name="bootanim_settings_title">開機動畫</string>
   <string name="soundpack_settings_title">音效包</string>
->>>>>>> 7593bcb... Settings: create cm string for wallpapers
   <string name="performance_settings_title">效能</string>
   <string name="performance_settings_warning_title">謹慎繼續</string>
   <string name="performance_set_on_boot">開機時設定</string>

@@ -404,13 +404,8 @@ Show context | Edit context</string>
   <string name="styles_settings_title">Стилови</string>
   <string name="icons_settings_title">Иконе</string>
   <string name="fonts_settings_title">Фонтови</string>
-<<<<<<< HEAD
-  <string name="wallpaper_settings_title">Позадине</string>
-  <string name="lockscreen_wallpaper_settings_title">Позадине закључаног екрана</string>
-=======
   <string name="wallpaper_settings_title_cm">Позадине</string>
   <string name="lockscreen_wallpaper_settings_title">Тапети закључаног екрана</string>
->>>>>>> 7593bcb... Settings: create cm string for wallpapers
   <string name="bootanim_settings_title">Покретачка анимација</string>
   <string name="soundpack_settings_title">Пакети звукова</string>
   <string name="performance_settings_title">Перформансе</string>

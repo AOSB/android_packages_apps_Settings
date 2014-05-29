@@ -397,8 +397,6 @@
   <string name="preview_carrier_title">Πάροχος δικτύου</string>
   <string name="header_category_interface">Εξατομίκευση</string>
   <string name="themes_settings_title">Θέματα</string>
-<<<<<<< HEAD
-=======
   <string name="themepacks_settings_title">Πακέτα θέματος</string>
   <string name="styles_settings_title">Στυλ</string>
   <string name="icons_settings_title">Εικονίδια</string>
@@ -407,7 +405,6 @@
   <string name="lockscreen_wallpaper_settings_title">Ταπετσαρίες οθόνης κλειδώματος</string>
   <string name="bootanim_settings_title">Κινούμενες εικόνες εκκίνησης</string>
   <string name="soundpack_settings_title">Πακέτα ήχου</string>
->>>>>>> 7593bcb... Settings: create cm string for wallpapers
   <string name="performance_settings_title">Επιδόσεις</string>
   <string name="performance_settings_warning_title">Συνεχίστε με προσοχή</string>
   <string name="performance_settings_warning">Οι παρακάτω ρυθμίσεις περιλαμβάνονται για πειραματισμό και η οποιαδήποτε αλλαγή ενδεχομένως να προκαλέσει αστάθεια, κολλήματα, απώλεια δεδομένων ή και βλάβη στο hardware.\n\nΠαρακαλούμε μην πραγματοποιήσετε αναφορές σφαλμάτων αν έχετε τροποποιήσει κάποια από τις παρακάτω ρυθμίσεις.</string>

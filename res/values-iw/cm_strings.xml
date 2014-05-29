@@ -348,8 +348,6 @@
   <string name="preview_carrier_title">חברת סלולר</string>
   <string name="header_category_interface">התאמה אישית</string>
   <string name="themes_settings_title">ערכות עיצוב</string>
-<<<<<<< HEAD
-=======
   <string name="themepacks_settings_title">ערכות עיצוב</string>
   <string name="styles_settings_title">סגנונות</string>
   <string name="icons_settings_title">סמלים</string>
@@ -358,7 +356,6 @@
   <string name="lockscreen_wallpaper_settings_title">רקעים למסך הנעילה</string>
   <string name="bootanim_settings_title">אנימציות אתחול</string>
   <string name="soundpack_settings_title">ערכות צלילים</string>
->>>>>>> 7593bcb... Settings: create cm string for wallpapers
   <string name="performance_settings_title">ביצועים</string>
   <string name="performance_settings_warning_title">המשך בזהירות</string>
   <string name="performance_settings_warning">הגדרות אלה כלולות עבור ניסוי, כל השינויים שבוצעו בהם בעלי פוטנציאל לגרום לחוסר יציבות, קריסות, אובדן נתונים או שגיאות חומרה.\n\n אנה אל תשלח דוחות שגיאה אם אחת מהגדרות האלה שונו מברירת מחדל.</string>
