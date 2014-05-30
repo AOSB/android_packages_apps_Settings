@@ -60,8 +60,7 @@
         android:title="@string/screen_recorder_title"
         android:fragment="com.android.settings.chameleonos.ScreenRecorderSettings" />
 
-   <!-- --->
-
+   <!-- Third party apps/mods -->
    <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.InitD"
@@ -97,8 +96,7 @@
 	    android:action="android.intent.action.MAIN"
 	    android:targetClass="com.aosb.gps.GPSCountryChangerInterface" />
     </PreferenceScreen>
-
-   <!-- --->
+   <!-- Third party apps/mods -->
 
    <PreferenceScreen
   	android:key="lcd_density_setup"
