@@ -1121,6 +1121,7 @@ public class Settings extends PreferenceActivity
             mProfileEnabler.pause();
             mLocationEnabler.pause();
             mThemeEnabler.resume();
+            mVoiceWakeupEnabler.resume();
         }
     }
 
