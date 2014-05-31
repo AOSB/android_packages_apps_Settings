@@ -1023,4 +1023,12 @@
     <string name="slim_recents_warning_message">SystemUI will restart to apply changes</string>
     <string name="recents_use_slim_title">Use for recents</string>
     <string name="recents_use_slim_summary">Use Slim Recents instead of AOSB recents view</string>
+
+    <!-- AOSB ROM BOX -->
+    <string name="aosb_rom_box_title">AOSB ROM BOX</string>
+    <string name="aosb_rom_box_summary">customize your phone just the way you want it!</string>
+    <string name="aosb_interface_title">Interface</string>
+    <string name="aosb_general_ui_title">General UI</string>
+    <string name="aosb_tweaks_title">Add-ons and Misc</string>
+
 </resources>
