@@ -26,6 +26,18 @@
             android:selectable="false" />
 
     <PreferenceCategory
+        android:title="@string/sensors_check_title" >
+         <CheckBoxPreference
+            android:key="gyroscope_sensor"
+            android:title="@string/gyroscope_sensor_title"
+            android:summary="@string/gyroscope_sensor_summary" />
+         <CheckBoxPreference
+            android:key="proximity_sensor"
+            android:title="@string/proximity_sensor_title"
+            android:summary="@string/proximity_sensor_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/notification_peek_title" >
          <CheckBoxPreference
             android:key="notification_peek"

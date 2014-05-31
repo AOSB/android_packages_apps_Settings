@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceCategory;
@@ -12,7 +13,12 @@ import android.preference.Preference;
 import android.preference.SeekBarPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.WindowManager;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 
 import com.android.settings.probam.preference.NumberPickerPreference;
 import com.android.settings.SettingsPreferenceFragment;
@@ -42,6 +48,8 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private static final String KEY_CATEGORY_GENERAL = "category_general";
     private static final String KEY_EXCLUDED_APPS = "excluded_apps";
     private static final String KEY_NOTIFICATION_COLOR = "notification_color";
+    private static final String KEY_GYROSCOPE = "gyroscope_sensor";
+    private static final String KEY_PROXIMITY = "proximity_sensor";
 
     private CheckBoxPreference mNotificationPeek;
     private CheckBoxPreference mLockscreenNotifications;
@@ -58,6 +66,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private SeekBarPreference mOffsetTop;
     private AppMultiSelectListPreference mExcludedAppsPref;
     private ColorPickerPreference mNotificationColor;
+ 
+    private CheckBoxPreference mGyroscope;
+    private CheckBoxPreference mProximity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -126,6 +137,17 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
         mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + mOffsetTop.getProgress() + "%");
         mOffsetTop.setOnPreferenceChangeListener(this);
         mOffsetTop.setEnabled(mLockscreenNotifications.isChecked());
+
+        //gyroscope && proximity sensor
+        mGyroscope = (CheckBoxPreference) findPreference(KEY_GYROSCOPE);
+        mGyroscope.setPersistent(false);
+        mGyroscope.setEnabled(false);
+
+        mProximity = (CheckBoxPreference) findPreference(KEY_PROXIMITY);
+        mProximity.setPersistent(false);
+        mProximity.setEnabled(false);
+
+        CheckSensors();
 
         mNotificationsHeight = (NumberPickerPreference) prefs.findPreference(KEY_NOTIFICATIONS_HEIGHT);
         mNotificationsHeight.setValue(Settings.System.getInt(cr,
@@ -316,6 +338,48 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
             } else {
                 mNotificationPeek.setEnabled(true);
             }
+        }
+    }
+
+    private void CheckSensors() {
+        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+        // Check if there is gyroscope sensor.
+        Sensor gyroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+
+        getStatusColor(getResources().getText(R.string.gyroscope_sensor_summary).toString(), 1, gyroSensor);
+        
+        // Check if there is proximity sensor.
+        Sensor proxSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY) != null ?
+                                sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY) :
+                                sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+           
+        getStatusColor(getResources().getText(R.string.proximity_sensor_summary).toString(), 2, proxSensor);
+    }
+
+    private void getStatusColor(String title, int type, Sensor success){
+
+        Spannable summary = new SpannableString(title);
+        if(type == 1){
+            if (success != null) {
+                mGyroscope.setChecked(true);
+                summary.setSpan( new ForegroundColorSpan( Color.GREEN ), 0, summary.length(), 0 );
+            } else {
+                mGyroscope.setChecked(false);
+                summary.setSpan( new ForegroundColorSpan( Color.RED ), 0, summary.length(), 0 );
+            }
+            mGyroscope.setSummary(summary);
+        }
+
+        if(type == 2){
+            if (success != null) {
+                mProximity.setChecked(true);
+                summary.setSpan( new ForegroundColorSpan( Color.GREEN ), 0, summary.length(), 0 );
+            } else {
+                mProximity.setChecked(false);
+                summary.setSpan( new ForegroundColorSpan( Color.RED ), 0, summary.length(), 0 );
+            }
+            mProximity.setSummary(summary);
         }
     }
 }

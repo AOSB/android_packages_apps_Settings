@@ -1031,4 +1031,11 @@
     <string name="aosb_general_ui_title">General UI</string>
     <string name="aosb_tweaks_title">Add-ons and Misc</string>
 
+    <!-- Sensors check -->
+    <string name="sensors_check_title">Sensors Status</string>
+    <string name="gyroscope_sensor_title">Gyroscope Sensor</string>
+    <string name="gyroscope_sensor_summary">Listen to gyroscope sensor changes</string>
+    <string name="proximity_sensor_title">Proximity/Light Sensor</string>
+    <string name="proximity_sensor_summary">listening to proximity/light sensor changes</string>
+
 </resources>
