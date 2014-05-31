@@ -28,12 +28,20 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
 import com.android.settings.util.Helpers;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.crdroid.AppMultiSelectListPreference;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.lang.Thread;
 
 public class SystemUiSettings extends SettingsPreferenceFragment  implements
         Preference.OnPreferenceChangeListener {
@@ -46,11 +54,13 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";    
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
+    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
 
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;    
     private CheckBoxPreference mRecentsCustom;
     private CheckBoxPreference mNavigationBarLeftPref;
+    private AppMultiSelectListPreference mIncludedAppCircleBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +82,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
         mRecentsCustom.setChecked(enableRecentsCustom);
         mRecentsCustom.setOnPreferenceChangeListener(this);
+
+        mIncludedAppCircleBar = (AppMultiSelectListPreference) prefScreen.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
+        Set<String> includedApps = getIncludedApps();
+        if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
+        mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_GESTURE_SETTINGS);
@@ -116,16 +131,13 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             return true;
         } else if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
             boolean value = (Boolean) objValue;
-
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.CUSTOM_RECENT, value);
-
             mRecentsCustom.setChecked(value);
-
             openSlimRecentsWarning();
-
-            Helpers.restartSystemUI();
             return true;
+        } else if (preference == mIncludedAppCircleBar) {
+            storeIncludedApps((Set<String>) objValue);
         }
 
         return false;
@@ -165,5 +177,26 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                     Helpers.restartSystemUI();
                 }
             }).show();
+    }
+
+    private Set<String> getIncludedApps() {
+        String included = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.WHITELIST_APP_CIRCLE_BAR);
+        if (TextUtils.isEmpty(included)) {
+            return null;
+        }
+        return new HashSet<String>(Arrays.asList(included.split("\\|")));
+    }
+
+    private void storeIncludedApps(Set<String> values) {
+        StringBuilder builder = new StringBuilder();
+        String delimiter = "";
+        for (String value : values) {
+            builder.append(delimiter);
+            builder.append(value);
+            delimiter = "|";
+	}
+        Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
     }
 }

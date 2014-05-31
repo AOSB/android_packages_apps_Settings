@@ -1031,4 +1031,9 @@
     <string name="aosb_general_ui_title">General UI</string>
     <string name="aosb_tweaks_title">Add-ons and Misc</string>
 
+    <!-- Circle App Launcher -->
+    <string name="app_circle_bar_title">App circle bar</string>
+    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <string name="app_circle_bar_included_apps_title">Included apps</string>
+    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
 </resources>
