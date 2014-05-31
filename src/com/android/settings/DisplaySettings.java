@@ -136,8 +136,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         PreferenceCategory displayPrefs = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
-        PreferenceCategory displayPrefs = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
-
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
@@ -185,39 +183,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             advancedPrefs.removePreference(mScreenColorSettings);
         }
 
-        boolean allowsScreenOffAnimation = res.getBoolean(
-                com.android.internal.R.bool.config_screenOffAnimation);
-        boolean requiresFadeAnimation = res.getBoolean(
-                com.android.internal.R.bool.config_animateScreenLights);
-        mScreenOffAnimation = (CheckBoxPreference)
-                findPreference(KEY_SCREEN_ANIMATION_OFF);
-        mScreenAnimationStylePreference =
-                (ListPreference) findPreference(KEY_SCREEN_ANIMATION_STYLE);
-
-        if (allowsScreenOffAnimation) {
-            if (!requiresFadeAnimation) {
-                advancedPrefs.removePreference(mScreenOffAnimation);
-                final boolean animationEnabled =
-                        Settings.System.getInt(resolver,
-                                Settings.System.SCREEN_OFF_ANIMATION, 1) != 0;
-                final int currentAnimation =
-                        Settings.System.getInt(resolver, SCREEN_ANIMATION_STYLE, 0);
-
-                mScreenAnimationStylePreference.setOnPreferenceChangeListener(this);
-                if (animationEnabled) {
-                    mScreenAnimationStylePreference.setValue(String.valueOf(currentAnimation));
-                    updateScreenAnimationStylePreferenceDescription(currentAnimation + 1);
-                } else {
-                    mScreenAnimationStylePreference.setValue(String.valueOf(-1));
-                    updateScreenAnimationStylePreferenceDescription(0);
-                }
-            } else {
-                advancedPrefs.removePreference(mScreenAnimationStylePreference);
-            }
-        } else {
-            advancedPrefs.removePreference(mScreenAnimationStylePreference);
-        }
-
         boolean hasNotificationLed = res.getBoolean(
                 com.android.internal.R.bool.config_intrusiveNotificationLed);
         boolean hasBatteryLed = res.getBoolean(
@@ -240,6 +205,23 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         } else {
             getPreferenceScreen().removePreference(lightPrefs);
+        }
+
+        // respect device default configuration
+        // true fades while false animates
+        boolean electronBeamFadesConfig = getResources().getBoolean(
+                com.android.internal.R.bool.config_animateScreenLights);
+        PreferenceCategory animationOptions =
+            (PreferenceCategory) prefSet.findPreference(KEY_ANIMATION_OPTIONS);
+        mCrtMode = (ListPreference) prefSet.findPreference(KEY_POWER_CRT_MODE);
+        if (!electronBeamFadesConfig && mCrtMode != null) {
+            int crtMode = Settings.System.getInt(getContentResolver(),
+                    Settings.System.SYSTEM_POWER_CRT_MODE, 1);
+            mCrtMode.setValue(String.valueOf(crtMode));
+            mCrtMode.setSummary(mCrtMode.getEntry());
+            mCrtMode.setOnPreferenceChangeListener(this);
+        } else if (animationOptions != null) {
+            prefSet.removePreference(animationOptions);
         }
     }
 
