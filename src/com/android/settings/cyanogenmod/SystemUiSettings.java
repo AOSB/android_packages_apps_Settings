@@ -89,6 +89,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 expandedCategory.removePreference(mExpandedDesktopNoNavbarPref);
 
                 if (!Utils.isPhone(getActivity())) {
+		    // Hide navigation bar category
                     PreferenceScreen navCategory = (PreferenceScreen) findPreference(CATEGORY_NAVBAR);
                     navCategory.removePreference(mNavigationBarLeftPref);
                 }
@@ -98,7 +99,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
                 mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
                 expandedCategory.removePreference(mExpandedDesktopPref);
                 // Hide navigation bar category
-                prefScreen.removePreference(findPreference(CATEGORY_NAVBAR));
+                //prefScreen.removePreference(findPreference(CATEGORY_NAVBAR));
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
