@@ -228,7 +228,7 @@
 		android:summary="@string/xposed_framework_modules_summary" >
 	<intent android:action="android.intent.action.MAIN"
 		android:targetPackage="de.robv.android.xposed.installer"
-	android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
+		android:targetClass="de.robv.android.xposed.installer.WelcomeActivity" />
 	</PreferenceScreen>
 
 	<PreferenceScreen
