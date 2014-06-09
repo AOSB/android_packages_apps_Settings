@@ -42,7 +42,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_EXPANDED_DESKTOP = "expanded_desktop";
     private static final String KEY_EXPANDED_DESKTOP_NO_NAVBAR = "expanded_desktop_no_navbar";
     private static final String CATEGORY_EXPANDED_DESKTOP = "expanded_desktop_category";
-    private static final String CATEGORY_NAVBAR = "navigation_bar";
+    private static final String CATEGORY_NAVBAR = "navigation_bar_options";
     private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";    
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
@@ -90,7 +90,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
                 if (!Utils.isPhone(getActivity())) {
 		    // Hide navigation bar category
-                    PreferenceScreen navCategory = (PreferenceScreen) findPreference(CATEGORY_NAVBAR);
+                    PreferenceCategory navCategory =
+                            (PreferenceCategory) findPreference(CATEGORY_NAVBAR);
                     navCategory.removePreference(mNavigationBarLeftPref);
                 }
             } else {

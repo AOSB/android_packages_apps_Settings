@@ -189,7 +189,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="navigation_bar"
+        android:key="navigation_bar_options"
         android:title="@string/navigation_bar_category" >
 
 	<PreferenceScreen
