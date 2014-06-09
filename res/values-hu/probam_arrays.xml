@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="entries_network_widget">
+        <item>2G/3G+2G</item>
+        <item>Csak 2G/3G</item>
+        <item>2G/3G Csak/3G+2G</item>
+    </string-array>
+	<string-array name="entries_sleep_explain">
+        <item>Tiltva</item>
+        <item>Teljesítmény csökkenés felfüggesztés</item>
+        <item>Teljesítmény csökkenés (legjobb)</item>
+        <item>Alkalmazások alvás</item>
+        <item>Lassú Óra</item>
+        <item>Megszakitásig várakozik</item>
+    </string-array>
+	<string-array name="battery_bar_style_entries">
+        <item>Szabályos</item>
+        <item>Középen tükrözött</item>
+    </string-array>
+	<string-array name="battery_bar_entries">
+        <item>Rejtve</item>
+        <item>Állapotsor</item>
+        <item>Navigációs sáv tetején</item>
+        <item>Navigációs sáv alján</item>
+    </string-array>
+</resources>
