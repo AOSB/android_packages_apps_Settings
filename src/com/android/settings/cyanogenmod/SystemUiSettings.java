@@ -125,7 +125,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
             openSlimRecentsWarning();
 
-            Helpers.restartSystemUI();
             return true;
         }
 
