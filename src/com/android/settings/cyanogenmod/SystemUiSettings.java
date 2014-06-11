@@ -49,7 +49,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;    
-    private CheckBoxPreference mRecentsCustom;
+    private ListPreference mRecentsCustom;
     private CheckBoxPreference mNavigationBarLeftPref;
 
     @Override
@@ -67,10 +67,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         // Navigation bar left
         mNavigationBarLeftPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
 
-        boolean enableRecentsCustom = Settings.System.getBoolean(getContentResolver(), Settings.System.CUSTOM_RECENT, false);
-
-        mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
-        mRecentsCustom.setChecked(enableRecentsCustom);
+        mRecentsCustom = (ListPreference) findPreference(CUSTOM_RECENT_MODE);
+        long recent_state = Settings.System.getLong(getContentResolver(),
+                Settings.System.CUSTOM_RECENT, 0);
+        mRecentsCustom.setValue(String.valueOf(recent_state));
+        mRecentsCustom.setSummary(mRecentsCustom.getEntry());
         mRecentsCustom.setOnPreferenceChangeListener(this);
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
@@ -117,15 +118,14 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             updateExpandedDesktop(value ? 2 : 0);
             return true;
         } else if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
-            boolean value = (Boolean) objValue;
-
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.CUSTOM_RECENT, value);
-
-            mRecentsCustom.setChecked(value);
-
-            openSlimRecentsWarning();
-
+            int val = Integer.parseInt((String) objValue);
+            int index = mRecentsCustom.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.CUSTOM_RECENT, val);
+            mRecentsCustom.setSummary(mRecentsCustom.getEntries()[index]);
+            if(index == 2){
+                 openSlimRecentsWarning();
+            }
             return true;
         }
 

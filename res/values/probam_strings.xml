@@ -1009,8 +1009,11 @@
     <string name="aosb_gps_settings_summary">Modify gps.conf to specific country</string>
 
     <!-- Custom Recent Settings -->
-    <string name="custom_recent_title">Enable Slim Recents</string>
-    <string name="custom_recent_summary">Tick this box to switch between Slim/AOSB RecentApps</string>
+    <string name="custom_recent_title">Switch Between Recents</string>
+    <string name="custom_recent_summary">Tick this list to switch between Stock/AOSB/Slim Recents</string>
+    <string name="stock_recent_title">Stock Android Recents</string>
+    <string name="aosb_recent_title">AOSB Recents</string>
+    <string name="slim_recent_title">Slim Recents</string>
 
     <!-- Kernel Tweaker -->
     <string name="kernel_tweaker_title">Kernel Tweaker</string>

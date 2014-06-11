@@ -85,12 +85,13 @@
 	    	android:fragment="com.android.settings.crdroid.RamBar"
 	    	android:title="@string/ram_bar" /> 
 
-	   <CheckBoxPreference
+	   <ListPreference
 		android:key="custom_recent_mode"
 		android:icon="@drawable/ic_aosb_recents"
+		android:persistent="false"
 		android:title="@string/custom_recent_title"
-		android:summary="@string/custom_recent_summary"
-		android:persistent="false" />
+		android:entries="@array/custom_recent_entries"
+		android:entryValues="@array/custom_recent_values" />
 
 	    <PreferenceScreen
 		android:key="progressbar_settings"
