@@ -278,9 +278,11 @@
     <string name="ad_threshold_3s">3 seconds</string>
     <string name="ad_threshold_4s">4 seconds</string>
     <string name="ad_threshold_5s">5 seconds</string>
-    <string name="ad_pocket_mode_off">Off</string>
-    <string name="ad_pocket_mode_notifications">Notifications only</string>
-    <string name="ad_pocket_mode_always">Always</string>
+    <string name="pocket_mode_off">Disabled</string>
+    <string name="pocket_mode_lockscreen">Show Lockscreen notifications</string>
+    <string name="pocket_mode_active">Turn on Active Display</string>
+    <string name="ad_quiet_hours_title">Quiet hours</string>
+    <string name="ad_quiet_hours_summary">Observe quiet hours settings</string>
 
     <!-- Low battery warning policy -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
