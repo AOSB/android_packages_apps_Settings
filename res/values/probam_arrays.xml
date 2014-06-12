@@ -378,7 +378,7 @@
 
     <!-- Activ display pocket mode -->
     <string-array name="ad_pocket_mode_entries" translatable="false">
-        <item>@string/ad_pocket_mode_off</item>
+        <item>@string/pocket_mode_off</item>
         <item>@string/pocket_mode_lockscreen</item>
         <item>@string/pocket_mode_active</item>
     </string-array>
