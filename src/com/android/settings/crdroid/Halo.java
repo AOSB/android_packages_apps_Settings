@@ -30,6 +30,7 @@ import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Halo extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -45,6 +46,7 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_MSGBOX_ANIMATION = "halo_msgbox_animation";
     private static final String KEY_HALO_NOTIFY_COUNT = "halo_notify_count";
     private static final String KEY_HALO_UNLOCK_PING = "halo_unlock_ping";
+    private static final String KEY_HALO_COLOR = "halo_color";
 
     private CheckBoxPreference mHaloEnabled;
     private ListPreference mHaloState;
@@ -57,6 +59,7 @@ public class Halo extends SettingsPreferenceFragment
     private CheckBoxPreference mHaloNinja;
     private CheckBoxPreference mHaloMsgBox;
     private CheckBoxPreference mHaloUnlockPing;
+    private ColorPickerPreference mHaloColor;
 
     private Context mContext;
     private INotificationManager mNotificationManager;
@@ -134,6 +137,9 @@ public class Halo extends SettingsPreferenceFragment
             // fail...
         }
         mHaloMsgAnimate.setOnPreferenceChangeListener(this);
+
+        mHaloColor = (ColorPickerPreference) prefSet.findPreference(KEY_HALO_COLOR);
+        mHaloColor.setOnPreferenceChangeListener(this);
     }
 
     private boolean isHaloPolicyBlack() {
@@ -202,6 +208,11 @@ public class Halo extends SettingsPreferenceFragment
             int haloNotifyCount = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.HALO_NOTIFY_COUNT, haloNotifyCount);
+            return true;
+        } else if (preference == mHaloColor) {
+            int haloColor = Integer.valueOf(String.valueOf(newValue));
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HALO_COLOR, haloColor);
             return true;
         }
         return false;

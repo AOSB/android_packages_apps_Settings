@@ -55,6 +55,13 @@ limitations under the License.
 	android:dependency="halo_enabled"
         android:defaultValue="false" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="halo_color"
+        android:title="@string/halo_color_title"
+        android:summary="@string/halo_color_summary"
+        android:defaultValue="#66ffffff"
+        android:dependency="halo_enabled" />
+
     <ListPreference
         android:key="halo_notify_count"
         android:dialogTitle="@string/halo_notification_count_title"
