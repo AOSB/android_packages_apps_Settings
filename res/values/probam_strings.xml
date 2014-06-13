@@ -988,6 +988,7 @@
     <string name="battery_saver_network_gsm_title">GSM Networks</string>
     <string name="battery_saver_network_cdma_title">CDMA Networks</string>
     <string name="battery_saver_system_title">System options</string>
+    <string name="title_tile_batterysaver">PowerSaver mode</string>
 
     <!-- Toast Animation -->
     <string name="toast_animation_title">Toast Animation</string>
