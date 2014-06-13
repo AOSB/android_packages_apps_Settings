@@ -123,9 +123,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.CUSTOM_RECENT, val);
             mRecentsCustom.setSummary(mRecentsCustom.getEntries()[index]);
-            if(index == 2){
-                 openSlimRecentsWarning();
-            }
+            openSlimRecentsWarning();
             return true;
         }
 
