@@ -49,6 +49,13 @@
         android:entryValues="@array/ad_redisplay_values"
         android:dependency="ad_enable"/>
 
+    <CheckBoxPreference
+        android:key="active_display_double_tap"
+        android:persistent="false"
+        android:title="@string/ad_double_tap_title"
+        android:summary="@string/ad_double_tap_summary"
+        android:dependency="ad_enable"/>
+
     <PreferenceCategory
         android:key="ad_customizations"
         android:title="@string/ad_customizations_title">

@@ -285,6 +285,8 @@
     <string name="pocket_mode_active">Turn on Active Display</string>
     <string name="ad_quiet_hours_title">Quiet hours</string>
     <string name="ad_quiet_hours_summary">Observe quiet hours settings</string>
+    <string name="ad_double_tap_title">Double tap to sleep</string>
+    <string name="ad_double_tap_summary">Turn screen off with double tap</string>
 
     <!-- Low battery warning policy -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>

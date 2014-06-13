@@ -54,6 +54,7 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_QUIET_HOURS = "quiet_hours";
     private static final String KEY_SHOW_TEXT = "ad_text";
     private static final String KEY_SHOW_DATE = "ad_show_date";
+    private static final String KEY_ACTIVE_DISPLAY_DOUBLE_TAP = "active_display_double_tap";
 
     private ContentResolver mResolver;
     private Context mContext;
@@ -63,6 +64,7 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mQuietHours;
     private CheckBoxPreference mShowDatePref;
     private CheckBoxPreference mShowTextPref;
+    private CheckBoxPreference mAdDoubleTap;
     private SwitchPreference mEnabledPref;
     private ListPreference mDisplayTimeout;
     private ListPreference mPocketModePref;
@@ -92,6 +94,10 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
         mShowDatePref = (CheckBoxPreference) prefSet.findPreference(KEY_SHOW_DATE);
         mShowDatePref.setChecked((Settings.System.getInt(mResolver,
                 Settings.System.ACTIVE_DISPLAY_SHOW_DATE, 0) == 1));
+
+        mAdDoubleTap = (CheckBoxPreference) prefSet.findPreference(KEY_ACTIVE_DISPLAY_DOUBLE_TAP);
+        mAdDoubleTap.setChecked((Settings.System.getInt(mResolver,
+                Settings.System.ACTIVE_DISPLAY_DOUBLE_TAP, 0) == 1));
 
         mPocketModePref = (ListPreference) prefSet.findPreference(KEY_POCKET_MODE);
         mProximityThreshold = (ListPreference) prefSet.findPreference(KEY_THRESHOLD);
@@ -203,6 +209,11 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(mResolver,
                     Settings.System.ACTIVE_DISPLAY_TEXT,
                     mShowTextPref.isChecked() ? 1 : 0);
+        } else if (preference == mAdDoubleTap) {
+            value = mAdDoubleTap.isChecked();
+            Settings.System.putInt(mResolver,
+                    Settings.System.ACTIVE_DISPLAY_DOUBLE_TAP,
+                    value ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
