@@ -52,6 +52,8 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_HIDE_LOW_PRIORITY = "hide_low_priority";
     private static final String KEY_HIDE_NON_CLEARABLE = "hide_non_clearable";
     private static final String KEY_QUIET_HOURS = "quiet_hours";
+    private static final String KEY_SHOW_TEXT = "ad_text";
+    private static final String KEY_SHOW_DATE = "ad_show_date";
 
     private ContentResolver mResolver;
     private Context mContext;
@@ -59,6 +61,8 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mHideLowPriority;
     private CheckBoxPreference mHideNonClearable;
     private CheckBoxPreference mQuietHours;
+    private CheckBoxPreference mShowDatePref;
+    private CheckBoxPreference mShowTextPref;
     private SwitchPreference mEnabledPref;
     private ListPreference mDisplayTimeout;
     private ListPreference mPocketModePref;
@@ -80,6 +84,14 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
         mEnabledPref.setChecked((Settings.System.getInt(mResolver,
                 Settings.System.ENABLE_ACTIVE_DISPLAY, 0) == 1));
         mEnabledPref.setOnPreferenceChangeListener(this);
+
+        mShowTextPref = (CheckBoxPreference) prefSet.findPreference(KEY_SHOW_TEXT);
+        mShowTextPref.setChecked((Settings.System.getInt(mResolver,
+                Settings.System.ACTIVE_DISPLAY_TEXT, 0) == 1));
+
+        mShowDatePref = (CheckBoxPreference) prefSet.findPreference(KEY_SHOW_DATE);
+        mShowDatePref.setChecked((Settings.System.getInt(mResolver,
+                Settings.System.ACTIVE_DISPLAY_SHOW_DATE, 0) == 1));
 
         mPocketModePref = (ListPreference) prefSet.findPreference(KEY_POCKET_MODE);
         mProximityThreshold = (ListPreference) prefSet.findPreference(KEY_THRESHOLD);
@@ -183,6 +195,14 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mQuietHours) {
             Settings.System.putInt(mResolver, Settings.System.ACTIVE_DISPLAY_QUIET_HOURS,
                     mQuietHours.isChecked() ? 1 : 0);
+        } else if (preference == mShowDatePref) {
+            Settings.System.putInt(mResolver,
+                    Settings.System.ACTIVE_DISPLAY_SHOW_DATE,
+                    mShowDatePref.isChecked() ? 1 : 0);
+        } else if (preference == mShowTextPref) {
+            Settings.System.putInt(mResolver,
+                    Settings.System.ACTIVE_DISPLAY_TEXT,
+                    mShowTextPref.isChecked() ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
