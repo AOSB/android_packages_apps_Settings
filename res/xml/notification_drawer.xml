@@ -44,6 +44,11 @@
         android:summary="@string/summary_full_screen_swipe"
         android:defaultValue="false" />
 
+    <PreferenceScreen
+            android:key="heads_up"
+            android:fragment="com.android.settings.headsup.HeadsUpDoNotDisturbSettings"
+            android:title="@string/category_heads_up" />
+
     <PreferenceCategory
         android:title="@string/category_quick_access" >
 
