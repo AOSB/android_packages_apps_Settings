@@ -63,25 +63,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
         implements OnPreferenceChangeListener, DialogInterface.OnClickListener {
     static final String TAG = "SecuritySettings";
 
-    // Lock Settings
-    private static final String KEY_UNLOCK_SET_OR_CHANGE = "unlock_set_or_change";
-    private static final String KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING =
-            "biometric_weak_improve_matching";
-    private static final String KEY_BIOMETRIC_WEAK_LIVELINESS = "biometric_weak_liveliness";
-    private static final String KEY_LOCK_ENABLED = "lockenabled";
-    private static final String KEY_VISIBLE_PATTERN = "visiblepattern";
-    private static final String KEY_VISIBLE_ERROR_PATTERN = "visible_error_pattern";
-    private static final String KEY_VISIBLE_DOTS = "visibledots";
-    private static final String KEY_SECURITY_CATEGORY = "security_category";
     private static final String KEY_DEVICE_ADMIN_CATEGORY = "device_admin_category";
-    private static final String KEY_LOCK_AFTER_TIMEOUT = "lock_after_timeout";
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
     private static final String KEY_SEE_THROUGH = "see_through";
     private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
-
-    private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
-    private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
-    private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_LIVELINESS_OFF = 125;
 
     // Misc Settings
     private static final String KEY_SIM_LOCK = "sim_lock";
@@ -92,7 +77,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_CREDENTIALS_INSTALL = "credentials_install";
     private static final String KEY_TOGGLE_INSTALL_APPLICATIONS = "toggle_install_applications";
     private static final String KEY_TOGGLE_VERIFY_APPLICATIONS = "toggle_verify_applications";
-    private static final String KEY_POWER_INSTANTLY_LOCKS = "power_button_instantly_locks";
     private static final String KEY_CREDENTIALS_MANAGER = "credentials_management";
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
@@ -112,14 +96,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private DevicePolicyManager mDPM;
 
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
-    private LockPatternUtils mLockPatternUtils;
-    private ListPreference mLockAfter;
-
-    private CheckBoxPreference mBiometricWeakLiveliness;
-    private CheckBoxPreference mVisiblePattern;
-    private CheckBoxPreference mVisibleErrorPattern;
-    private CheckBoxPreference mVisibleDots;
-
     private CheckBoxPreference mShowPassword;
 
     private KeyStore mKeyStore;
@@ -129,7 +105,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mToggleAppInstallation;
     private DialogInterface mWarnInstallApps;
     private CheckBoxPreference mToggleVerifyApps;
-    private CheckBoxPreference mPowerButtonInstantlyLocks;
 
     private ListPreference mLockNumpadRandom;
     private CheckBoxPreference mSeeThrough;
@@ -151,12 +126,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mLockPatternUtils = new LockPatternUtils(getActivity());
-
         mPM = getActivity().getPackageManager();
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
-
         mChooseLockSettingsHelper = new ChooseLockSettingsHelper(getActivity());
     }
 
@@ -165,6 +136,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         if (root != null) {
             root.removeAll();
         }
+        addPreferencesFromResource(R.xml.security_settings_owner);
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
 
@@ -217,8 +189,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         }
         addPreferencesFromResource(resid);
 
-
-        // Add options for device encryption
+       // Add options for device encryption
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
 
         if (!mIsPrimary) {
@@ -354,6 +325,23 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
         // Append the rest of the settings
         if (!isCmSecurity) {
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+            // Determine options based on device telephony support
+            if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+                mSmsSecurityCheck.setOnPreferenceChangeListener(this);
+                int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
+                updateSmsSecuritySummary(smsSecurityCheck);
+            } else {
+                // No telephony, remove dependent options
+                PreferenceGroup appCategory = (PreferenceGroup)
+                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
+                appCategory.removePreference(mSmsSecurityCheck);
+                root.removePreference(appCategory);
+            }
+
             addPreferencesFromResource(R.xml.security_settings_misc);
 
             if (MSimTelephonyManager.getDefault().isMultiSimEnabled()) {
@@ -457,23 +445,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 } else {
                     mToggleVerifyApps.setEnabled(false);
                 }
-            }
-
-            // App security settings
-            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
-            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
-            // Determine options based on device telephony support
-            if (pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
-                mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
-                mSmsSecurityCheck.setOnPreferenceChangeListener(this);
-                int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
-                updateSmsSecuritySummary(smsSecurityCheck);
-            } else {
-                // No telephony, remove dependent options
-                PreferenceGroup appCategory = (PreferenceGroup)
-                        root.findPreference(KEY_APP_SECURITY_CATEGORY);
-                appCategory.removePreference(mSmsSecurityCheck);
-                root.removePreference(appCategory);
             }
         }
 
@@ -579,117 +550,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
         }
     }
 
-    private void updateSlideAfterTimeoutSummary() {
-        // Update summary message with current value
-        long currentTimeout = Settings.System.getInt(getContentResolver(),
-                Settings.System.SCREEN_LOCK_SLIDE_TIMEOUT_DELAY, 5000);
-        final CharSequence[] entries = mSlideLockTimeoutDelay.getEntries();
-        final CharSequence[] values = mSlideLockTimeoutDelay.getEntryValues();
-        int best = 0;
-        for (int i = 0; i < values.length; i++) {
-            long timeout = Long.valueOf(values[i].toString());
-            if (currentTimeout >= timeout) {
-                best = i;
-            }
-        }
-        mSlideLockTimeoutDelay.setSummary(entries[best]);
-    }
-
-    private void updateSlideAfterScreenOffSummary() {
-        // Update summary message with current value
-        long currentTimeout = Settings.System.getInt(getContentResolver(),
-                Settings.System.SCREEN_LOCK_SLIDE_SCREENOFF_DELAY, 0);
-        final CharSequence[] entries = mSlideLockScreenOffDelay.getEntries();
-        final CharSequence[] values = mSlideLockScreenOffDelay.getEntryValues();
-        int best = 0;
-        for (int i = 0; i < values.length; i++) {
-            long timeout = Long.valueOf(values[i].toString());
-            if (currentTimeout >= timeout) {
-                best = i;
-            }
-        }
-        mSlideLockScreenOffDelay.setSummary(entries[best]);
-    }
-
     private void updateSmsSecuritySummary(int selection) {
         String message = selection > 0
                 ? getString(R.string.sms_security_check_limit_summary, selection)
                 : getString(R.string.sms_security_check_limit_summary_none);
         mSmsSecurityCheck.setSummary(message);
-    }
-
-    private void setupLockAfterPreference() {
-        // Compatible with pre-Froyo
-        long currentTimeout = Settings.Secure.getLong(getContentResolver(),
-                Settings.Secure.LOCK_SCREEN_LOCK_AFTER_TIMEOUT, 5000);
-        mLockAfter.setValue(String.valueOf(currentTimeout));
-        mLockAfter.setOnPreferenceChangeListener(this);
-        final long adminTimeout = (mDPM != null ? mDPM.getMaximumTimeToLock(null) : 0);
-        final long displayTimeout = Math.max(0,
-                Settings.System.getInt(getContentResolver(), SCREEN_OFF_TIMEOUT, 0));
-        if (adminTimeout > 0) {
-            // This setting is a slave to display timeout when a device policy is enforced.
-            // As such, maxLockTimeout = adminTimeout - displayTimeout.
-            // If there isn't enough time, shows "immediately" setting.
-            disableUnusableTimeouts(Math.max(0, adminTimeout - displayTimeout));
-        }
-    }
-
-    private void updateLockAfterPreferenceSummary() {
-        // Update summary message with current value
-        long currentTimeout = Settings.Secure.getLong(getContentResolver(),
-                Settings.Secure.LOCK_SCREEN_LOCK_AFTER_TIMEOUT, 5000);
-        final CharSequence[] entries = mLockAfter.getEntries();
-        final CharSequence[] values = mLockAfter.getEntryValues();
-        int best = 0;
-        for (int i = 0; i < values.length; i++) {
-            long timeout = Long.valueOf(values[i].toString());
-            if (currentTimeout >= timeout) {
-                best = i;
-            }
-        }
-        mLockAfter.setSummary(getString(R.string.lock_after_timeout_summary, entries[best]));
-    }
-
-    private void checkPowerInstantLockDependency() {
-        if (mPowerButtonInstantlyLocks != null) {
-            long timeout = Settings.Secure.getLong(getContentResolver(),
-                    Settings.Secure.LOCK_SCREEN_LOCK_AFTER_TIMEOUT, 5000);
-            if (timeout == 0) {
-                mPowerButtonInstantlyLocks.setEnabled(false);
-            } else {
-                mPowerButtonInstantlyLocks.setEnabled(true);
-            }
-        }
-    }
-
-    private void disableUnusableTimeouts(long maxTimeout) {
-        final CharSequence[] entries = mLockAfter.getEntries();
-        final CharSequence[] values = mLockAfter.getEntryValues();
-        ArrayList<CharSequence> revisedEntries = new ArrayList<CharSequence>();
-        ArrayList<CharSequence> revisedValues = new ArrayList<CharSequence>();
-        for (int i = 0; i < values.length; i++) {
-            long timeout = Long.valueOf(values[i].toString());
-            if (timeout <= maxTimeout) {
-                revisedEntries.add(entries[i]);
-                revisedValues.add(values[i]);
-            }
-        }
-        if (revisedEntries.size() != entries.length || revisedValues.size() != values.length) {
-            mLockAfter.setEntries(
-                    revisedEntries.toArray(new CharSequence[revisedEntries.size()]));
-            mLockAfter.setEntryValues(
-                    revisedValues.toArray(new CharSequence[revisedValues.size()]));
-            final int userPreference = Integer.valueOf(mLockAfter.getValue());
-            if (userPreference <= maxTimeout) {
-                mLockAfter.setValue(String.valueOf(userPreference));
-            } else {
-                // There will be no highlighted selection since nothing in the list matches
-                // maxTimeout. The user can still select anything less than maxTimeout.
-                // TODO: maybe append maxTimeout to the list and mark selected.
-            }
-        }
-        mLockAfter.setEnabled(revisedEntries.size() > 0);
     }
 
     @Override
@@ -699,24 +564,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
         // Make sure we reload the preference hierarchy since some of these settings
         // depend on others...
         createPreferenceHierarchy();
-
-        final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
-        if (mBiometricWeakLiveliness != null) {
-            mBiometricWeakLiveliness.setChecked(
-                    lockPatternUtils.isBiometricWeakLivelinessEnabled());
-        }
-        if (mVisiblePattern != null) {
-            mVisiblePattern.setChecked(lockPatternUtils.isVisiblePatternEnabled());
-        }
-        if (mVisibleErrorPattern != null) {
-            mVisibleErrorPattern.setChecked(lockPatternUtils.isShowErrorPath());
-        }
-        if (mVisibleDots != null) {
-            mVisibleDots.setChecked(lockPatternUtils.isVisibleDotsEnabled());
-        }
-        if (mPowerButtonInstantlyLocks != null) {
-            mPowerButtonInstantlyLocks.setChecked(lockPatternUtils.getPowerButtonInstantlyLocks());
-        }
 
         if (mShowPassword != null) {
             mShowPassword.setChecked(Settings.System.getInt(getContentResolver(),
@@ -736,6 +583,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         final String key = preference.getKey();
 
         final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
+
         if (KEY_UNLOCK_SET_OR_CHANGE.equals(key)) {
             startFragment(this, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment",
                     SET_OR_CHANGE_LOCK_METHOD_REQUEST, null);
@@ -786,7 +634,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, isToggled(preference) ? 1 : 0);
         } else if (preference == mShowPassword) {
-            Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
+       Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     mShowPassword.isChecked() ? 1 : 0);
         } else if (mAllowMultiuserPreference == preference) {
             handleMultiUserClick();
@@ -815,30 +663,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
         return ((CheckBoxPreference) pref).isChecked();
     }
 
-    /**
-     * see confirmPatternThenDisableAndClear
-     */
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST &&
-                resultCode == Activity.RESULT_OK) {
-            startBiometricWeakImprove();
-            return;
-        } else if (requestCode == CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_LIVELINESS_OFF &&
-                resultCode == Activity.RESULT_OK) {
-            final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
-            lockPatternUtils.setBiometricWeakLivelinessEnabled(false);
-            // Setting the mBiometricWeakLiveliness checked value to false is handled when onResume
-            // is called by grabbing the value from lockPatternUtils.  We can't set it here
-            // because mBiometricWeakLiveliness could be null
-            return;
-        }
-        createPreferenceHierarchy();
-    }
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
+
         if (preference == mLockAfter) {
             int timeout = Integer.parseInt((String) value);
             try {
@@ -866,6 +693,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mLockNumpadRandom.setValue(String.valueOf(value));
             mLockNumpadRandom.setSummary(mLockNumpadRandom.getEntry());
         } else if (preference == mSmsSecurityCheck) {
+
             int smsSecurityCheck = Integer.valueOf((String) value);
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT, smsSecurityCheck);
