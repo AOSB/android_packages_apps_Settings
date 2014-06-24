@@ -1850,6 +1850,8 @@
                 android:resource="@id/system_settings" />
         </activity>
 
+        <activity android:name=".headsup.HeadsUpSettings" />
+
         <activity android:name=".cyanogenmod.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
