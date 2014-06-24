@@ -93,6 +93,12 @@
 		android:entries="@array/custom_recent_entries"
 		android:entryValues="@array/custom_recent_values" />
 
+	   <CheckBoxPreference
+                android:key="htc_recent_style"
+                android:title="@string/htc_recent_style_title"
+                android:summary="@string/htc_recent_style_summary"
+                android:defaultValue="false" />
+
 	    <PreferenceScreen
 		android:key="progressbar_settings"
 		android:icon="@drawable/ic_aosb_progressbar"

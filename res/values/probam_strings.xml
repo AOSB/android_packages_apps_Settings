@@ -1140,4 +1140,8 @@
     <string name="peek_blacklist_label">Blacklist from Peek</string>
     <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
     <string name="hover_blacklist_label">Blacklist from Hover</string>
+
+    <!--HTC Recent Style-->
+    <string name="htc_recent_style_title">HTC Style with Reflection Effect</string>
+    <string name="htc_recent_style_summary">tick this box for enable HTC style instead of iOS flat</string>
 </resources>
