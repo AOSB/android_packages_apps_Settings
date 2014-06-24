@@ -51,13 +51,7 @@
             android:key="power_button_instantly_locks"
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
-        <PreferenceScreen
-            android:fragment="com.android.settings.OwnerInfoSettings"
-            android:key="owner_info_settings"
-            android:title="@string/owner_info_settings_title"
-            android:summary="@string/owner_info_settings_summary"/>
-
-        <CheckBoxPreference
+       <CheckBoxPreference
             android:key="see_through"
             android:title="@string/see_through_title"
             android:summary="@string/see_through_summary" />
@@ -65,7 +59,6 @@
         <PreferenceScreen
             android:title="@string/lockscreen_notifications"
             android:fragment="com.android.settings.probam.LockscreenNotifications" />
-
 
     </PreferenceCategory>
 
