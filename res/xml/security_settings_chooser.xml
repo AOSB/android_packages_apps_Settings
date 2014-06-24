@@ -31,12 +31,6 @@
             android:summary="@string/unlock_set_unlock_mode_none"
             android:persistent="false"/>
 
-        <PreferenceScreen
-            android:fragment="com.android.settings.OwnerInfoSettings"
-            android:key="owner_info_settings"
-            android:title="@string/owner_info_settings_title"
-            android:summary="@string/owner_info_settings_summary"/>
-
         <CheckBoxPreference
             android:key="see_through"
             android:title="@string/see_through_title"
@@ -45,6 +39,18 @@
         <PreferenceScreen
             android:title="@string/lockscreen_notifications"
             android:fragment="com.android.settings.probam.LockscreenNotifications" />
+
+        <ListPreference
+            android:key="lock_after_timeout"
+            android:title="@string/lock_after_timeout"
+            android:summary="@string/lock_after_timeout_summary"
+            android:entries="@array/lock_after_timeout_entries"
+            android:entryValues="@array/lock_after_timeout_values"
+            android:persistent="false"/>
+
+        <CheckBoxPreference
+            android:key="power_button_instantly_locks"
+            android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
     </PreferenceCategory>
 

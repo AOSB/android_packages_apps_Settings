@@ -165,59 +165,9 @@
 
     <!-- Device Specific Touchscreen gestures. Avoid duplicating CMHW functionality, please -->
     <Preference
-        android:key="touch_screen_gesture_settings">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_TOUCHSCREEN_GESTURE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.TouchscreenGestureSettings" />
+        android:key="touch_screen_gesture_settings"
+        android:title="@string/gestures_settings_header_title">
     </Preference>
-
-    <PreferenceCategory
-            android:key="expanded_desktop_category"
-            android:title="@string/power_menu_expanded_desktop" >
-        <ListPreference
-                android:key="expanded_desktop"
-                android:title="@string/expanded_desktop_style"
-                android:entries="@array/expanded_desktop_entries"
-                android:entryValues="@array/expanded_desktop_values"
-                android:persistent="false" />
-
-        <CheckBoxPreference
-                android:key="expanded_desktop_no_navbar"
-                android:title="@string/power_menu_expanded_desktop"
-                android:persistent="true" />
-
-        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
-                android:key="expanded_desktop_system_bars_visibility"
-                android:title="@string/expanded_desktop_system_bars_visibility"
-                android:summary="@string/expanded_desktop_system_bars_visibility_summary"
-                android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="navigation_bar_options"
-        android:title="@string/navigation_bar_category" >
-
-	<PreferenceScreen
-            android:key="navigation_bar_ring"
-            android:icon="@drawable/ic_aosb_navbar_ring"
-            android:fragment="com.android.settings.probam.NavRingTargets"
-            android:title="@string/category_navring" />
-
-	<PreferenceScreen
-            android:key="navigation_bar"
-            android:icon="@drawable/ic_aosb_navbar"
-            android:fragment="com.android.settings.probam.navbar.NavbarTabHostFragment"
-            android:title="@string/category_navbar" />
-
-        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
-            android:key="navigation_bar_left"
-            android:title="@string/navigation_bar_left_title"
-            android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
 	android:key="xposed_options"
