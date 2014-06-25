@@ -22,6 +22,11 @@
         android:title="@string/title_general"
         android:key="lockscreen_general_category" >
 
+        <CheckBoxPreference
+            android:key="lockscreen_torch"
+            android:title="@string/lockscreen_glowpad_torch_title"
+            android:summary="@string/lockscreen_glowpad_torch_summary" />
+
         <PreferenceScreen
             android:key="screen_security"
             android:fragment="com.android.settings.SecuritySettings"
