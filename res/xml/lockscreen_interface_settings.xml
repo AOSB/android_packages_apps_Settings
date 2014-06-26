@@ -22,6 +22,11 @@
         android:title="@string/title_general"
         android:key="lockscreen_general_category" >
 
+        <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.probam.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
         <CheckBoxPreference
             android:key="lockscreen_torch"
             android:title="@string/lockscreen_glowpad_torch_title"
