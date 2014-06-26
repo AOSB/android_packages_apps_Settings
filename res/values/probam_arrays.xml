@@ -1259,6 +1259,19 @@
         <item>2</item>
     </string-array>
 
+    <!-- Bubble Recent Settings -->
+    <string-array name="bubble_recent_entries" translatable="false">
+        <item>@string/bubble_recent_disable</item>
+        <item>@string/bubble_recent_fav</item>
+        <item>@string/bubble_recent_star</item>
+    </string-array>
+
+    <string-array name="bubble_recent_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Lockscreen lock icon values -->
     <string-array name="lock_icon_entries">
         <item>@string/lockscreen_lock_icon_custom</item>

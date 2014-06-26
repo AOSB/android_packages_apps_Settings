@@ -85,19 +85,11 @@
 	    	android:fragment="com.android.settings.crdroid.RamBar"
 	    	android:title="@string/ram_bar" /> 
 
-	   <ListPreference
-		android:key="custom_recent_mode"
+	   <PreferenceScreen
+                android:key="custom_recents"
 		android:icon="@drawable/ic_aosb_recents"
-		android:persistent="false"
-		android:title="@string/custom_recent_title"
-		android:entries="@array/custom_recent_entries"
-		android:entryValues="@array/custom_recent_values" />
-
-	   <CheckBoxPreference
-                android:key="htc_recent_style"
-                android:title="@string/htc_recent_style_title"
-                android:summary="@string/htc_recent_style_summary"
-                android:defaultValue="false" />
+                android:fragment="com.android.settings.probam.Bubble"
+                android:title="@string/custom_recent_cat" /> 
 
 	    <PreferenceScreen
 		android:key="progressbar_settings"

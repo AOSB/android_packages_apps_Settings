@@ -1016,8 +1016,10 @@
     <string name="aosb_gps_settings_summary">Modify gps.conf to specific country</string>
 
     <!-- Custom Recent Settings -->
+    <string name="custom_recent_cat">Recent Customizer</string>
     <string name="custom_recent_title">Switch Between Recents</string>
     <string name="custom_recent_summary">Tick this list to switch between Stock/AOSB/Slim Recents</string>
+    <string name="custom_recents_options">Recent Tweaks Options</string>
     <string name="stock_recent_title">Stock Android Recents</string>
     <string name="aosb_recent_title">AOSB Recents</string>
     <string name="slim_recent_title">Slim Recents</string>
@@ -1183,7 +1185,7 @@
     <string name="hover_exclude_non_clearable_title">Exclude non-clearable</string>
     <string name="hover_exclude_non_clearable_summary">Exclude not dismissable notifications</string>
 
-  <!-- Hover long fade out delay -->
+    <!-- Hover long fade out delay -->
     <string name="hover_long_fadeout_title">Hover notification time</string>
     <string name="hover_long_fadeout_3seconds">3 seconds</string>
     <string name="hover_long_fadeout_5seconds">5 seconds (default)</string>
@@ -1213,4 +1215,12 @@
     <string name="noti_reminder_interval_3s">3 seconds</string>
     <string name="noti_reminder_interval_3dot5s">3.5 second</string>
     <string name="noti_reminder_interval_4s">4 seconds</string>
+
+    <!-- Bubble Recents -->
+    <string name="bubble_recent_title">About Bubble</string>
+    <string name="bubble_recent_summary">that enables dynamic callback to check last call detail on a single click OR open the contact card when you click it twice (double tap), switch between the modes set CallLogs OR Starred contacts in recents.</string>
+    <string name="bubble_mode_title">Recent Bubble Mode</string>
+    <string name="bubble_recent_disable">Disable Recent Bubble</string>
+    <string name="bubble_recent_fav">Starred Mode</string>
+    <string name="bubble_recent_star">Call Logs Mode</string>
 </resources>

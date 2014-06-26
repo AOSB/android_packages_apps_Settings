@@ -30,7 +30,6 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
-import com.android.settings.util.Helpers;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -43,17 +42,11 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_EXPANDED_DESKTOP_NO_NAVBAR = "expanded_desktop_no_navbar";
     private static final String CATEGORY_EXPANDED_DESKTOP = "expanded_desktop_category";
     private static final String CATEGORY_NAVBAR = "navigation_bar_options";
-    private static final String CATEGORY_GENERAL_UI = "aosb_general_ui";
-    private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";    
-    private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
-    private static final String HTC_RECENT_STYLE = "htc_recent_style";
+    private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
-    private int recent_style = 0;
 
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;    
-    private ListPreference mRecentsCustom;
-    private CheckBoxPreference mHTCEffect;    
     private CheckBoxPreference mNavigationBarLeftPref;
 
     @Override
@@ -70,22 +63,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         // Navigation bar left
         mNavigationBarLeftPref = (CheckBoxPreference) findPreference(KEY_NAVIGATION_BAR_LEFT);
-
-        mHTCEffect = (CheckBoxPreference) findPreference(HTC_RECENT_STYLE);
-        recent_style = Settings.System.getInt(getContentResolver(),
-                Settings.System.HTC_RECENT_STYLE, 0);
-
-        mRecentsCustom = (ListPreference) findPreference(CUSTOM_RECENT_MODE);
-        long recent_state = Settings.System.getLong(getContentResolver(),
-                Settings.System.CUSTOM_RECENT, 0);
-        mRecentsCustom.setValue(String.valueOf(recent_state));
-        mRecentsCustom.setSummary(mRecentsCustom.getEntry());
-        mRecentsCustom.setOnPreferenceChangeListener(this);
-
-	    if(recent_state != 1){
-		    PreferenceCategory UICategory = (PreferenceCategory) findPreference(CATEGORY_GENERAL_UI);
-		    UICategory.removePreference(mHTCEffect);
-	    }
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_GESTURE_SETTINGS);
@@ -130,24 +107,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             boolean value = (Boolean) objValue;
             updateExpandedDesktop(value ? 2 : 0);
             return true;
-        } else if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
-            int val = Integer.parseInt((String) objValue);
-            int index = mRecentsCustom.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.CUSTOM_RECENT, val);
-            mRecentsCustom.setSummary(mRecentsCustom.getEntries()[index]);
-            if(recent_style == 1 && index != 1){
-		//reset style option value
-		Settings.System.putInt(getActivity().getContentResolver(),
-		        Settings.System.HTC_RECENT_STYLE, 0);
-            }
-            openSlimRecentsWarning();
-            return true;
-        } else if (preference == mHTCEffect) {
-            boolean value = (Boolean) objValue;
-	    Settings.System.putInt(getActivity().getContentResolver(),
-		        Settings.System.HTC_RECENT_STYLE, value ? 1 : 0);
-            return true;
         }
         return false;
     }
@@ -175,16 +134,5 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         if (mExpandedDesktopPref != null && summary != -1) {
             mExpandedDesktopPref.setSummary(res.getString(summary));
         }
-    }
-
-    private void openSlimRecentsWarning() {
-        new AlertDialog.Builder(getActivity())
-            .setTitle(getResources().getString(R.string.slim_recents_warning_title))
-            .setMessage(getResources().getString(R.string.slim_recents_warning_message))
-            .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    Helpers.restartSystemUI();
-                }
-            }).show();
     }
 }

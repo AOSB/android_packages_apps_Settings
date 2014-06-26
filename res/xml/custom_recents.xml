@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014 AOSB Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/custom_recent_cat">
+
+    <Preference
+        style="?android:preferenceInformationStyle"
+        android:title="@string/bubble_recent_title"
+        android:summary="@string/bubble_recent_summary"
+        android:selectable="false" />
+
+    <PreferenceCategory
+        android:key="bubble_mode_cat"
+        android:title="@string/bubble_mode_title">
+
+    <ListPreference
+        android:key="bubble_mode"
+        android:title="@string/bubble_mode_title"
+	android:icon="@drawable/ic_aosb_bubble"
+        android:entries="@array/bubble_recent_entries"
+        android:entryValues="@array/bubble_recent_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="custom_recent_switch"
+        android:title="@string/custom_recent_title">
+
+    <ListPreference
+	android:key="custom_recent_mode"
+	android:icon="@drawable/ic_aosb_recents"
+	android:persistent="false"
+	android:title="@string/custom_recent_title"
+	android:entries="@array/custom_recent_entries"
+	android:entryValues="@array/custom_recent_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="custom_recents_options"
+        android:title="@string/custom_recents_options">
+
+	   <CheckBoxPreference
+		android:key="htc_recent_style"
+		android:title="@string/htc_recent_style_title"
+		android:summary="@string/htc_recent_style_summary"
+		android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
