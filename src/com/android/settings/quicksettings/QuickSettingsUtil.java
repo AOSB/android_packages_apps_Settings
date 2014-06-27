@@ -49,6 +49,8 @@ import static com.android.internal.util.cm.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.cm.QSConstants.TILE_QUICKRECORD;
 import static com.android.internal.util.cm.QSConstants.TILE_ONTHEGO;
 import static com.android.internal.util.cm.QSConstants.TILE_BATTERYSAVER;
+import static com.android.internal.util.cm.QSConstants.TILE_FASTCHARGE;
+import static com.android.internal.util.cm.QSConstants.TILE_OTOUCH;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -169,6 +171,12 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_BATTERYSAVER, R.string.title_tile_batterysaver,
                 "com.android.systemui:drawable/ic_qs_battery_saver_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_FASTCHARGE, R.string.title_tile_fast_charge,
+                "com.android.systemui:drawable/ic_qs_fcharge_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_OTOUCH, R.string.title_tile_otouch,
+                "com.android.systemui:drawable/ic_qs_otouch_on"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -229,6 +237,14 @@ public class QuickSettingsUtil {
         // Don't show the performance profiles tile if is not available for the device
         if (!QSUtils.deviceSupportsPerformanceProfiles(context)) {
             removeTile(TILE_PERFORMANCE_PROFILE);
+        }
+
+        // only if kernel supports this
+        if (!QSUtils.deviceSupportsFastcharge()) {
+         removeTile(TILE_FASTCHARGE);
+        }
+        if (!QSUtils.deviceSupportsOtouch()) {
+         removeTile(TILE_OTOUCH);
         }
     }
 

@@ -1223,4 +1223,8 @@
     <string name="bubble_recent_disable">Disable Recent Bubble</string>
     <string name="bubble_recent_fav">Starred Mode</string>
     <string name="bubble_recent_star">Call Logs Mode</string>
+	
+    <!-- fast charge + otouch tiles  -->
+    <string name="title_tile_fast_charge">Fast charge</string>
+    <string name="title_tile_otouch">O-Touch</string>
 </resources>
