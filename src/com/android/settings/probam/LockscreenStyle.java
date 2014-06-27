@@ -25,6 +25,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Bitmap.Config;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,6 +54,9 @@ import android.widget.Toast;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
+
+import java.io.FileOutputStream;
+import java.io.ByteArrayOutputStream;
 
 import com.android.internal.widget.LockPatternUtils;
 
@@ -178,8 +189,26 @@ public class LockscreenStyle extends SettingsPreferenceFragment
 
                 File image = new File(getActivity().getFilesDir() + File.separator
                         + "lock_icon" + System.currentTimeMillis() + ".png");
+
                 String path = image.getAbsolutePath();
+
+                try {
+                    Bitmap Roundedimage = MakeItRounded(mLockImage);
+                    //Convert bitmap to byte array
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    Roundedimage.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos);
+                    byte[] bitmapdata = bos.toByteArray();
+                    //write the bytes in file
+                    FileOutputStream fos = new FileOutputStream(mLockImage);
+                    fos.write(bitmapdata);
+                    fos.flush();
+                    fos.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 mLockImage.renameTo(image);
+
                 image.setReadable(true, false);
 
                 Settings.Secure.putString(getContentResolver(),
@@ -193,6 +222,34 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             }
         }
         updateLockSummary();
+    }
+
+    public static Bitmap MakeItRounded(File image){
+
+        Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath());
+
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+
+        int radius = Math.min(h / 2, w / 2);
+        Bitmap output = Bitmap.createBitmap(w + 8, h + 8, Config.ARGB_8888);
+
+        Paint p = new Paint();
+        p.setAntiAlias(true);
+        Canvas c = new Canvas(output);
+
+        c.drawARGB(0, 0, 0, 0);
+        p.setStyle(Style.FILL);
+        c.drawCircle((w / 2) + 4, (h / 2) + 4, radius, p);
+        p.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+
+        c.drawBitmap(bitmap, 4, 4, p);
+        p.setXfermode(null);
+        p.setStyle(Style.STROKE);
+        p.setColor(Color.WHITE);
+        p.setStrokeWidth(2);
+        c.drawCircle((w / 2) + 4, (h / 2) + 4, radius, p);
+        return output;
     }
 
     @Override
