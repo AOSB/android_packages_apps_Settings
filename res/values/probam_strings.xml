@@ -1236,4 +1236,9 @@
     <string name="weather_header_summary">Add a small weather\ninfo in statusbar header.</string>
     <string name="weather_notification_title">Weather notification</string>
     <string name="weather_notification_summary">Add weather info as notification</string>
+
+    <!-- Minimum Vibration Duration -->
+    <string name="minimum_vibration_duration">Minimum vibration duration</string>
+    <!-- Vibration multiplier -->
+    <string name="vibrator_multiplier_title">Vibration multiplier</string>
 </resources>
