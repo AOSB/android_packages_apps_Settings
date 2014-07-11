@@ -79,13 +79,13 @@ public class Weather extends SettingsPreferenceFragment implements
         mWeather = (Preference)
                 prefSet.findPreference(WEATHER_START);
 
-        boolean enableWeatherHeader = Settings.AOKP.getBoolean(getContentResolver(),
+        boolean enableWeatherHeader = Settings.System.getBoolean(getContentResolver(),
                 Settings.System.SYSTEMUI_WEATHER_HEADER_VIEW, false);
         mWeatherHeader = (CheckBoxPreference) prefSet.findPreference(PREF_SYSTEMUI_WEATHER_HEADER_VIEW);
         mWeatherHeader.setChecked(enableWeatherHeader);
         mWeatherHeader.setOnPreferenceChangeListener(this);
 
-        boolean enableWeatherNotification = Settings.AOKP.getBoolean(getContentResolver(),
+        boolean enableWeatherNotification = Settings.System.getBoolean(getContentResolver(),
                 Settings.System.SYSTEMUI_WEATHER_NOTIFICATION, false);
         mWeatherNotification = (CheckBoxPreference) prefSet.findPreference(PREF_SYSTEMUI_WEATHER_NOTIFICATION);
         mWeatherNotification.setChecked(enableWeatherNotification);
@@ -122,12 +122,12 @@ public class Weather extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final String key = preference.getKey();
         if (preference == mWeatherHeader) {
-            Settings.AOKP.putBoolean(resolver,
+            Settings.System.putBoolean(resolver,
                     Settings.System.SYSTEMUI_WEATHER_HEADER_VIEW,
                     ((Boolean) objValue) ? true : false);
             Helpers.restartSystemUI();
         } else if (preference == mWeatherNotification) {
-            Settings.AOKP.putBoolean(resolver,
+            Settings.System.putBoolean(resolver,
                     Settings.System.SYSTEMUI_WEATHER_NOTIFICATION,
                     ((Boolean) objValue) ? true : false);
             openWeatherWarning();
