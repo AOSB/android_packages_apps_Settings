@@ -28,7 +28,7 @@
         android:summaryOff="@string/voice_tts_notification_summary_off"
         android:summaryOn="@string/voice_tts_notification_summary_on" />
 
-    <com.android.settings.widget.SeekBarPreferenceCham
+    <com.android.settings.crdroid.SeekBarPreferenceChOS
         android:key="voice_tts_volume"
         android:dependency="voice_tts"
         android:persistent="false"
@@ -118,7 +118,7 @@
         android:summary="@string/voice_tts_notif_read_summary"
         android:dependency="voice_tts_notif"/>
 
-    <com.android.settings.vanir.AppMultiSelectListPreference
+    <com.android.settings.crdroid.AppMultiSelectListPreference
         android:key="voice_tts_whitelist"
         android:persistent="false"
         android:dependency="voice_tts_notif"
