@@ -1375,6 +1375,8 @@
     <string name="heads_up_snooze_title">Snooze timer</string>
     <string name="heads_up_snooze_summary">If snooze button is pressed disable heads up for <xliff:g id="number">%d</xliff:g> minutes.</string>
     <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled.</string>
+    <string name="heads_up_gravity_title">Show at the bottom</string>
+    <string name="heads_up_gravity_summary">Show heads up notification at the bottom of the screen</string>
     <string name="heads_up_snooze_3min">3 minutes</string>
     <string name="heads_up_snooze_5min">5 minutes</string>
     <string name="heads_up_snooze_10min">10 minutes</string>
