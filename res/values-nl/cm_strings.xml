@@ -518,8 +518,8 @@ Extra opties zijn beschikbaar door een regel lang aan te raken. Door \'Aanpassen
   <string name="collapse_on_dismiss_if_empty_summary">Paneel sluiten bij verwijderen van laatste melding</string>
   <string name="collapse_on_dismiss_if_no_clearable_summary">Paneel sluiten bij verwijderen van laatste verwijderbare melding</string>
   <string name="double_tap_to_wake_title">Dubbeltikken om te ontwaken</string>
-  <string name="proximity_wake_title">Per ongeluk ontwaken voorkomen</string>
-  <string name="proximity_wake_summary">Nabijheidssensor gebruiken voorafgaand aan ontwaken van scherm</string>
+  <string name="proximity_wake_title">Ontwaken in nabijheid</string>
+  <string name="proximity_wake_summary">Nabijheidssensor gebruiken om te bepalen of apparaat moet ontwaken</string>
   <string name="category_quick_access">Snelle knoppenstrook</string>
   <string name="title_quick_access">Weergeven in paneel</string>
   <string name="title_quick_access_size">Grootte knoppenstrook</string>
@@ -911,9 +911,8 @@ Extra opties zijn beschikbaar door een regel lang aan te raken. Door \'Aanpassen
   <string name="show_dev_already_cm">Niet nodig, u heeft de opties voor ontwikkelaars al ingeschakeld.</string>
   <string name="enable_adb_cm">Android-foutopsporing</string>
   <string name="enable_adb_summary_cm">Android Debug Bridge (adb)-interface inschakelen</string>
-  <string name="spam_added_title">Toegevoegd <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
-  <string name="spam_last_blocked_title">Laatst geblokkeerd <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (total: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
+  <string name="spam_added_title">Toegevoegd %1$s</string>
+  <string name="spam_last_blocked_title">Laatst geblokkeerd %1$s</string>
   <string name="block_notifications_title">Meldingen filteren</string>
-  <string name="block_notifications_summary">Genegeerde meldingen en filters beheren</string>
-  <string name="no_filters_title">Geen filters ingesteld. Om een melding te filteren, drukt u lang op een melding en kiest u \'Meldingen als deze negeren\'.</string>
+  <string name="no_filters_title">Geen filters ingesteld</string>
 </resources>

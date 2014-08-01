@@ -909,9 +909,6 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
   <string name="show_dev_already_cm">Inutile, vous avez déjà activé les options de développeur.</string>
   <string name="enable_adb_cm">Débogage Android</string>
   <string name="enable_adb_summary_cm">Activer l\'interface Android Debug Bridge (adb)</string>
-  <string name="spam_added_title">Ajouté <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
-  <string name="spam_last_blocked_title">Dernière bloquée <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (total : <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
-  <string name="block_notifications_title">Filtre des notifications</string>
-  <string name="block_notifications_summary">Gérer les notifications ignorées et les filtres</string>
-  <string name="no_filters_title">Aucun filtre défini. Pour filtrer une notification, faites un appui long dessus et choisissez \'Ignorer les messages similaires\'.</string>
+  <string name="spam_added_title">%1$s ajouté</string>
+  <string name="spam_last_blocked_title">Dernier bloqué %1$s</string>
 </resources>

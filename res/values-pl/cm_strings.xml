@@ -517,8 +517,7 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="collapse_on_dismiss_if_empty_summary">Zamknij po usunięciu ostatniego powiadomienia</string>
   <string name="collapse_on_dismiss_if_no_clearable_summary">Zamknij po usunięciu ostatniego usuwalnego powiadomienia</string>
   <string name="double_tap_to_wake_title">Wybudzanie podwójnym dotknięciem</string>
-  <string name="proximity_wake_title">Zapobiega przypadkowemu wybudzeniu</string>
-  <string name="proximity_wake_summary">Używaj czujnika zbliżeniowego podczas wybudzania ekranu</string>
+  <string name="proximity_wake_title">Wybudź czujnikiem zbliżenia</string>
   <string name="category_quick_access">Wstążka szybkich ustawień</string>
   <string name="title_quick_access">Pokaż w powiadomieniach</string>
   <string name="title_quick_access_size">Rozmiar wstążki</string>
@@ -651,7 +650,6 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="hardware_keys_action_search">Asystent wyszukiwania</string>
   <string name="hardware_keys_action_voice_search">Wyszukiwanie głosowe</string>
   <string name="hardware_keys_action_in_app_search">Szukanie w aplikacjach</string>
-  <string name="hardware_keys_action_launch_camera">Uruchom aparat</string>
   <string name="power_end_call_title">Kończenie połączeń</string>
   <string name="power_end_call_summary">Naciśnięcie przycisku zasilania zakończy bieżące połączenie</string>
   <string name="button_wake_title">Wybudzanie</string>

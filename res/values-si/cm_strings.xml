@@ -517,8 +517,8 @@
   <string name="collapse_on_dismiss_if_empty_summary">අවසන් දැනුම්දීම ඉවත්කළ පසු වහන්න</string>
   <string name="collapse_on_dismiss_if_no_clearable_summary">අවසන් ඉවත්කළ හැකි දැනුම්දීම ඉවත්කළ පසු වහන්න</string>
   <string name="double_tap_to_wake_title">ඇහැරවීමට දෙවරක් තට්ටු කරන්න</string>
-  <string name="proximity_wake_title">අහඹු අවදි වීම් වළක්වන්න</string>
-  <string name="proximity_wake_summary">තිරය අවදි කිරීමට පෙර සන්නිකර්ෂණ සංවේදකය පරීක්ෂා කරන්න</string>
+  <string name="proximity_wake_title">සන්නිකර්ෂණ අවදිවීම</string>
+  <string name="proximity_wake_summary">උපාංගය අවදිකළ යුතුදැයි නිර්ණයට සහාය ලබාගැනීම සඳහා සන්නිකර්ෂණ සංවේදකය භාවිතාකරන්න</string>
   <string name="category_quick_access">ඉක්මන් පිවිසුම් පීත්තපටිය</string>
   <string name="title_quick_access">ලාච්චුවේ පෙන්වන්න</string>
   <string name="title_quick_access_size">පීත්තපටි තීරුවේ ප්‍රමාණය</string>
@@ -909,9 +909,8 @@
   <string name="show_dev_already_cm">අනවශ්‍යය, ඔබ මේ වන විටත් වර්ධක විකල්ප සබල කර ඇත.</string>
   <string name="enable_adb_cm">ඇන්ඩ්‍රොයිඩ් නිදොස් කරණය</string>
   <string name="enable_adb_summary_cm">ඇන්ඩ්‍රොයිඩ් නිදොස් කරණ පාලම (adb) අතුරු මුහුණත සබල කරන්න</string>
-  <string name="spam_added_title"><xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> එක් කෙරුණි</string>
-  <string name="spam_last_blocked_title">අන්තිමට අවහිර කලේ <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (එකතුව: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
+  <string name="spam_added_title">එක්කළේ %1$s</string>
+  <string name="spam_last_blocked_title">අන්තිමට අවහිරකලේ %1$s</string>
   <string name="block_notifications_title">දැනුම්දීම් පෙරන්න</string>
-  <string name="block_notifications_summary">නොසලකා හැරූ දැනුම්දීම් සහ පෙරහන් හසුරුවන්න</string>
-  <string name="no_filters_title">කිසිඳු පෙරහනක් සකසා නැත. දැනුම්දීමක් පෙරීමට, එය මත දිගු එබීමෙන් \'මෙවැනි පනිවිඩ නොසලකා හරින්න\' යන්න තෝරන්න.</string>
+  <string name="no_filters_title">පෙරහන් කිසිවක් සකසා නැත</string>
 </resources>

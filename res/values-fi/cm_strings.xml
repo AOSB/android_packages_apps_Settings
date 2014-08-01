@@ -519,8 +519,8 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="collapse_on_dismiss_if_empty_summary">Sulje, kun viimeinen ilmoitus on poistettu</string>
   <string name="collapse_on_dismiss_if_no_clearable_summary">Sulje, kun viimeinen poistettava ilmoitus on poistettu</string>
   <string name="double_tap_to_wake_title">Herätys tuplanapautuksella</string>
-  <string name="proximity_wake_title">Estä herätys vahingossa</string>
-  <string name="proximity_wake_summary">Tarkista lähesyysanturi ennen laitteen herättämistä</string>
+  <string name="proximity_wake_title">Läheisyysherätys</string>
+  <string name="proximity_wake_summary">Käytä läheisyyssensoria valitsemaan milloin laite herää</string>
   <string name="category_quick_access">Pika-asetuspalkki</string>
   <string name="title_quick_access">Näytä ilmoitusvalikossa</string>
   <string name="title_quick_access_size">Pika-asetuspalkin koko</string>
@@ -654,7 +654,6 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="hardware_keys_action_voice_search">Äänihaku</string>
   <string name="hardware_keys_action_in_app_search">Haku sovelluksessa</string>
   <string name="hardware_keys_action_launch_camera">Käynnistä kamera</string>
-  <string name="hardware_keys_action_last_app">Viimeinen sovellus</string>
   <string name="power_end_call_title">Lopeta puhelu</string>
   <string name="power_end_call_summary">Virtapainikkeen painaminen lopettaa nykyisen puhelun</string>
   <string name="button_wake_title">Herätys</string>
@@ -913,9 +912,8 @@ Lisää asetuksia on saaavilla painamalla riviä pitkään. Valitsemalla \'Muokk
   <string name="show_dev_already_cm">Olet jo ottanut kehittäjäasetukset käyttöön.</string>
   <string name="enable_adb_cm">Android-vianetsintä</string>
   <string name="enable_adb_summary_cm">Ota Android Debug Bridge (adb) käyttöön</string>
-  <string name="spam_added_title">Lisätty <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
-  <string name="spam_last_blocked_title">Viimeksi estetty <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (yhteensä: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
+  <string name="spam_added_title">Lisätty %1$s</string>
+  <string name="spam_last_blocked_title">Viimeksi torjuttu %1$s</string>
   <string name="block_notifications_title">Suodata ilmoitukset</string>
-  <string name="block_notifications_summary">Hallitse estettyjä ilmoituksia ja suodattimia</string>
-  <string name="no_filters_title">Suodattimia ei asetettu. Suodattaaksesi ilmoituksen, paina ilmoitusta pitkään ja valitse \"Älä huomioi tämänlaisia viestejä\".</string>
+  <string name="no_filters_title">Suodattimia ei asetettu</string>
 </resources>
