@@ -518,8 +518,8 @@ Každý riadok v zozname jasu zodpovedá jednému <i>riadiacemu bodu</i> krivky 
   <string name="collapse_on_dismiss_if_empty_summary">Zatvoriť po odstránení posledného oznámenia</string>
   <string name="collapse_on_dismiss_if_no_clearable_summary">Zatvoriť po odstránení posledného odstrániteľného oznámenia</string>
   <string name="double_tap_to_wake_title">Prebudiť dvojitým poklepaním</string>
-  <string name="proximity_wake_title">Prebudiť snímačom priblíženia</string>
-  <string name="proximity_wake_summary">Použiť snímač priblíženia pri rozhodovaní, či zariadenie prebudiť</string>
+  <string name="proximity_wake_title">Zabrániť nechcenému prebudeniu</string>
+  <string name="proximity_wake_summary">Kontrolovať snímač priblíženia pre zabránenie nechcenému prebudeniu</string>
   <string name="category_quick_access">Panel rýchleho prístupu</string>
   <string name="title_quick_access">Zobraziť v ponuke</string>
   <string name="title_quick_access_size">Veľkosť panela rýchleho prístupu</string>
@@ -916,5 +916,6 @@ Každý riadok v zozname jasu zodpovedá jednému <i>riadiacemu bodu</i> krivky 
   <string name="spam_added_title">Pridané %1$s</string>
   <string name="spam_last_blocked_title">Naposledy zablokovaných %1$s</string>
   <string name="block_notifications_title">Filtrovať oznámenia</string>
+  <string name="block_notifications_summary">Spravovať ignorované oznámenia a filtre</string>
   <string name="no_filters_title">Nenastavené žiadne filtre</string>
 </resources>

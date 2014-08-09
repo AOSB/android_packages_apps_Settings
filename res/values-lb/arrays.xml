@@ -154,7 +154,7 @@
     <item>Verbonnen</item>
     <item>Invited</item>
     <item>Unsuccessful</item>
-    <item>Disponibel</item>
+    <item>Available</item>
     <item>Out-of-range</item>
   </string-array>
   <string-array name="bluetooth_visibility_timeout_entries">
@@ -264,10 +264,10 @@
   </string-array>
   <string-array name="app_ops_categories">
     <item>Lokaliséierung</item>
-    <item>Perséinlech</item>
+    <item>Personal</item>
     <item>Messagen</item>
-    <item>Medien</item>
-    <item>Apparat</item>
+    <item>Media</item>
+    <item>Device</item>
   </string-array>
   <string-array name="app_ops_summaries">
     <item>coarse location</item>
@@ -364,33 +364,6 @@
     <item>50%</item>
     <item>75%</item>
     <item>100%</item>
-  </string-array>
-  <string-array name="window_animation_scale_entries">
-    <item>Animatioun aus</item>
-    <item>Animation scale .5x</item>
-    <item>Animation scale 1x</item>
-    <item>Animation scale 1.5x</item>
-    <item>Animation scale 2x</item>
-    <item>Animation scale 5x</item>
-    <item>Animation scale 10x</item>
-  </string-array>
-  <string-array name="transition_animation_scale_entries">
-    <item>Animatioun aus</item>
-    <item>Animation scale .5x</item>
-    <item>Animation scale 1x</item>
-    <item>Animation scale 1.5x</item>
-    <item>Animation scale 2x</item>
-    <item>Animation scale 5x</item>
-    <item>Animation scale 10x</item>
-  </string-array>
-  <string-array name="animator_duration_scale_entries">
-    <item>Animatioun aus</item>
-    <item>Animation scale .5x</item>
-    <item>Animation scale 1x</item>
-    <item>Animation scale 1.5x</item>
-    <item>Animation scale 2x</item>
-    <item>Animation scale 5x</item>
-    <item>Animation scale 10x</item>
   </string-array>
   <string-array name="vpn_states">
     <item>Disconnected</item>

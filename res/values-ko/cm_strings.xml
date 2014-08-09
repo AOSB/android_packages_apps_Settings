@@ -24,7 +24,7 @@
   <string name="wifi_ssid_input_limit">SSID 길이가 최대치를 초과했습니다</string>
   <string name="p2p_device_name_input_limit">P2P 이름 길이가 최대치를 초과했습니다</string>
   <string name="change_crypt_password_title">비밀번호 변경</string>
-  <string name="change_crypt_password_summary">기기 암호화에 사용되는 비밀번호 변경</string>
+  <string name="change_crypt_password_summary">기기 암호화에 사용되는 비밀번호를 변경합니다</string>
   <string name="encryptionpassword_choose_your_password_header">암호화 비밀번호 설정</string>
   <string name="lock_screen_title">잠금 화면</string>
   <string name="increasing_ring_title">벨소리 점점 커지게</string>
@@ -517,8 +517,8 @@
   <string name="collapse_on_dismiss_if_empty_summary">마지막 알림 삭제 후 닫기</string>
   <string name="collapse_on_dismiss_if_no_clearable_summary">삭제 가능한 마지막 알림 삭제 후 닫기</string>
   <string name="double_tap_to_wake_title">더블 탭으로 화면 켜기</string>
-  <string name="proximity_wake_title">근접 켜기</string>
-  <string name="proximity_wake_summary">장치를 켤 것인지 결정하는 데 근접 센서 활용하기</string>
+  <string name="proximity_wake_title">실수로 화면 켜기 방지</string>
+  <string name="proximity_wake_summary">화면을 켜기 전에 근접 센서 확인</string>
   <string name="category_quick_access">빠른 액세스 리본</string>
   <string name="title_quick_access">알림 서랍에 표시</string>
   <string name="title_quick_access_size">리본 바의 크기</string>
@@ -912,5 +912,6 @@
   <string name="spam_added_title">%1$s 추가됨</string>
   <string name="spam_last_blocked_title">%1$s 최근 차단됨</string>
   <string name="block_notifications_title">알림 필터</string>
+  <string name="block_notifications_summary">무시할 알림 및 필터 관리</string>
   <string name="no_filters_title">필터가 설정되지 않음</string>
 </resources>

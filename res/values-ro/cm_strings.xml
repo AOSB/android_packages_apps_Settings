@@ -656,6 +656,7 @@ două pentru a adăuga puncte de control adiționale. „Ștergere” elimină l
   <string name="hardware_keys_action_search">Asistent de căutare</string>
   <string name="hardware_keys_action_voice_search">Căutare vocală</string>
   <string name="hardware_keys_action_in_app_search">Căutare în aplicație</string>
+  <string name="hardware_keys_action_launch_camera">Lansare Cameră foto</string>
   <string name="power_end_call_title">Terminare apel</string>
   <string name="power_end_call_summary">Apăsarea butonului de pornire va termina apelul curent</string>
   <string name="button_wake_title">Trezire</string>
@@ -908,5 +909,8 @@ două pentru a adăuga puncte de control adiționale. „Ștergere” elimină l
   <string name="show_dev_already_cm">Nu mai este nevoie, ai activat deja opțiunile de dezvoltator.</string>
   <string name="enable_adb_cm">Android debugging</string>
   <string name="enable_adb_summary_cm">Activează interfața Android Debug Bridge (adb)</string>
+  <string name="spam_added_title">Adăugat %1$s</string>
+  <string name="spam_last_blocked_title">Ultima blocată %1$s</string>
   <string name="block_notifications_title">Filtru notificări</string>
+  <string name="no_filters_title">Niciun filtru setat</string>
 </resources>

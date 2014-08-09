@@ -179,9 +179,7 @@
   <string name="menu_duration_12h">12 Stonnen</string>
   <string name="keyboard_settings_title">Android-Tastatur</string>
   <string name="tts_engine_error_config">Astellen</string>
-  <string name="pico_installed">Installéiert</string>
   <string name="tts_general_section_title">Allgemeng</string>
-  <string name="gadget_wifi">WLAN</string>
   <string name="gadget_bluetooth">Bluetooth</string>
   <string name="gadget_location">Lokaliséierung</string>
   <string name="gadget_sync">Sync</string>
@@ -220,7 +218,6 @@
   <string name="ssl_ca_cert_warning">D\'Netzwierk kéint iwwerwaacht sinn</string>
   <string name="done_button">Fäerdeg</string>
   <string name="user_owner">Besëtzer</string>
-  <string name="user_add_user_type_title">Dobäisetzen</string>
   <string name="user_setup_button_setup_later">Net elo</string>
   <string name="user_delete_button">Läschen</string>
   <string name="help_label">Hëllef</string>
