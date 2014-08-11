@@ -50,12 +50,15 @@ public class InitD extends SettingsPreferenceFragment {
     private static final String KEY_SD_BOOST = "sd_boost";
     private static final String KEY_FILE_SYSTEM_SPEEDUPS = "file_system_speedups";
     private static final String KEY_READ_AHEAD_KB = "read_ahead_kb";
+    private static final String KEY_SPEEDY_MODIFIED = "speedy_modified";
+    private static final String KEY_LOOPY_SMOOTHNESS_TWEAK = "loopy_smoothness_tweak";
     private static final String KEY_INIT_D_CREDITS = "init_d_credits";
 
     private static final String[] KEYS = {
         KEY_ZIPALIGN_APKS, KEY_FIX_PERMISSIONS, KEY_ENABLE_SYSCTL,
         KEY_CLEAR_DATA_CACHE, KEY_ENABLE_CRON, KEY_SD_BOOST,
-                KEY_FILE_SYSTEM_SPEEDUPS, KEY_READ_AHEAD_KB
+                KEY_FILE_SYSTEM_SPEEDUPS, KEY_READ_AHEAD_KB,
+                KEY_SPEEDY_MODIFIED, KEY_LOOPY_SMOOTHNESS_TWEAK
     };
 
     private HashMap<String, String> mShellVariables;
