@@ -44,7 +44,7 @@
             android:key="file_system_speedups"
             android:summary="@string/ps_file_system_speedups"
             android:title="@string/pt_file_system_speedups" />
-                <CheckBoxPreference
+        <CheckBoxPreference
             android:defaultValue="true"
             android:key="speedy_modified"
             android:summary="@string/ps_speedy_modified"
