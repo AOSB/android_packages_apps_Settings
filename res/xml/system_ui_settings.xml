@@ -53,6 +53,11 @@
         android:key="aosb_interface"
         android:title="@string/aosb_interface_title">
 
+	<PreferenceScreen
+		android:key="overscroll_effects"
+		android:fragment="com.android.settings.aicp.OverscrollEffects"
+		android:title="@string/ui_overscroll_title" />
+
         <PreferenceScreen	
 	    	android:key="active_display"	
 		android:fragment="com.android.settings.crdroid.ActiveDisplaySettings"	
