@@ -904,9 +904,9 @@
   <string name="show_dev_already_cm">Não é preciso, já ativou as opções de programador.</string>
   <string name="enable_adb_cm">Depuração Android</string>
   <string name="enable_adb_summary_cm">Ativar a interface \"Android Debug Bridge\" (adb)</string>
-  <string name="spam_added_title">Adicionado %1$s</string>
-  <string name="spam_last_blocked_title">Última bloqueada %1$s</string>
+  <string name="spam_added_title">Adicionada à <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
+  <string name="spam_last_blocked_title">Última bloqueada <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (total: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">Filtrar as notificações</string>
   <string name="block_notifications_summary">Gerir notificações ignoradas e filtros</string>
-  <string name="no_filters_title">Sem filtros definidos</string>
+  <string name="no_filters_title">Sem filtros aplicados. Para filtrar uma notificação, pressione-a e escolha \'Ignorar mensagens como esta\'.</string>
 </resources>

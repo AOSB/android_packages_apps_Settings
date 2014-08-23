@@ -936,6 +936,7 @@
   <string name="master_clear_summary" product="tablet">سڕینەوەی داتاکانی تاتەژمێرەکە</string>
   <string name="master_clear_summary" product="default">سڕینەوەی داتا لەسەر تەلەفۆن</string>
   <string name="master_clear_desc" product="tablet">ئەمە هەموو دراوەکانی ناو تابلێتەکەت دەسڕێتەوە هەروەها <b>بیرگەی ناوەکی</b>, کە ئەمانە لە خۆ ئەگرێت:\n\n<li>هەژماری گوگڵ</li>\n<li>سیستەم و دراوەکانی ئەپ و ڕێکخستنەکان و</li>\n<li>ئەپە دابەزێنراوەکان</li></string>
+  <string name="master_clear_desc" product="default">ئه‌مه‌ هه‌موو داتای ئامێره‌که‌ت ئه‌سڕدرێته‌وه‌ وه‌ک <b>بیرگه‌ی ناوه‌کی</b>، وه‌ پێکهاته‌کانی وه‌ک:\n\n<li>هه‌ژماری Google وه‌ </li>\n<li>سیسته‌م و به‌رنامه‌ و ڕێکخستنه‌کان</li>\n<li>به‌رنامه‌ی داگیراو</li></string>
   <string name="master_clear_accounts" product="default">\n\nئێستا تۆ لە ژورەوەیت بۆ ئەم هەژمارانەی خوارەوە:\n</string>
   <string name="master_clear_desc_also_erases_external"><li>مۆسیقا</li>\n<li>وێنەکان</li>\n<li>دراوەکانی دیکەی بەکارهێنەر</li></string>
   <string name="master_clear_desc_erase_external_storage" product="nosdcard">\n\nبۆ پاککردنەوەی مۆسیقا، وێنەکان و دیکەی دراوەکانی بەکارهێنەر  <b>بیرگەی یو ئێس بی</b> پێویستە بسڕدرێتەوە.</string>
@@ -1554,7 +1555,7 @@
   <string name="usage_type_no_coverage">کات بێ نیشانە</string>
   <string name="battery_action_stop">هێز بۆ وەستان</string>
   <string name="battery_action_app_details">زانیاری دەربارەی بەرنامە</string>
-  <string name="battery_action_app_settings">ڕێخستنی بەرنامەکان</string>
+  <string name="battery_action_app_settings">ڕێکخستنی بەرنامەکان</string>
   <string name="battery_action_display">ڕێکخستنی شاشە</string>
   <string name="battery_action_wifi">ڕێکخستنەکانی وای\u2011فای</string>
   <string name="battery_action_bluetooth">ڕیکخستنی بلوتوس</string>
@@ -1711,7 +1712,7 @@
   <string name="credentials_configure_lock_screen_hint">پێویستە قوفڵێکی PIN دانێیت یان تێپەڕەوشەیەک پێشی ئەوەی بەڵگەنامەکانی بیرگە بەکاربهێنیت.</string>
   <string name="emergency_tone_title">دەنگی فریاگوزار</string>
   <string name="emergency_tone_summary">دانانی کرداری كۆمەڵە كاتێك تەلەفۆن كردنێكى بارى ناكاو دا دەنێرێت</string>
-  <string name="privacy_settings">پاڵپشت &amp; ڕێکخستنەوە</string>
+  <string name="privacy_settings">پاڵپشت و ڕێکخستنەوە</string>
   <string name="privacy_settings_title">پاڵپشتamp; ڕێکخستنەوە</string>
   <string name="backup_section_title">پاڵپشتamp; ڕێکخستنەوە</string>
   <string name="personal_data_section_title">داتای کەسی</string>
@@ -1779,7 +1780,11 @@
   <string name="accessibility_sync_error">هەڵەی ناردن.</string>
   <string name="sync_failed">ناردن هەڵوەشایەوە</string>
   <string name="sync_active">چالاککردنی ناردن</string>
+<<<<<<< HEAD
   <string name="account_sync_settings_title">Sync</string>
+=======
+  <string name="account_sync_settings_title">ناردنی</string>
+>>>>>>> ac39da4... Automatic translation import
   <string name="sync_is_failing">ناردن  ئێستا گرفت بەسەر دێت.  بەكورتى ێتەوە. </string>
   <string name="add_account_label">دانانی هەژمار</string>
   <string name="background_data">داتای پشتەگەڵاڵە</string>

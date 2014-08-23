@@ -336,7 +336,6 @@
   <string name="display_rotation_180_title">180 grader</string>
   <string name="display_rotation_270_title">270 grader</string>
   <string name="advanced_reboot_title">Avansert omstart</string>
-  <string name="advanced_reboot_summary">Når ulåst, Inkluder alternativer i strøm-menyen for omstart i recovery, bootloader eller utføre en myk omstart</string>
   <string name="app_security_title">Program sikkerhet</string>
   <string name="root_access">Root-tilgang</string>
   <string name="root_access_warning_title">Tillat root-tilgang?</string>
@@ -644,6 +643,7 @@
   <string name="hardware_keys_action_search">Søkeassistent</string>
   <string name="hardware_keys_action_voice_search">Talesøk</string>
   <string name="hardware_keys_action_in_app_search">I-app søk</string>
+  <string name="hardware_keys_action_launch_camera">Start kamera</string>
   <string name="power_end_call_title">Avslutt samtale</string>
   <string name="power_end_call_summary">Ved å trykke på strømknappen så vil samtalen avsluttes</string>
   <string name="button_wake_title">Våkne</string>

@@ -910,9 +910,9 @@
   <string name="show_dev_already_cm">没有必要，您已启用开发者选项。</string>
   <string name="enable_adb_cm">Android 调试</string>
   <string name="enable_adb_summary_cm">开启 Android Debug Bridge (adb) 界面</string>
-  <string name="spam_added_title">已添加 %1$s</string>
-  <string name="spam_last_blocked_title">最后一次被阻止： %1$s</string>
+  <string name="spam_added_title"><xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> 已添加</string>
+  <string name="spam_last_blocked_title">上次屏蔽 <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (总计: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">通知过滤</string>
   <string name="block_notifications_summary">管理已忽略的通知和过滤器</string>
-  <string name="no_filters_title">没有设置过滤</string>
+  <string name="no_filters_title">没有设置过滤器。若要过滤通知，请长按它并选择“忽略像这样的消息”。</string>
 </resources>

@@ -896,9 +896,9 @@
   <string name="show_dev_already_cm">ไม่จำเป็น คุณได้เปิดตัวเลือกสำหรับนักพัฒนาแล้ว</string>
   <string name="enable_adb_cm">แก้ไขข้อบกพร่องแอนดรอยด์</string>
   <string name="enable_adb_summary_cm">เปิดใช้งานแก้ไขข้อบอกพร่องแอนดรอยด์ (ADB)</string>
-  <string name="spam_added_title">เพิ่ม %1$s</string>
-  <string name="spam_last_blocked_title">ล่าสุดบล็อค %1$s</string>
+  <string name="spam_added_title">เพิ่ม <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
+  <string name="spam_last_blocked_title">บล็อคล่าสุด <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (ทั้งหมด: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">ตัวกรองการแจ้งเตือน</string>
   <string name="block_notifications_summary">จัดการการละเว้นการแจ้งเตือนและตัวกรอง</string>
-  <string name="no_filters_title">ไม่ตั้งค่าตัวกรอง</string>
+  <string name="no_filters_title">ไม่ได้ตั้งตัวกรอง เพื่อกรองการแจ้งเตือน,แตะค้างแล้วเลือก \'ละเว้นข้อความเช่นนี้\'</string>
 </resources>

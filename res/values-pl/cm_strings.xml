@@ -909,9 +909,9 @@ Dodatkowe opcje są dostępne przez długie przytrzymanie linii. Wybierając opc
   <string name="show_dev_already_cm">Wystarczy, już jesteś programistą.</string>
   <string name="enable_adb_cm">Debugowanie</string>
   <string name="enable_adb_summary_cm">Włącz interfejs ADB</string>
-  <string name="spam_added_title">Dodano %1$s</string>
-  <string name="spam_last_blocked_title">Ostatnio zablokowano %1$s</string>
+  <string name="spam_added_title">Dodano <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
+  <string name="spam_last_blocked_title">Ostatnio zablokowano <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (w sumie: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">Filtrowanie powiadomień</string>
   <string name="block_notifications_summary">Zarządzaj ignorowanymi powiadomieniami i filtrami</string>
-  <string name="no_filters_title">Brak filtrów</string>
+  <string name="no_filters_title">Brak skonfigurowanych filtrów. Aby filtrować powiadomienia, przytrzymaj palcem na jednym z nich i wybierz opcję \"Ignoruj wiadomości tego typu\".</string>
 </resources>

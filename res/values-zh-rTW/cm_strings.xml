@@ -620,6 +620,12 @@
   <string name="hardware_keys_action_search">搜尋助手</string>
   <string name="hardware_keys_action_voice_search">語音搜尋</string>
   <string name="hardware_keys_action_in_app_search">應用程式內搜尋</string>
+  <string name="hardware_keys_action_launch_camera">啟動相機</string>
+  <string name="power_end_call_title">結束通話</string>
+  <string name="power_end_call_summary">按下電源按鈕將會結束目前通話</string>
+  <string name="button_wake_title">喚醒</string>
+  <string name="home_answer_call_title">接聽電話</string>
+  <string name="camera_sleep_on_release_title">螢幕窺視</string>
   <string name="camera_music_controls_title">播放控制</string>
   <string name="volbtn_music_controls_title">播放控制</string>
   <string name="volbtn_music_controls_summary">螢幕關閉時，長按音量鍵將可以改變音樂曲目</string>

@@ -911,9 +911,9 @@ Opções adicionais estão disponíveis ao pressionar continuamente uma linha. A
   <string name="show_dev_already_cm">Não é preciso, pois as configurações de desenvolvedor já estão ativadas.</string>
   <string name="enable_adb_cm">Depuração Android</string>
   <string name="enable_adb_summary_cm">Ativar a interface de Ponte de Depuração Android (adb)</string>
-  <string name="spam_added_title">Adicionado %1$s</string>
-  <string name="spam_last_blocked_title">Última bloqueada %1$s</string>
+  <string name="spam_added_title">Adicionada <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
+  <string name="spam_last_blocked_title">Última bloqueada <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (total: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">Filtrar notificações</string>
   <string name="block_notifications_summary">Gerenciar notificações e filtros ignorados</string>
-  <string name="no_filters_title">Nenhum filtro definido</string>
+  <string name="no_filters_title">Nenhum conjunto de filtros definido. Para filtrar uma notificação, pressione-a e escolha \'Ignorar mensagens como esta\'.</string>
 </resources>

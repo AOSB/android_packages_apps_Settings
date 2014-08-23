@@ -341,7 +341,6 @@ Pilihan tambahan tersedia dengan menekan-lama sebuah garis. Dengan memilih \'Uba
   <string name="display_rotation_180_title">180 derajat</string>
   <string name="display_rotation_270_title">270 derajat</string>
   <string name="advanced_reboot_title">Reboot lanjutan</string>
-  <string name="advanced_reboot_summary">Ketika dibuka, termasuk pilihan dalam menu daya untuk reboot ke recovery, bootloader atau melakukan soft reboot</string>
   <string name="app_security_title">Keamanan aplikasi</string>
   <string name="root_access">Akses root</string>
   <string name="root_access_warning_title">Izinkan akses root?</string>
@@ -905,9 +904,9 @@ Pilihan tambahan tersedia dengan menekan-lama sebuah garis. Dengan memilih \'Uba
   <string name="show_dev_already_cm">Tidak perlu, Anda telah mengaktifkan opsi pengembang.</string>
   <string name="enable_adb_cm">Android debugging</string>
   <string name="enable_adb_summary_cm">Aktifkan antarmuka Android Debug Bridge (adb)</string>
-  <string name="spam_added_title">Ditambahkan %1$s</string>
-  <string name="spam_last_blocked_title">Terakhir diblokir %1$s</string>
+  <string name="spam_added_title">Ditambahkan <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
+  <string name="spam_last_blocked_title">Terakhir diblokir <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (total: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">Notifikasi penyaringan</string>
   <string name="block_notifications_summary">Kelola pemberitahuan yang diabaikan dan filter</string>
-  <string name="no_filters_title">Belum ada penyaring</string>
+  <string name="no_filters_title">Tidak ada filter yang ditetapkan. Untuk menyaring pemberitahuan, tekan lama dan pilih \'Abaikan pesan seperti ini\'.</string>
 </resources>

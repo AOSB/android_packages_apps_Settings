@@ -934,9 +934,9 @@
   <string name="show_dev_already_cm">Δεν χρειάζεται, έχετε ήδη ενεργοποιήσει τις επιλογές για προγραμματιστές.</string>
   <string name="enable_adb_cm">Εντοπισμός σφαλμάτων Android</string>
   <string name="enable_adb_summary_cm">Ενεργοποίηση του περιβάλλοντος Android Debug Bridge (adb)</string>
-  <string name="spam_added_title">Προστέθηκε: %1$s</string>
-  <string name="spam_last_blocked_title">Τελευταία φραγή: %1$s</string>
+  <string name="spam_added_title">Προστέθηκε <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g></string>
+  <string name="spam_last_blocked_title">Τελευταία φραγή <xliff:g id="time_since" example="5 minutes ago">%1$s</xliff:g> (σύνολο: <xliff:g id="count" example="2 times">%2$s</xliff:g>)</string>
   <string name="block_notifications_title">Φιλτράρισμα ειδοποιήσεων</string>
   <string name="block_notifications_summary">Διαχείριση φίλτρων και ειδοποιήσεων που αγνοούνται</string>
-  <string name="no_filters_title">Δεν έχουν οριστεί φίλτρα</string>
+  <string name="no_filters_title">Δεν έχουν οριστεί φίλτρα. Για να φιλτράρετε μια ειδοποίηση, πατήστε παρατεταμένα πάνω της και επιλέξτε \'Αγνοήστε μηνύματα όπως αυτό\'.</string>
 </resources>

@@ -344,7 +344,6 @@ Yderligere indstillinger er tilgængelige ved at trykke længe på en linje. Ved
   <string name="display_rotation_180_title">180 grader</string>
   <string name="display_rotation_270_title">270 grader</string>
   <string name="advanced_reboot_title">Avanceret genstart</string>
-  <string name="advanced_reboot_summary">Inkludér indstillinger i tænd/sluk-menuen for genstart til recovery, bootloader eller udfører en blød genstart når telefonen er låst op</string>
   <string name="app_security_title">App-sikkerhed</string>
   <string name="root_access">Root-adgang</string>
   <string name="root_access_warning_title">Tillad root-adgang?</string>
@@ -910,9 +909,9 @@ Yderligere indstillinger er tilgængelige ved at trykke længe på en linje. Ved
   <string name="show_dev_already_cm">Du behøver ikke gøre dette, Indstillinger for udviklere er allerede aktiveret.</string>
   <string name="enable_adb_cm">Android-fejlfinding</string>
   <string name="enable_adb_summary_cm">Aktivér ADB-grænsefladen</string>
-  <string name="spam_added_title">Tilføjet %1$s</string>
-  <string name="spam_last_blocked_title">Sidste blokerede %1$s</string>
+  <string name="spam_added_title">Tilføjet <xliff:g id="time_since" example="5 minutes ago"> %1$s </xliff:g></string>
+  <string name="spam_last_blocked_title">Sidst blokeret <xliff:g id="time_since" example="5 minutes ago"> %1$s </xliff:g> (total: <xliff:g id="count" example="2 times"> %2$s </xliff:g>)</string>
   <string name="block_notifications_title">Filtrere meddelelser</string>
   <string name="block_notifications_summary">Administrere ignoreret underretninger og filtre</string>
-  <string name="no_filters_title">Der er ingen filtre</string>
+  <string name="no_filters_title">Ingen filtre angivet. Hvis du vil filtrere en meddelelse, så tryk længe på den og vælg \'Ignorer meddelelser som denne\'.</string>
 </resources>
