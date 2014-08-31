@@ -85,10 +85,6 @@
     <string name="pt_empty_app_mem">Empty app mem</string>
     <string name="pt_read_ahead_kb">Read ahead value</string>
     <string name="pt_minfree_values">Minfree values</string>
-    <string name="pt_speedy_modified">Enable Speedy Modified Tweaks</string>
-    <string name="ps_speedy_modified">Optimises and speeds up the system</string>
-    <string name="ps_loopy_smoothness_tweak">Enable Loopy Smoothness Tweak</string>
-    <string name="ps_loopy_smoothness_tweak">Feel the speed!</string>
     <string name="pt_init_d_credits">Developed by:</string>
     <string name="ps_init_d_credits">Jared Rummler (JRummy16)</string>
     <string name="dt_init_d_error">Init.d error</string>

@@ -44,16 +44,6 @@
             android:key="file_system_speedups"
             android:summary="@string/ps_file_system_speedups"
             android:title="@string/pt_file_system_speedups" />
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="speedy_modified"
-            android:summary="@string/ps_speedy_modified"
-            android:title="@string/pt_speedy_modified" />
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="loopy_smoothness_tweak"
-            android:summary="@string/ps_loopy_smoothness_tweak"
-            android:title="@string/pt_loopy_smoothness_tweak" />    
     </PreferenceCategory>
 
 </PreferenceScreen>
