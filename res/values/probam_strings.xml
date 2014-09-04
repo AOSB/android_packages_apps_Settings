@@ -487,6 +487,8 @@
     <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape</string>
     <string name="navigation_bar_width_title">Navigation Bar width</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side</string>
+    <string name="navigation_bar_dpad_keys_title">Arrow keys</string>
+    <string name="navigation_bar_dpad_keys_summary">Show arrow keys while keyboard is shown</string>
 
     <!-- Navigation bar dimens -->
     <string name="size_42_dp_default">42 dp (default)</string>
