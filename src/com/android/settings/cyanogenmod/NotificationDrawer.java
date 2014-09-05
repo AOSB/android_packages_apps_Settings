@@ -63,6 +63,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.notification_drawer);
+        PreferenceScreen prefScreen = getPreferenceScreen();
 
         // Notification drawer
         int collapseBehaviour = Settings.System.getInt(getContentResolver(),
