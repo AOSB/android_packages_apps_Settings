@@ -121,13 +121,6 @@
 		android:fragment="com.android.settings.aicp.TtsNotification" />
 
 	   <PreferenceScreen
-		android:id="@+id/wakelock_blocker"
-		android:layout="@layout/preference_wakelockblocker"
-		android:icon="@drawable/ic_settings_wakelock_blocker"
-		android:title="@string/wakelock_blocker"
-		android:fragment="com.android.settings.du.WakeLockBlocker" />
-
-	   <PreferenceScreen
 		android:id="@+id/weather"
 		android:title="@string/weather_settings_title"
 		android:icon="@drawable/ic_aicp_weather"
