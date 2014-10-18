@@ -1332,18 +1332,6 @@ public class Settings extends PreferenceActivity
         invalidateHeaders();
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        mSearchBar.clearFocus();
-        mSearchItem.collapseActionView();
-
-        if (newConfig.uiThemeMode != mCurrentState && HeaderAdapter.mThemeEnabler != null) {
-            mCurrentState = newConfig.uiThemeMode;
-            HeaderAdapter.mThemeEnabler.setSwitchState();
-        }
-
     public void setNfcProfileCallback(NFCProfileTagCallback callback) {
         mNfcProfileCallback = callback;
     }
