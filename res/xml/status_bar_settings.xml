@@ -16,6 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_title">
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
@@ -29,5 +30,16 @@
         android:title="@string/status_bar_quick_qs_pulldown_title"
         android:summary="@string/status_bar_quick_qs_pulldown_summary"
         android:defaultValue="true" />
+
+    <!-- Status bar tweaks -->
+    <PreferenceCategory
+        android:title="@string/status_bar_style_title">
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.aosb.StatusBarClockStyle"
+            android:key="clock_style_pref"
+            android:title="@string/status_bar_clock" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
