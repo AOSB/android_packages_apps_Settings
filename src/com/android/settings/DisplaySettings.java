@@ -89,6 +89,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_COLOR_ENHANCEMENT = "color_enhancement";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+    private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
 
     private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
@@ -106,6 +107,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mDozePreference;
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mTapToWake;
+    private SwitchPreference mWakeWhenPluggedOrUnplugged;
 
     private SwitchPreference mAdaptiveBacklight;
     private SwitchPreference mSunlightEnhancement;
@@ -233,6 +235,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             advancedPrefs.removePreference(findPreference(KEY_PROXIMITY_WAKE));
             Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
         }
+
+        mWakeWhenPluggedOrUnplugged =
+                (SwitchPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -349,6 +354,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (mTapToWake != null) {
             mTapToWake.setChecked(TapToWake.isEnabled());
         }
+
+        // Default value for wake-on-plug behavior from config.xml
+        boolean wakeUpWhenPluggedOrUnpluggedConfig = getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen);
+
+        mWakeWhenPluggedOrUnplugged.setChecked(Settings.Global.getInt(getContentResolver(),
+                Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
 
         updateState();
     }
