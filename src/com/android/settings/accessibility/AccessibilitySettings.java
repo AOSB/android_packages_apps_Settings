@@ -30,7 +30,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.UserHandle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
@@ -174,7 +173,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     private final RotationPolicyListener mRotationPolicyListener = new RotationPolicyListener() {
         @Override
         public void onChange() {
-            updateLockScreenRotationCheckbox();
+            updateLockScreenRotationSwitch();
         }
     };
 
@@ -182,10 +181,10 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mServicesCategory;
     private PreferenceCategory mSystemsCategory;
 
-    private CheckBoxPreference mToggleLargeTextPreference;
-    private CheckBoxPreference mToggleHighTextContrastPreference;
-    private CheckBoxPreference mToggleLockScreenRotationPreference;
-    private CheckBoxPreference mToggleSpeakPasswordPreference;
+    private SwitchPreference mToggleLargeTextPreference;
+    private SwitchPreference mToggleHighTextContrastPreference;
+    private SwitchPreference mToggleLockScreenRotationPreference;
+    private SwitchPreference mToggleSpeakPasswordPreference;
     private ListPreference mSelectLongPressTimeoutPreference;
     private Preference mNoServicesMessagePreference;
     private PreferenceScreen mCaptioningPreferenceScreen;
@@ -240,6 +239,18 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         } else if (mToggleInversionPreference == preference) {
             handleToggleInversionPreferenceChange((Boolean) newValue);
             return true;
+        } else if (mToggleLargeTextPreference == preference) {
+            handleToggleLargeTextPreferenceChange((Boolean) newValue);
+            return true;
+        } else if (mToggleHighTextContrastPreference == preference) {
+            handleToggleTextContrastPreferenceChange((Boolean) newValue);
+            return true;
+        } else if (mToggleLockScreenRotationPreference == preference) {
+            handleLockScreenRotationPreferenceChange((Boolean) newValue);
+            return true;
+        } else if (mToggleSpeakPasswordPreference == preference) {
+            handleToggleSpeakPasswordPreferenceChange((Boolean) newValue);
+            return true;
         }
         return false;
     }
@@ -258,19 +269,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (mToggleLargeTextPreference == preference) {
-            handleToggleLargeTextPreferenceClick();
-            return true;
-        } else if (mToggleHighTextContrastPreference == preference) {
-            handleToggleTextContrastPreferenceClick();
-            return true;
-        } else if (mToggleLockScreenRotationPreference == preference) {
-            handleLockScreenRotationPreferenceClick();
-            return true;
-        } else if (mToggleSpeakPasswordPreference == preference) {
-            handleToggleSpeakPasswordPreferenceClick();
-            return true;
-        } else if (mGlobalGesturePreferenceScreen == preference) {
+        if (mGlobalGesturePreferenceScreen == preference) {
             handleToggleEnableAccessibilityGesturePreferenceClick();
             return true;
         } else if (mDisplayMagnificationPreferenceScreen == preference) {
@@ -280,30 +279,30 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    private void handleToggleLargeTextPreferenceClick() {
+    private void handleToggleLargeTextPreferenceChange(boolean checked) {
         try {
-            mCurConfig.fontScale = mToggleLargeTextPreference.isChecked() ? LARGE_FONT_SCALE : 1;
+            mCurConfig.fontScale = checked ? LARGE_FONT_SCALE : 1;
             ActivityManagerNative.getDefault().updatePersistentConfiguration(mCurConfig);
         } catch (RemoteException re) {
             /* ignore */
         }
     }
 
-    private void handleToggleTextContrastPreferenceClick() {
+    private void handleToggleTextContrastPreferenceChange(boolean checked) {
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_HIGH_TEXT_CONTRAST_ENABLED,
-                (mToggleHighTextContrastPreference.isChecked() ? 1 : 0));
+                (checked ? 1 : 0));
     }
 
-    private void handleLockScreenRotationPreferenceClick() {
+    private void handleLockScreenRotationPreferenceChange(boolean checked) {
         RotationPolicy.setRotationLockForAccessibility(getActivity(),
-                !mToggleLockScreenRotationPreference.isChecked());
+                !checked);
     }
 
-    private void handleToggleSpeakPasswordPreferenceClick() {
+    private void handleToggleSpeakPasswordPreferenceChange(boolean checked) {
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_SPEAK_PASSWORD,
-                mToggleSpeakPasswordPreference.isChecked() ? 1 : 0);
+                checked ? 1 : 0);
     }
 
     private void handleToggleEnableAccessibilityGesturePreferenceClick() {
@@ -336,11 +335,13 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
         // Large text.
         mToggleLargeTextPreference =
-                (CheckBoxPreference) findPreference(TOGGLE_LARGE_TEXT_PREFERENCE);
+                (SwitchPreference) findPreference(TOGGLE_LARGE_TEXT_PREFERENCE);
+        mToggleLargeTextPreference.setOnPreferenceChangeListener(this);
 
         // Text contrast.
         mToggleHighTextContrastPreference =
-                (CheckBoxPreference) findPreference(TOGGLE_HIGH_TEXT_CONTRAST_PREFERENCE);
+                (SwitchPreference) findPreference(TOGGLE_HIGH_TEXT_CONTRAST_PREFERENCE);
+        mToggleHighTextContrastPreference.setOnPreferenceChangeListener(this);
 
         // Display inversion.
         mToggleInversionPreference = (SwitchPreference) findPreference(TOGGLE_INVERSION_PREFERENCE);
@@ -348,14 +349,17 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
         // Lock screen rotation.
         mToggleLockScreenRotationPreference =
-                (CheckBoxPreference) findPreference(TOGGLE_LOCK_SCREEN_ROTATION_PREFERENCE);
+                (SwitchPreference) findPreference(TOGGLE_LOCK_SCREEN_ROTATION_PREFERENCE);
         if (!RotationPolicy.isRotationSupported(getActivity())) {
             mSystemsCategory.removePreference(mToggleLockScreenRotationPreference);
+        } else {
+            mToggleLockScreenRotationPreference.setOnPreferenceChangeListener(this);
         }
 
         // Speak passwords.
         mToggleSpeakPasswordPreference =
-                (CheckBoxPreference) findPreference(TOGGLE_SPEAK_PASSWORD_PREFERENCE);
+                (SwitchPreference) findPreference(TOGGLE_SPEAK_PASSWORD_PREFERENCE);
+        mToggleSpeakPasswordPreference.setOnPreferenceChangeListener(this);
 
         // Long press timeout.
         mSelectLongPressTimeoutPreference =
@@ -521,7 +525,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
                 Settings.Secure.ACCESSIBILITY_DISPLAY_INVERSION_ENABLED, 0) == 1);
 
         // Auto-rotate screen
-        updateLockScreenRotationCheckbox();
+        updateLockScreenRotationSwitch();
 
         // Speak passwords.
         final boolean speakPasswordEnabled = Settings.Secure.getInt(getContentResolver(),
@@ -560,7 +564,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
                 : R.string.accessibility_feature_state_off);
     }
 
-    private void updateLockScreenRotationCheckbox() {
+    private void updateLockScreenRotationSwitch() {
         Context context = getActivity();
         if (context != null) {
             mToggleLockScreenRotationPreference.setChecked(
