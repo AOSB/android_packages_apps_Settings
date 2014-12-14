@@ -24,7 +24,7 @@
     <string name="default_string">Default</string>
     <string name="choose_app">Choose application</string>
 
-    <!-- Slim settings screens -->
+    <!-- AOSB settings screens -->
     <string name="header_category_personalization">Personalization</string>
     <string name="interface_settings_title">AOSB rom box</string>
 
@@ -75,5 +75,10 @@
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
+
+    <!-- Network stats -->
+    <string name="status_bar_network_title">Network traffic</string>
+    <string name="status_bar_show_network_stats_title">Show network speeds</string>
+    <string name="status_bar_network_stats_update_title">Update frequency</string>
 
 </resources>
