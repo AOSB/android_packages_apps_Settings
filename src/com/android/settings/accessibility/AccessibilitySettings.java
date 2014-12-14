@@ -173,9 +173,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mToggleLargeTextPreference;
     private SwitchPreference mToggleHighTextContrastPreference;
     private SwitchPreference mToggleSpeakPasswordPreference;
-    private CheckBoxPreference mToggleLargeTextPreference;
-    private CheckBoxPreference mToggleHighTextContrastPreference;
-    private CheckBoxPreference mToggleSpeakPasswordPreference;
     private ListPreference mSelectLongPressTimeoutPreference;
     private Preference mNoServicesMessagePreference;
     private PreferenceScreen mCaptioningPreferenceScreen;
@@ -222,15 +219,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         } else if (mToggleInversionPreference == preference) {
             handleToggleInversionPreferenceChange((Boolean) newValue);
             return true;
-        } else if (mToggleLargeTextPreference == preference) {
-            handleToggleLargeTextPreferenceChange((Boolean) newValue);
-            return true;
-        } else if (mToggleHighTextContrastPreference == preference) {
-            handleToggleTextContrastPreferenceChange((Boolean) newValue);
-            return true;
-        } else if (mToggleSpeakPasswordPreference == preference) {
-            handleToggleSpeakPasswordPreferenceChange((Boolean) newValue);
-            return true;
         }
         return false;
     }
@@ -249,7 +237,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (mGlobalGesturePreferenceScreen == preference) {
         if (mToggleLargeTextPreference == preference) {
             handleToggleLargeTextPreferenceClick();
             return true;
@@ -269,25 +256,25 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    private void handleToggleLargeTextPreferenceChange(boolean checked) {
+    private void handleToggleLargeTextPreferenceClick() {
         try {
-            mCurConfig.fontScale = checked ? LARGE_FONT_SCALE : 1;
+            mCurConfig.fontScale = mToggleLargeTextPreference.isChecked() ? LARGE_FONT_SCALE : 1;
             ActivityManagerNative.getDefault().updatePersistentConfiguration(mCurConfig);
         } catch (RemoteException re) {
             /* ignore */
         }
     }
 
-    private void handleToggleTextContrastPreferenceChange(boolean checked) {
+    private void handleToggleTextContrastPreferenceClick() {
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_HIGH_TEXT_CONTRAST_ENABLED,
-                (checked ? 1 : 0));
+                (mToggleHighTextContrastPreference.isChecked() ? 1 : 0));
     }
 
     private void handleToggleSpeakPasswordPreferenceClick() {
         Settings.Secure.putInt(getContentResolver(),
                 Settings.Secure.ACCESSIBILITY_SPEAK_PASSWORD,
-                checked ? 1 : 0);
+                mToggleSpeakPasswordPreference.isChecked() ? 1 : 0);
     }
 
     private void handleToggleEnableAccessibilityGesturePreferenceClick() {
@@ -321,12 +308,10 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         // Large text.
         mToggleLargeTextPreference =
                 (SwitchPreference) findPreference(TOGGLE_LARGE_TEXT_PREFERENCE);
-        mToggleLargeTextPreference.setOnPreferenceChangeListener(this);
 
         // Text contrast.
         mToggleHighTextContrastPreference =
                 (SwitchPreference) findPreference(TOGGLE_HIGH_TEXT_CONTRAST_PREFERENCE);
-        mToggleHighTextContrastPreference.setOnPreferenceChangeListener(this);
 
         // Display inversion.
         mToggleInversionPreference = (SwitchPreference) findPreference(TOGGLE_INVERSION_PREFERENCE);
@@ -335,7 +320,6 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
         // Speak passwords.
         mToggleSpeakPasswordPreference =
                 (SwitchPreference) findPreference(TOGGLE_SPEAK_PASSWORD_PREFERENCE);
-        mToggleSpeakPasswordPreference.setOnPreferenceChangeListener(this);
 
         // Long press timeout.
         mSelectLongPressTimeoutPreference =
